@@ -567,6 +567,16 @@
               <FilePath>..\..\ESC51_sdk\HW_Support\hw_UART.c</FilePath>
             </File>
             <File>
+              <FileName>hw_Ext0.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\ESC51_sdk\HW_Support\hw_Ext0.c</FilePath>
+            </File>
+            <File>
+              <FileName>hw_Ext1.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\ESC51_sdk\HW_Support\hw_Ext1.c</FilePath>
+            </File>
+            <File>
               <FileName>hw_critical.h</FileName>
               <FileType>5</FileType>
               <FilePath>..\..\ESC51_sdk\HW_Support\header\hw_critical.h</FilePath>

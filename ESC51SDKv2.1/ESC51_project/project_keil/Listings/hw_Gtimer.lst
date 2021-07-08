@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   HW_GTIMER                                                         07/08/2021 21:48:01 PAGE 1   
+C51 COMPILER V9.60.0.0   HW_GTIMER                                                         07/08/2021 22:33:46 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE HW_GTIMER
@@ -62,7 +62,7 @@ line level    source
   50          {
   51   1              
   52   1      }
-C51 COMPILER V9.60.0.0   HW_GTIMER                                                         07/08/2021 21:48:01 PAGE 2   
+C51 COMPILER V9.60.0.0   HW_GTIMER                                                         07/08/2021 22:33:46 PAGE 2   
 
   53          
   54          
@@ -126,7 +126,7 @@ line level    source
  112          {
  113   1              __GTimerOBJ*  head = GTimer_Head;
  114   1      
-C51 COMPILER V9.60.0.0   HW_GTIMER                                                         07/08/2021 21:48:01 PAGE 3   
+C51 COMPILER V9.60.0.0   HW_GTIMER                                                         07/08/2021 22:33:46 PAGE 3   
 
  115   1              while (head != NULL)
  116   1              {

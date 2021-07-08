@@ -32,6 +32,8 @@
 ".\Objects\hw_Timer1.obj",
 ".\Objects\hw_Timer2.obj",
 ".\Objects\hw_UART.obj",
+".\Objects\hw_Ext0.obj",
+".\Objects\hw_Ext1.obj",
 ".\Objects\bsp_config.obj",
 ".\Objects\es_main.obj",
 ".\Objects\STARTUP.obj" 

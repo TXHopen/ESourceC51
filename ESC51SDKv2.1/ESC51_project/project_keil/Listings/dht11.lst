@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   DHT11                                                             07/08/2021 21:47:57 PAGE 1   
+C51 COMPILER V9.60.0.0   DHT11                                                             07/08/2021 22:33:41 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE DHT11
@@ -62,7 +62,7 @@ line level    source
               }
               
               
-C51 COMPILER V9.60.0.0   DHT11                                                             07/08/2021 21:47:57 PAGE 2   
+C51 COMPILER V9.60.0.0   DHT11                                                             07/08/2021 22:33:41 PAGE 2   
 
               //DHT11初始化 
               //返回0：初始化成功，1：失败
@@ -126,7 +126,7 @@ line level    source
                                       buf[i]=DHT11_Read_Byte();
                               }
                               if((buf[0]+buf[1]+buf[2]+buf[3])==buf[4])
-C51 COMPILER V9.60.0.0   DHT11                                                             07/08/2021 21:47:57 PAGE 3   
+C51 COMPILER V9.60.0.0   DHT11                                                             07/08/2021 22:33:41 PAGE 3   
 
                               {
                                       *humi=buf[0];

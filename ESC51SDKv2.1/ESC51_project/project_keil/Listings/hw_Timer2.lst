@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   HW_TIMER2                                                         07/08/2021 21:48:02 PAGE 1   
+C51 COMPILER V9.60.0.0   HW_TIMER2                                                         07/08/2021 22:33:47 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE HW_TIMER2
@@ -62,7 +62,7 @@ line level    source
   50   1              RCAP2L = timer_l;
   51   1              TH2 = RCAP2H;
   52   1              TL2 = RCAP2L;
-C51 COMPILER V9.60.0.0   HW_TIMER2                                                         07/08/2021 21:48:02 PAGE 2   
+C51 COMPILER V9.60.0.0   HW_TIMER2                                                         07/08/2021 22:33:47 PAGE 2   
 
   53   1              
   54   1              EA  = 1;
@@ -126,7 +126,7 @@ line level    source
  112   1              TR2   = 0;//¹Ø±Õ¶¨Ê±Æ÷
  113   1      }
  114          
-C51 COMPILER V9.60.0.0   HW_TIMER2                                                         07/08/2021 21:48:02 PAGE 3   
+C51 COMPILER V9.60.0.0   HW_TIMER2                                                         07/08/2021 22:33:47 PAGE 3   
 
  115          void Timer2Start(void)
  116          {

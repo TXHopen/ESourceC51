@@ -1,4 +1,4 @@
-BL51 BANKED LINKER/LOCATER V6.22.2.0                                                    07/08/2021  21:48:03  PAGE 1
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                    07/08/2021  22:33:48  PAGE 1
 
 
 BL51 BANKED LINKER/LOCATER V6.22.2.0, INVOKED BY:
@@ -9,8 +9,8 @@ C:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\user.obj, .\Objects\ad0809.obj, .\Objects\
 >> s\max263.obj, .\Objects\MAX541x.obj, .\Objects\max1241.obj, .\Objects\pwm.obj, .\Objects\sw_GCapture.obj, .\Objects\s
 >> w_Gdelay.obj, .\Objects\sw_PWMGroup.obj, .\Objects\sw_SoftTimer.obj, .\Objects\hw_Gtimer.obj, .\Objects\hw_ioctrl.obj
 >> , .\Objects\hw_MEMPool.obj, .\Objects\hw_Timer0.obj, .\Objects\hw_Timer1.obj, .\Objects\hw_Timer2.obj, .\Objects\hw_U
->> ART.obj, .\Objects\bsp_config.obj, .\Objects\es_main.obj, .\Objects\STARTUP.obj TO .\Objects\es_sdk PRINT (.\Listings
->> \es_sdk.m51) RAMSIZE (256)
+>> ART.obj, .\Objects\hw_Ext0.obj, .\Objects\hw_Ext1.obj, .\Objects\bsp_config.obj, .\Objects\es_main.obj, .\Objects\STA
+>> RTUP.obj TO .\Objects\es_sdk PRINT (.\Listings\es_sdk.m51) RAMSIZE (256)
 
 
 MEMORY MODEL: LARGE
@@ -51,17 +51,19 @@ INPUT MODULES INCLUDED:
   .\Objects\hw_Timer1.obj (HW_TIMER1)
   .\Objects\hw_Timer2.obj (HW_TIMER2)
   .\Objects\hw_UART.obj (HW_UART)
+  .\Objects\hw_Ext0.obj (HW_EXT0)
+  .\Objects\hw_Ext1.obj (HW_EXT1)
   .\Objects\bsp_config.obj (BSP_CONFIG)
   .\Objects\es_main.obj (ES_MAIN)
   .\Objects\STARTUP.obj (?C_STARTUP)
   C:\KEIL_V5\C51\LIB\C51L.LIB (?C_INIT)
   C:\KEIL_V5\C51\LIB\C51L.LIB (?C?CLDPTR)
   C:\KEIL_V5\C51\LIB\C51L.LIB (?C?CLDOPTR)
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  07/08/2021  22:33:48  PAGE 2
+
+
   C:\KEIL_V5\C51\LIB\C51L.LIB (?C?CILDOPTR)
   C:\KEIL_V5\C51\LIB\C51L.LIB (?C?CSTPTR)
-BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  07/08/2021  21:48:03  PAGE 2
-
-
   C:\KEIL_V5\C51\LIB\C51L.LIB (?C?CSTOPTR)
   C:\KEIL_V5\C51\LIB\C51L.LIB (?C?SLDIV)
   C:\KEIL_V5\C51\LIB\C51L.LIB (?C?PLDOPTR)
@@ -112,16 +114,27 @@ LINK MAP OF MODULE:  .\Objects\es_sdk (USER)
             XDATA   008CH     0003H     UNIT         ?XD?_LED4?USER
             XDATA   008FH     0003H     UNIT         ?XD?_LED5?USER
             XDATA   0092H     0003H     UNIT         ?XD?_LED6?USER
+            XDATA   0095H     0003H     UNIT         ?XD?_INTERUPT_EXT0_FUNCTION?HW_EXT0
+            XDATA   0098H     0003H     UNIT         ?XD?_EXT0INIT?HW_EXT0
+            XDATA   009BH     0003H     UNIT         ?XD?_EXT0INIT_NOOPEN?HW_EXT0
+            XDATA   009EH     0003H     UNIT         ?XD?HW_EXT0
+            XDATA   00A1H     0003H     UNIT         ?XD?_INTERUPT_EXT1_FUNCTION?HW_EXT1
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  07/08/2021  22:33:48  PAGE 3
+
+
+            XDATA   00A4H     0003H     UNIT         ?XD?_EXT1INIT?HW_EXT1
+            XDATA   00A7H     0003H     UNIT         ?XD?_EXT1INIT_NOOPEN?HW_EXT1
+            XDATA   00AAH     0003H     UNIT         ?XD?HW_EXT1
 
             * * * * * * *   C O D E   M E M O R Y   * * * * * * *
             CODE    0000H     0003H     ABSOLUTE     
-            CODE    0003H     0018H     UNIT         ?PR?GTIMER_INIT?HW_GTIMER
-            CODE    001BH     000FH     UNIT         ?PR?_TEST1?USER
-            CODE    002AH     0001H     UNIT         ?PR?GTIMER_START?HW_GTIMER
+            CODE    0003H     000FH     UNIT         ?PR?_TEST1?USER
+            CODE    0012H     0001H     UNIT         ?PR?GTIMER_START?HW_GTIMER
+            CODE    0013H     0003H     ABSOLUTE     
+* OVERLAP * CODE    0013H     0003H     ABSOLUTE     
+            CODE    0016H     000FH     UNIT         ?PR?_INTERUPT_TIMER_FUNCTION?HW_TIMER2
+            CODE    0025H     0006H     UNIT         ?PR?MAIN?ES_MAIN
             CODE    002BH     0003H     ABSOLUTE     
-BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  07/08/2021  21:48:03  PAGE 3
-
-
             CODE    002EH     024CH     UNIT         ?C?LIB_CODE
             CODE    027AH     01B0H     UNIT         ?PR?_IO_CTRL_SET_MODE?HW_IOCTRL
             CODE    042AH     0129H     UNIT         ?PR?_PWMGROUP_OBJJOIN?SW_PWMGROUP
@@ -141,31 +154,49 @@ LINK MAP OF MODULE:  .\Objects\es_sdk (USER)
             CODE    0E28H     006AH     UNIT         ?PR?_GTIMER_OBJPAUSE?HW_GTIMER
             CODE    0E92H     0057H     UNIT         ?PR?_IO_CTRL_READ?HW_IOCTRL
             CODE    0EE9H     0053H     UNIT         ?PR?TIMER2?HW_TIMER2
-            CODE    0F3CH     0051H     UNIT         ?PR?_IO_CTRL_SET_LOW?HW_IOCTRL
-            CODE    0F8DH     004DH     UNIT         ?PR?_IO_CTRL_SET_HIGH?HW_IOCTRL
-            CODE    0FDAH     0044H     UNIT         ?C?LDIV
-            CODE    101EH     002FH     UNIT         ?PR?_TEST?USER
-            CODE    104DH     002FH     UNIT         ?PR?_TEST2?USER
-            CODE    107CH     002FH     UNIT         ?PR?_TEST3?USER
-            CODE    10ABH     002FH     UNIT         ?PR?PWMGROUP_INIT?SW_PWMGROUP
-            CODE    10DAH     002AH     UNIT         ?C_INITSEG
-            CODE    1104H     000FH     UNIT         ?PR?_INTERUPT_TIMER_FUNCTION?HW_TIMER2
-            CODE    1113H     000FH     UNIT         ?PR?BSP_INIT?BSP_CONFIG
-            CODE    1122H     000EH     UNIT         ?PR?_LED1?USER
-            CODE    1130H     000EH     UNIT         ?PR?_LED2?USER
-            CODE    113EH     000EH     UNIT         ?PR?_LED3?USER
-            CODE    114CH     000EH     UNIT         ?PR?_LED4?USER
-            CODE    115AH     000EH     UNIT         ?PR?_LED5?USER
-            CODE    1168H     000EH     UNIT         ?PR?_LED6?USER
-            CODE    1176H     000DH     UNIT         ?PR?BSP_GPIO_CONFIG?BSP_CONFIG
-            CODE    1183H     000CH     UNIT         ?PR?PWMGROUP_START?SW_PWMGROUP
-            CODE    118FH     000CH     UNIT         ?PR?PWMGROUP_STOP?SW_PWMGROUP
-            CODE    119BH     0006H     UNIT         ?PR?MAIN?ES_MAIN
-            CODE    11A1H     0005H     UNIT         ?PR?TIMER2OPEN?HW_TIMER2
-            CODE    11A6H     0005H     UNIT         ?PR?TIMER2CLOSE?HW_TIMER2
-            CODE    11ABH     0003H     UNIT         ?PR?TIMER2PAUSE?HW_TIMER2
-            CODE    11AEH     0003H     UNIT         ?PR?TIMER2START?HW_TIMER2
-            CODE    11B1H     0001H     UNIT         ?PR?GTIMER_STOP?HW_GTIMER
+            CODE    0F3CH     0052H     UNIT         ?PR?_EXT0INIT?HW_EXT0
+            CODE    0F8EH     0052H     UNIT         ?PR?_EXT0INIT_NOOPEN?HW_EXT0
+            CODE    0FE0H     0052H     UNIT         ?PR?_EXT1INIT?HW_EXT1
+            CODE    1032H     0052H     UNIT         ?PR?_EXT1INIT_NOOPEN?HW_EXT1
+            CODE    1084H     0051H     UNIT         ?PR?_IO_CTRL_SET_LOW?HW_IOCTRL
+            CODE    10D5H     0051H     UNIT         ?PR?EXT0?HW_EXT0
+            CODE    1126H     0051H     UNIT         ?PR?EXT1?HW_EXT1
+            CODE    1177H     004DH     UNIT         ?PR?_IO_CTRL_SET_HIGH?HW_IOCTRL
+            CODE    11C4H     0044H     UNIT         ?C?LDIV
+            CODE    1208H     002FH     UNIT         ?PR?_TEST?USER
+            CODE    1237H     002FH     UNIT         ?PR?_TEST2?USER
+            CODE    1266H     002FH     UNIT         ?PR?_TEST3?USER
+            CODE    1295H     002FH     UNIT         ?PR?PWMGROUP_INIT?SW_PWMGROUP
+            CODE    12C4H     002AH     UNIT         ?C_INITSEG
+            CODE    12EEH     0018H     UNIT         ?PR?GTIMER_INIT?HW_GTIMER
+            CODE    1306H     000FH     UNIT         ?PR?_INTERUPT_EXT0_FUNCTION?HW_EXT0
+            CODE    1315H     000FH     UNIT         ?PR?_INTERUPT_EXT1_FUNCTION?HW_EXT1
+            CODE    1324H     000FH     UNIT         ?PR?BSP_INIT?BSP_CONFIG
+            CODE    1333H     000EH     UNIT         ?PR?_LED1?USER
+            CODE    1341H     000EH     UNIT         ?PR?_LED2?USER
+            CODE    134FH     000EH     UNIT         ?PR?_LED3?USER
+            CODE    135DH     000EH     UNIT         ?PR?_LED4?USER
+            CODE    136BH     000EH     UNIT         ?PR?_LED5?USER
+            CODE    1379H     000EH     UNIT         ?PR?_LED6?USER
+            CODE    1387H     000DH     UNIT         ?PR?BSP_GPIO_CONFIG?BSP_CONFIG
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  07/08/2021  22:33:48  PAGE 4
+
+
+            CODE    1394H     000CH     UNIT         ?PR?PWMGROUP_START?SW_PWMGROUP
+            CODE    13A0H     000CH     UNIT         ?PR?PWMGROUP_STOP?SW_PWMGROUP
+            CODE    13ACH     0005H     UNIT         ?PR?TIMER2OPEN?HW_TIMER2
+            CODE    13B1H     0005H     UNIT         ?PR?TIMER2CLOSE?HW_TIMER2
+            CODE    13B6H     0003H     UNIT         ?PR?TIMER2PAUSE?HW_TIMER2
+            CODE    13B9H     0003H     UNIT         ?PR?TIMER2START?HW_TIMER2
+            CODE    13BCH     0003H     UNIT         ?PR?EXT0OPEN?HW_EXT0
+            CODE    13BFH     0003H     UNIT         ?PR?EXT0CLOSE?HW_EXT0
+            CODE    13C2H     0003H     UNIT         ?PR?EXT1OPEN?HW_EXT1
+            CODE    13C5H     0003H     UNIT         ?PR?EXT1CLOSE?HW_EXT1
+            CODE    13C8H     0001H     UNIT         ?PR?GTIMER_STOP?HW_GTIMER
+            CODE    13C9H     0001H     UNIT         ?PR?EXT0PAUSE?HW_EXT0
+            CODE    13CAH     0001H     UNIT         ?PR?EXT0START?HW_EXT0
+            CODE    13CBH     0001H     UNIT         ?PR?EXT1PAUSE?HW_EXT1
+            CODE    13CCH     0001H     UNIT         ?PR?EXT1START?HW_EXT1
 
 
 
@@ -178,9 +209,6 @@ SEGMENT                                          XDATA_GROUP
 ?C_C51STARTUP                                  -----    -----
   +--> ?PR?MAIN?ES_MAIN
   +--> ?C_INITSEG
-
-BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  07/08/2021  21:48:03  PAGE 4
-
 
 ?PR?MAIN?ES_MAIN                               -----    -----
   +--> ?PR?BSP_INIT?BSP_CONFIG
@@ -211,6 +239,9 @@ SEGMENT                                          XDATA_GROUP
 ?PR?_PWMGROUP_FUNCTION?SW_PWMGROUP             004DH    0003H
   +--> ?PR?_IO_CTRL_SET_LOW?HW_IOCTRL
   +--> ?PR?_IO_CTRL_SET_HIGH?HW_IOCTRL
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  07/08/2021  22:33:48  PAGE 5
+
+
 
 ?PR?_GTIMER_OBJJOIN?HW_GTIMER                  004DH    0006H
 
@@ -239,9 +270,6 @@ SYMBOL TABLE OF MODULE:  .\Objects\es_sdk (USER)
   D:0080H         PUBLIC        P0
   D:0090H         PUBLIC        P1
   D:00A0H         PUBLIC        P2
-BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  07/08/2021  21:48:03  PAGE 5
-
-
   D:00B0H         PUBLIC        P3
   B:0090H.0       PUBLIC        LED1
   B:0090H.1       PUBLIC        LED2
@@ -257,149 +285,152 @@ SYMBOL TABLE OF MODULE:  .\Objects\es_sdk (USER)
   X:001BH         PUBLIC        PWM4
   D:0098H         PUBLIC        SCON
   D:0088H         PUBLIC        TCON
-  C:101EH         SYMBOL        _test
+  C:1208H         SYMBOL        _test
   X:0024H         PUBLIC        jj
   X:0026H         PUBLIC        mm
   X:0028H         PUBLIC        nn
   C:09F4H         PUBLIC        es_main
-  C:1122H         PUBLIC        _led1
+  C:1333H         PUBLIC        _led1
   D:00C8H         PUBLIC        T2CON
-  C:1130H         PUBLIC        _led2
-  C:113EH         PUBLIC        _led3
-  C:114CH         PUBLIC        _led4
-  C:115AH         PUBLIC        _led5
-  C:1168H         PUBLIC        _led6
-  C:001BH         PUBLIC        _test1
-  C:104DH         PUBLIC        _test2
-  C:107CH         PUBLIC        _test3
+  C:1341H         PUBLIC        _led2
+  C:134FH         PUBLIC        _led3
+  C:135DH         PUBLIC        _led4
+  C:136BH         PUBLIC        _led5
+  C:1379H         PUBLIC        _led6
+  C:0003H         PUBLIC        _test1
+  C:1237H         PUBLIC        _test2
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  07/08/2021  22:33:48  PAGE 6
+
+
+  C:1266H         PUBLIC        _test3
   D:00D0H         PUBLIC        PSW
   -------         PROC          _TEST
   D:0001H         SYMBOL        arg
   -------         DO            
   X:0077H         SYMBOL        ptr
   -------         ENDDO         
-  C:101EH         LINE#         16
-  C:101EH         LINE#         17
-  C:101EH         LINE#         18
-  C:1029H         LINE#         19
-  C:1037H         LINE#         20
-  C:1043H         LINE#         21
-  C:1046H         LINE#         22
-  C:104CH         LINE#         23
-  C:104CH         LINE#         25
+  C:1208H         LINE#         16
+  C:1208H         LINE#         17
+  C:1208H         LINE#         18
+  C:1213H         LINE#         19
+  C:1221H         LINE#         20
+  C:122DH         LINE#         21
+  C:1230H         LINE#         22
+  C:1236H         LINE#         23
+  C:1236H         LINE#         25
   -------         ENDPROC       _TEST
   -------         PROC          _TEST1
   D:0001H         SYMBOL        arg
   -------         DO            
   X:007AH         SYMBOL        ptr
   -------         ENDDO         
-  C:001BH         LINE#         28
-  C:001BH         LINE#         29
-  C:001BH         LINE#         30
-  C:0026H         LINE#         32
-  C:0029H         LINE#         33
+  C:0003H         LINE#         28
+  C:0003H         LINE#         29
+  C:0003H         LINE#         30
+  C:000EH         LINE#         32
+  C:0011H         LINE#         33
   -------         ENDPROC       _TEST1
-BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  07/08/2021  21:48:03  PAGE 6
-
-
   -------         PROC          _TEST2
   D:0001H         SYMBOL        arg
   -------         DO            
   X:007DH         SYMBOL        ptr
   -------         ENDDO         
-  C:104DH         LINE#         36
-  C:104DH         LINE#         37
-  C:104DH         LINE#         38
-  C:1058H         LINE#         40
-  C:1066H         LINE#         41
-  C:1072H         LINE#         42
-  C:1075H         LINE#         43
-  C:107BH         LINE#         44
-  C:107BH         LINE#         45
+  C:1237H         LINE#         36
+  C:1237H         LINE#         37
+  C:1237H         LINE#         38
+  C:1242H         LINE#         40
+  C:1250H         LINE#         41
+  C:125CH         LINE#         42
+  C:125FH         LINE#         43
+  C:1265H         LINE#         44
+  C:1265H         LINE#         45
   -------         ENDPROC       _TEST2
   -------         PROC          _TEST3
   D:0001H         SYMBOL        arg
   -------         DO            
   X:0080H         SYMBOL        ptr
   -------         ENDDO         
-  C:107CH         LINE#         47
-  C:107CH         LINE#         48
-  C:107CH         LINE#         49
-  C:1087H         LINE#         51
-  C:1095H         LINE#         52
-  C:10A1H         LINE#         53
-  C:10A4H         LINE#         54
-  C:10AAH         LINE#         55
-  C:10AAH         LINE#         56
+  C:1266H         LINE#         47
+  C:1266H         LINE#         48
+  C:1266H         LINE#         49
+  C:1271H         LINE#         51
+  C:127FH         LINE#         52
+  C:128BH         LINE#         53
+  C:128EH         LINE#         54
+  C:1294H         LINE#         55
+  C:1294H         LINE#         56
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  07/08/2021  22:33:48  PAGE 7
+
+
   -------         ENDPROC       _TEST3
   -------         PROC          _LED1
   D:0001H         SYMBOL        arg
   -------         DO            
   X:0083H         SYMBOL        ptr
   -------         ENDDO         
-  C:1122H         LINE#         59
-  C:1122H         LINE#         60
-  C:1122H         LINE#         61
-  C:112DH         LINE#         62
-  C:112FH         LINE#         63
+  C:1333H         LINE#         59
+  C:1333H         LINE#         60
+  C:1333H         LINE#         61
+  C:133EH         LINE#         62
+  C:1340H         LINE#         63
   -------         ENDPROC       _LED1
   -------         PROC          _LED2
   D:0001H         SYMBOL        arg
   -------         DO            
   X:0086H         SYMBOL        ptr
   -------         ENDDO         
-  C:1130H         LINE#         65
-  C:1130H         LINE#         66
-  C:1130H         LINE#         67
-  C:113BH         LINE#         68
-  C:113DH         LINE#         69
+  C:1341H         LINE#         65
+  C:1341H         LINE#         66
+  C:1341H         LINE#         67
+  C:134CH         LINE#         68
+  C:134EH         LINE#         69
   -------         ENDPROC       _LED2
   -------         PROC          _LED3
   D:0001H         SYMBOL        arg
   -------         DO            
   X:0089H         SYMBOL        ptr
   -------         ENDDO         
-BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  07/08/2021  21:48:03  PAGE 7
-
-
-  C:113EH         LINE#         71
-  C:113EH         LINE#         72
-  C:113EH         LINE#         73
-  C:1149H         LINE#         74
-  C:114BH         LINE#         75
+  C:134FH         LINE#         71
+  C:134FH         LINE#         72
+  C:134FH         LINE#         73
+  C:135AH         LINE#         74
+  C:135CH         LINE#         75
   -------         ENDPROC       _LED3
   -------         PROC          _LED4
   D:0001H         SYMBOL        arg
   -------         DO            
   X:008CH         SYMBOL        ptr
   -------         ENDDO         
-  C:114CH         LINE#         77
-  C:114CH         LINE#         78
-  C:114CH         LINE#         79
-  C:1157H         LINE#         80
-  C:1159H         LINE#         81
+  C:135DH         LINE#         77
+  C:135DH         LINE#         78
+  C:135DH         LINE#         79
+  C:1368H         LINE#         80
+  C:136AH         LINE#         81
   -------         ENDPROC       _LED4
   -------         PROC          _LED5
   D:0001H         SYMBOL        arg
   -------         DO            
   X:008FH         SYMBOL        ptr
   -------         ENDDO         
-  C:115AH         LINE#         83
-  C:115AH         LINE#         84
-  C:115AH         LINE#         85
-  C:1165H         LINE#         86
-  C:1167H         LINE#         87
+  C:136BH         LINE#         83
+  C:136BH         LINE#         84
+  C:136BH         LINE#         85
+  C:1376H         LINE#         86
+  C:1378H         LINE#         87
   -------         ENDPROC       _LED5
   -------         PROC          _LED6
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  07/08/2021  22:33:48  PAGE 8
+
+
   D:0001H         SYMBOL        arg
   -------         DO            
   X:0092H         SYMBOL        ptr
   -------         ENDDO         
-  C:1168H         LINE#         89
-  C:1168H         LINE#         90
-  C:1168H         LINE#         91
-  C:1173H         LINE#         92
-  C:1175H         LINE#         93
+  C:1379H         LINE#         89
+  C:1379H         LINE#         90
+  C:1379H         LINE#         91
+  C:1384H         LINE#         92
+  C:1386H         LINE#         93
   -------         ENDPROC       _LED6
   -------         PROC          ES_MAIN
   C:09F4H         LINE#         105
@@ -419,9 +450,6 @@ SYMBOL TABLE OF MODULE:  .\Objects\es_sdk (USER)
   C:0AAEH         LINE#         164
   C:0AAEH         LINE#         165
   C:0AAEH         LINE#         168
-BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  07/08/2021  21:48:03  PAGE 8
-
-
   -------         ENDPROC       ES_MAIN
   -------         ENDMOD        USER
 
@@ -451,6 +479,9 @@ SYMBOL TABLE OF MODULE:  .\Objects\es_sdk (USER)
 
   -------         MODULE        DIGITALTUBE6
   C:0000H         SYMBOL        _ICE_DUMMY_
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  07/08/2021  22:33:48  PAGE 9
+
+
   -------         ENDMOD        DIGITALTUBE6
 
   -------         MODULE        DRV_BUTTON
@@ -479,9 +510,6 @@ SYMBOL TABLE OF MODULE:  .\Objects\es_sdk (USER)
 
   -------         MODULE        HCSR04
   C:0000H         SYMBOL        _ICE_DUMMY_
-BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  07/08/2021  21:48:03  PAGE 9
-
-
   -------         ENDMOD        HCSR04
 
   -------         MODULE        HX711
@@ -511,6 +539,9 @@ SYMBOL TABLE OF MODULE:  .\Objects\es_sdk (USER)
   -------         MODULE        MAX1241
   C:0000H         SYMBOL        _ICE_DUMMY_
   -------         ENDMOD        MAX1241
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  07/08/2021  22:33:48  PAGE 10
+
+
 
   -------         MODULE        PWM
   C:0000H         SYMBOL        _ICE_DUMMY_
@@ -531,7 +562,7 @@ SYMBOL TABLE OF MODULE:  .\Objects\es_sdk (USER)
   D:00B0H         PUBLIC        P3
   X:0030H         SYMBOL        PWMGROUP
   D:00A8H         PUBLIC        IE
-  C:118FH         PUBLIC        PWMGroup_Stop
+  C:13A0H         PUBLIC        PWMGroup_Stop
   D:00B8H         PUBLIC        IP
   D:0098H         PUBLIC        SCON
   C:067CH         PUBLIC        _PWMGroup_OBJRemove
@@ -539,15 +570,12 @@ SYMBOL TABLE OF MODULE:  .\Objects\es_sdk (USER)
   C:0C7AH         PUBLIC        _PWMGroup_OBJSetDUTY
   C:0D54H         PUBLIC        _PWMGroup_OBJPause
   C:086CH         SYMBOL        _PWMGroup_function
-BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  07/08/2021  21:48:03  PAGE 10
-
-
   C:042AH         PUBLIC        _PWMGroup_OBJJoin
   D:00C8H         PUBLIC        T2CON
-  C:1183H         PUBLIC        PWMGroup_Start
+  C:1394H         PUBLIC        PWMGroup_Start
   C:0CEAH         PUBLIC        _PWMGroup_OBJRun
   D:00D0H         PUBLIC        PSW
-  C:10ABH         PUBLIC        PWMGroup_Init
+  C:1295H         PUBLIC        PWMGroup_Init
   -------         PROC          _PWMGROUP_FUNCTION
   D:0001H         SYMBOL        arg
   -------         DO            
@@ -571,37 +599,37 @@ SYMBOL TABLE OF MODULE:  .\Objects\es_sdk (USER)
   C:0917H         LINE#         35
   C:0917H         LINE#         36
   C:0933H         LINE#         37
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  07/08/2021  22:33:48  PAGE 11
+
+
   C:0936H         LINE#         38
   -------         ENDPROC       _PWMGROUP_FUNCTION
   -------         PROC          PWMGROUP_INIT
-  C:10ABH         LINE#         49
-  C:10ABH         LINE#         50
-  C:10ABH         LINE#         51
-  C:10CEH         LINE#         53
-  C:10D7H         LINE#         55
-  C:10D9H         LINE#         56
+  C:1295H         LINE#         49
+  C:1295H         LINE#         50
+  C:1295H         LINE#         51
+  C:12B8H         LINE#         53
+  C:12C1H         LINE#         55
+  C:12C3H         LINE#         56
   -------         ENDPROC       PWMGROUP_INIT
   -------         PROC          PWMGROUP_START
-  C:1183H         LINE#         59
-  C:1183H         LINE#         60
-  C:1183H         LINE#         62
-  C:118CH         LINE#         64
-  C:118EH         LINE#         65
+  C:1394H         LINE#         59
+  C:1394H         LINE#         60
+  C:1394H         LINE#         62
+  C:139DH         LINE#         64
+  C:139FH         LINE#         65
   -------         ENDPROC       PWMGROUP_START
   -------         PROC          PWMGROUP_STOP
-  C:118FH         LINE#         67
-  C:118FH         LINE#         68
-  C:118FH         LINE#         70
-  C:1198H         LINE#         72
-  C:119AH         LINE#         73
+  C:13A0H         LINE#         67
+  C:13A0H         LINE#         68
+  C:13A0H         LINE#         70
+  C:13A9H         LINE#         72
+  C:13ABH         LINE#         73
   -------         ENDPROC       PWMGROUP_STOP
   -------         PROC          _PWMGROUP_OBJJOIN
   X:004DH         SYMBOL        pobj
   -------         DO            
   X:0050H         SYMBOL        head
-BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  07/08/2021  21:48:03  PAGE 11
-
-
   -------         ENDDO         
   C:042AH         LINE#         79
   C:0435H         LINE#         80
@@ -631,6 +659,9 @@ SYMBOL TABLE OF MODULE:  .\Objects\es_sdk (USER)
   X:0041H         SYMBOL        pre
   -------         ENDDO         
   C:067CH         LINE#         102
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  07/08/2021  22:33:48  PAGE 12
+
+
   C:0687H         LINE#         103
   C:0687H         LINE#         105
   C:069CH         LINE#         106
@@ -659,9 +690,6 @@ SYMBOL TABLE OF MODULE:  .\Objects\es_sdk (USER)
   X:004DH         SYMBOL        pobj
   -------         DO            
   X:0050H         SYMBOL        head
-BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  07/08/2021  21:48:03  PAGE 12
-
-
   -------         ENDDO         
   C:0CEAH         LINE#         130
   C:0CF5H         LINE#         131
@@ -691,6 +719,9 @@ SYMBOL TABLE OF MODULE:  .\Objects\es_sdk (USER)
   C:0D9DH         LINE#         154
   C:0DA5H         LINE#         155
   C:0DA8H         LINE#         156
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  07/08/2021  22:33:48  PAGE 13
+
+
   C:0DA8H         LINE#         157
   C:0DB9H         LINE#         158
   C:0DBBH         LINE#         160
@@ -719,9 +750,6 @@ SYMBOL TABLE OF MODULE:  .\Objects\es_sdk (USER)
   -------         ENDPROC       _PWMGROUP_OBJSETDUTY
   -------         ENDMOD        SW_PWMGROUP
 
-BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  07/08/2021  21:48:03  PAGE 13
-
-
   -------         MODULE        SW_SOFTTIMER
   C:0000H         SYMBOL        _ICE_DUMMY_
   -------         ENDMOD        SW_SOFTTIMER
@@ -738,10 +766,10 @@ SYMBOL TABLE OF MODULE:  .\Objects\es_sdk (USER)
   X:0064H         SYMBOL        GTimer_Head
   D:0098H         PUBLIC        SCON
   D:0088H         PUBLIC        TCON
-  C:002AH         PUBLIC        GTimer_Start
+  C:0012H         PUBLIC        GTimer_Start
   C:0DBEH         PUBLIC        _GTimer_OBJRun
-  C:0003H         PUBLIC        GTimer_Init
-  C:11B1H         PUBLIC        GTimer_Stop
+  C:12EEH         PUBLIC        GTimer_Init
+  C:13C8H         PUBLIC        GTimer_Stop
   D:00C8H         PUBLIC        T2CON
   C:0774H         PUBLIC        _GTimer_OBJRemove
   D:00D0H         PUBLIC        PSW
@@ -751,6 +779,9 @@ SYMBOL TABLE OF MODULE:  .\Objects\es_sdk (USER)
   X:004DH         SYMBOL        ptr
   X:0061H         SYMBOL        head
   -------         ENDDO         
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  07/08/2021  22:33:48  PAGE 14
+
+
   C:0BF5H         LINE#         15
   C:0BF5H         LINE#         16
   C:0BF5H         LINE#         17
@@ -766,23 +797,20 @@ SYMBOL TABLE OF MODULE:  .\Objects\es_sdk (USER)
   C:0C79H         LINE#         30
   -------         ENDPROC       _GTIMER_FUNCTION
   -------         PROC          GTIMER_INIT
-  C:0003H         LINE#         38
-  C:0003H         LINE#         39
-  C:0003H         LINE#         40
-  C:000CH         LINE#         41
+  C:12EEH         LINE#         38
+  C:12EEH         LINE#         39
+  C:12EEH         LINE#         40
+  C:12F7H         LINE#         41
   -------         ENDPROC       GTIMER_INIT
   -------         PROC          GTIMER_START
-  C:002AH         LINE#         44
-  C:002AH         LINE#         45
-  C:002AH         LINE#         47
+  C:0012H         LINE#         44
+  C:0012H         LINE#         45
+  C:0012H         LINE#         47
   -------         ENDPROC       GTIMER_START
   -------         PROC          GTIMER_STOP
-  C:11B1H         LINE#         49
-  C:11B1H         LINE#         50
-BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  07/08/2021  21:48:03  PAGE 14
-
-
-  C:11B1H         LINE#         52
+  C:13C8H         LINE#         49
+  C:13C8H         LINE#         50
+  C:13C8H         LINE#         52
   -------         ENDPROC       GTIMER_STOP
   -------         PROC          _GTIMER_OBJJOIN
   X:004DH         SYMBOL        GTimerobj
@@ -811,6 +839,9 @@ SYMBOL TABLE OF MODULE:  .\Objects\es_sdk (USER)
   C:067BH         LINE#         79
   -------         ENDPROC       _GTIMER_OBJJOIN
   -------         PROC          _GTIMER_OBJREMOVE
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  07/08/2021  22:33:48  PAGE 15
+
+
   X:0044H         SYMBOL        GTimerobj
   -------         DO            
   X:0047H         SYMBOL        head
@@ -839,9 +870,6 @@ SYMBOL TABLE OF MODULE:  .\Objects\es_sdk (USER)
   C:084DH         LINE#         104
   C:0867H         LINE#         105
   C:0869H         LINE#         107
-BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  07/08/2021  21:48:03  PAGE 15
-
-
   C:086BH         LINE#         108
   -------         ENDPROC       _GTIMER_OBJREMOVE
   -------         PROC          _GTIMER_OBJRUN
@@ -871,6 +899,9 @@ SYMBOL TABLE OF MODULE:  .\Objects\es_sdk (USER)
   C:0E28H         LINE#         127
   C:0E33H         LINE#         128
   C:0E33H         LINE#         129
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  07/08/2021  22:33:48  PAGE 16
+
+
   C:0E43H         LINE#         131
   C:0E51H         LINE#         132
   C:0E51H         LINE#         133
@@ -892,16 +923,13 @@ SYMBOL TABLE OF MODULE:  .\Objects\es_sdk (USER)
   D:00B0H         PUBLIC        P3
   D:00A8H         PUBLIC        IE
   D:00B8H         PUBLIC        IP
-  C:0F8DH         PUBLIC        _io_ctrl_set_high
+  C:1177H         PUBLIC        _io_ctrl_set_high
   C:027AH         PUBLIC        _io_ctrl_set_mode
   D:0098H         PUBLIC        SCON
   D:0088H         PUBLIC        TCON
-  C:0F3CH         PUBLIC        _io_ctrl_set_low
+  C:1084H         PUBLIC        _io_ctrl_set_low
   D:00C8H         PUBLIC        T2CON
   C:0E92H         PUBLIC        _io_ctrl_read
-BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  07/08/2021  21:48:03  PAGE 16
-
-
   D:0093H         PUBLIC        IO_P0M0
   D:0091H         PUBLIC        IO_P1M0
   D:0094H         PUBLIC        IO_P0M1
@@ -931,6 +959,9 @@ SYMBOL TABLE OF MODULE:  .\Objects\es_sdk (USER)
   C:02BAH         LINE#         28
   C:02C7H         LINE#         29
   C:02CAH         LINE#         30
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  07/08/2021  22:33:48  PAGE 17
+
+
   C:02CAH         LINE#         31
   C:02D7H         LINE#         32
   C:02E3H         LINE#         33
@@ -959,9 +990,6 @@ SYMBOL TABLE OF MODULE:  .\Objects\es_sdk (USER)
   C:034BH         LINE#         56
   C:034EH         LINE#         57
   C:034EH         LINE#         58
-BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  07/08/2021  21:48:03  PAGE 17
-
-
   C:035CH         LINE#         59
   C:035EH         LINE#         60
   C:0361H         LINE#         61
@@ -991,6 +1019,9 @@ SYMBOL TABLE OF MODULE:  .\Objects\es_sdk (USER)
   C:03C7H         LINE#         85
   C:03C7H         LINE#         86
   C:03C7H         LINE#         87
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  07/08/2021  22:33:48  PAGE 18
+
+
   C:03C7H         LINE#         88
   C:03C7H         LINE#         89
   C:03D5H         LINE#         90
@@ -1019,41 +1050,41 @@ SYMBOL TABLE OF MODULE:  .\Objects\es_sdk (USER)
   C:0427H         LINE#         113
   C:0427H         LINE#         115
   C:0429H         LINE#         116
-BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  07/08/2021  21:48:03  PAGE 18
-
-
   -------         ENDPROC       _IO_CTRL_SET_MODE
   -------         PROC          _IO_CTRL_SET_HIGH
   D:0007H         SYMBOL        Port
   D:0005H         SYMBOL        Bit
-  C:0F8DH         LINE#         120
-  C:0F8DH         LINE#         121
-  C:0F8DH         LINE#         122
-  C:0F9BH         LINE#         123
-  C:0F9BH         LINE#         124
-  C:0FAAH         LINE#         125
-  C:0FB9H         LINE#         126
-  C:0FC8H         LINE#         127
-  C:0FD7H         LINE#         128
-  C:0FD7H         LINE#         129
-  C:0FD7H         LINE#         131
-  C:0FD9H         LINE#         132
+  C:1177H         LINE#         120
+  C:1177H         LINE#         121
+  C:1177H         LINE#         122
+  C:1185H         LINE#         123
+  C:1185H         LINE#         124
+  C:1194H         LINE#         125
+  C:11A3H         LINE#         126
+  C:11B2H         LINE#         127
+  C:11C1H         LINE#         128
+  C:11C1H         LINE#         129
+  C:11C1H         LINE#         131
+  C:11C3H         LINE#         132
   -------         ENDPROC       _IO_CTRL_SET_HIGH
   -------         PROC          _IO_CTRL_SET_LOW
   D:0007H         SYMBOL        Port
   D:0005H         SYMBOL        Bit
-  C:0F3CH         LINE#         134
-  C:0F3CH         LINE#         135
-  C:0F3CH         LINE#         136
-  C:0F4AH         LINE#         137
-  C:0F4AH         LINE#         138
-  C:0F5AH         LINE#         139
-  C:0F6AH         LINE#         140
-  C:0F7AH         LINE#         141
-  C:0F8AH         LINE#         142
-  C:0F8AH         LINE#         143
-  C:0F8AH         LINE#         145
-  C:0F8CH         LINE#         146
+  C:1084H         LINE#         134
+  C:1084H         LINE#         135
+  C:1084H         LINE#         136
+  C:1092H         LINE#         137
+  C:1092H         LINE#         138
+  C:10A2H         LINE#         139
+  C:10B2H         LINE#         140
+  C:10C2H         LINE#         141
+  C:10D2H         LINE#         142
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  07/08/2021  22:33:48  PAGE 19
+
+
+  C:10D2H         LINE#         143
+  C:10D2H         LINE#         145
+  C:10D4H         LINE#         146
   -------         ENDPROC       _IO_CTRL_SET_LOW
   -------         PROC          _IO_CTRL_READ
   D:0007H         SYMBOL        Port
@@ -1079,9 +1110,6 @@ SYMBOL TABLE OF MODULE:  .\Objects\es_sdk (USER)
   C:0ED7H         LINE#         164
   C:0EE6H         LINE#         165
   C:0EE6H         LINE#         166
-BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  07/08/2021  21:48:03  PAGE 19
-
-
   C:0EE6H         LINE#         167
   C:0EE6H         LINE#         169
   C:0EE8H         LINE#         170
@@ -1111,19 +1139,22 @@ SYMBOL TABLE OF MODULE:  .\Objects\es_sdk (USER)
   X:0072H         PUBLIC        _pointer_interupt_timer2
   D:00CBH         PUBLIC        RCAP2H
   D:00CAH         PUBLIC        RCAP2L
-  C:11A6H         PUBLIC        Timer2Close
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  07/08/2021  22:33:48  PAGE 20
+
+
+  C:13B1H         PUBLIC        Timer2Close
   D:0098H         PUBLIC        SCON
   D:0088H         PUBLIC        TCON
   C:0EE9H         PUBLIC        Timer2
-  C:11ABH         PUBLIC        Timer2Pause
+  C:13B6H         PUBLIC        Timer2Pause
   B:0020H.0       SYMBOL        mode_flg
-  C:11AEH         PUBLIC        Timer2Start
-  C:11A1H         PUBLIC        Timer2Open
+  C:13B9H         PUBLIC        Timer2Start
+  C:13ACH         PUBLIC        Timer2Open
   B:00A8H.5       PUBLIC        ET2
   B:00C8H.7       PUBLIC        TF2
   C:0AB0H         PUBLIC        _Timer2Init
   D:00CDH         PUBLIC        TH2
-  C:1104H         SYMBOL        _interupt_timer_function
+  C:0016H         SYMBOL        _interupt_timer_function
   D:00CCH         PUBLIC        TL2
   B:00C8H.2       PUBLIC        TR2
   D:00C8H         PUBLIC        T2CON
@@ -1135,14 +1166,11 @@ SYMBOL TABLE OF MODULE:  .\Objects\es_sdk (USER)
   -------         DO            
   X:0052H         SYMBOL        ptr
   -------         ENDDO         
-  C:1104H         LINE#         13
-  C:1104H         LINE#         14
-  C:1104H         LINE#         15
-  C:110FH         LINE#         16
-BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  07/08/2021  21:48:03  PAGE 20
-
-
-  C:1112H         LINE#         17
+  C:0016H         LINE#         13
+  C:0016H         LINE#         14
+  C:0016H         LINE#         15
+  C:0021H         LINE#         16
+  C:0024H         LINE#         17
   -------         ENDPROC       _INTERUPT_TIMER_FUNCTION
   -------         PROC          _TIMER2INIT
   D:0007H         SYMBOL        mode
@@ -1171,6 +1199,9 @@ SYMBOL TABLE OF MODULE:  .\Objects\es_sdk (USER)
   C:0B52H         LINE#         49
   C:0B58H         LINE#         50
   C:0B5CH         LINE#         51
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  07/08/2021  22:33:48  PAGE 21
+
+
   C:0B5FH         LINE#         52
   C:0B62H         LINE#         54
   C:0B64H         LINE#         56
@@ -1199,9 +1230,6 @@ SYMBOL TABLE OF MODULE:  .\Objects\es_sdk (USER)
   C:09AAH         LINE#         78
   C:09AAH         LINE#         79
   C:09AAH         LINE#         81
-BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  07/08/2021  21:48:03  PAGE 21
-
-
   C:09B8H         LINE#         82
   C:09C6H         LINE#         83
   C:09C8H         LINE#         84
@@ -1216,30 +1244,33 @@ SYMBOL TABLE OF MODULE:  .\Objects\es_sdk (USER)
   C:09F3H         LINE#         96
   -------         ENDPROC       _TIMER2INIT_NOOPEN
   -------         PROC          TIMER2OPEN
-  C:11A1H         LINE#         98
-  C:11A1H         LINE#         99
-  C:11A1H         LINE#         100
-  C:11A3H         LINE#         101
-  C:11A5H         LINE#         102
+  C:13ACH         LINE#         98
+  C:13ACH         LINE#         99
+  C:13ACH         LINE#         100
+  C:13AEH         LINE#         101
+  C:13B0H         LINE#         102
   -------         ENDPROC       TIMER2OPEN
   -------         PROC          TIMER2CLOSE
-  C:11A6H         LINE#         104
-  C:11A6H         LINE#         105
-  C:11A6H         LINE#         106
-  C:11A8H         LINE#         107
-  C:11AAH         LINE#         108
+  C:13B1H         LINE#         104
+  C:13B1H         LINE#         105
+  C:13B1H         LINE#         106
+  C:13B3H         LINE#         107
+  C:13B5H         LINE#         108
   -------         ENDPROC       TIMER2CLOSE
   -------         PROC          TIMER2PAUSE
-  C:11ABH         LINE#         110
-  C:11ABH         LINE#         111
-  C:11ABH         LINE#         112
-  C:11ADH         LINE#         113
+  C:13B6H         LINE#         110
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  07/08/2021  22:33:48  PAGE 22
+
+
+  C:13B6H         LINE#         111
+  C:13B6H         LINE#         112
+  C:13B8H         LINE#         113
   -------         ENDPROC       TIMER2PAUSE
   -------         PROC          TIMER2START
-  C:11AEH         LINE#         115
-  C:11AEH         LINE#         116
-  C:11AEH         LINE#         117
-  C:11B0H         LINE#         118
+  C:13B9H         LINE#         115
+  C:13B9H         LINE#         116
+  C:13B9H         LINE#         117
+  C:13BBH         LINE#         118
   -------         ENDPROC       TIMER2START
   -------         PROC          TIMER2
   C:0EE9H         LINE#         130
@@ -1253,40 +1284,265 @@ SYMBOL TABLE OF MODULE:  .\Objects\es_sdk (USER)
   C:0000H         SYMBOL        _ICE_DUMMY_
   -------         ENDMOD        HW_UART
 
+  -------         MODULE        HW_EXT0
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0090H         PUBLIC        P1
+  D:00B0H         PUBLIC        P3
+  B:00A8H.7       PUBLIC        EA
+  D:00A8H         PUBLIC        IE
+  D:00B8H         PUBLIC        IP
+  C:0F8EH         PUBLIC        _Ext0Init_NoOpen
+  C:1306H         SYMBOL        _interupt_ext0_function
+  D:0098H         PUBLIC        SCON
+  D:0088H         PUBLIC        TCON
+  X:009EH         SYMBOL        _pointer_interupt_ext0
+  B:00A8H.0       PUBLIC        EX0
+  B:0088H.0       PUBLIC        IT0
+  C:13BFH         PUBLIC        Ext0Close
+  C:10D5H         PUBLIC        Ext0
+  C:13C9H         PUBLIC        Ext0Pause
+  D:00C8H         PUBLIC        T2CON
+  C:13CAH         PUBLIC        Ext0Start
+  C:13BCH         PUBLIC        Ext0Open
+  C:0F3CH         PUBLIC        _Ext0Init
+  D:00D0H         PUBLIC        PSW
+  -------         PROC          _INTERUPT_EXT0_FUNCTION
+  D:0001H         SYMBOL        arg
+  -------         DO            
+  X:0095H         SYMBOL        ptr
+  -------         ENDDO         
+  C:1306H         LINE#         11
+  C:1306H         LINE#         12
+  C:1306H         LINE#         13
+  C:1311H         LINE#         14
+  C:1314H         LINE#         15
+  -------         ENDPROC       _INTERUPT_EXT0_FUNCTION
+  -------         PROC          _EXT0INIT
+  D:0007H         SYMBOL        mode
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  07/08/2021  22:33:48  PAGE 23
+
+
+  X:0098H         SYMBOL        pfunc
+  C:0F3CH         LINE#         23
+  C:0F47H         LINE#         24
+  C:0F47H         LINE#         25
+  C:0F49H         LINE#         26
+  C:0F50H         LINE#         27
+  C:0F50H         LINE#         28
+  C:0F52H         LINE#         29
+  C:0F54H         LINE#         30
+  C:0F56H         LINE#         31
+  C:0F56H         LINE#         32
+  C:0F56H         LINE#         33
+  C:0F56H         LINE#         35
+  C:0F64H         LINE#         36
+  C:0F72H         LINE#         37
+  C:0F74H         LINE#         38
+  C:0F89H         LINE#         39
+  C:0F89H         LINE#         41
+  C:0F8BH         LINE#         42
+  C:0F8DH         LINE#         43
+  -------         ENDPROC       _EXT0INIT
+  -------         PROC          _EXT0INIT_NOOPEN
+  D:0007H         SYMBOL        mode
+  X:009BH         SYMBOL        pfunc
+  C:0F8EH         LINE#         46
+  C:0F99H         LINE#         47
+  C:0F99H         LINE#         48
+  C:0F9BH         LINE#         49
+  C:0FA2H         LINE#         50
+  C:0FA2H         LINE#         51
+  C:0FA4H         LINE#         52
+  C:0FA6H         LINE#         53
+  C:0FA8H         LINE#         54
+  C:0FA8H         LINE#         55
+  C:0FA8H         LINE#         56
+  C:0FA8H         LINE#         58
+  C:0FB6H         LINE#         59
+  C:0FC4H         LINE#         60
+  C:0FC6H         LINE#         61
+  C:0FDBH         LINE#         62
+  C:0FDBH         LINE#         64
+  C:0FDDH         LINE#         65
+  C:0FDFH         LINE#         66
+  -------         ENDPROC       _EXT0INIT_NOOPEN
+  -------         PROC          EXT0OPEN
+  C:13BCH         LINE#         68
+  C:13BCH         LINE#         69
+  C:13BCH         LINE#         70
+  C:13BEH         LINE#         71
+  -------         ENDPROC       EXT0OPEN
+  -------         PROC          EXT0CLOSE
+  C:13BFH         LINE#         72
+  C:13BFH         LINE#         73
+  C:13BFH         LINE#         74
+  C:13C1H         LINE#         75
+  -------         ENDPROC       EXT0CLOSE
+  -------         PROC          EXT0PAUSE
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  07/08/2021  22:33:48  PAGE 24
+
+
+  C:13C9H         LINE#         76
+  C:13C9H         LINE#         77
+  C:13C9H         LINE#         79
+  -------         ENDPROC       EXT0PAUSE
+  -------         PROC          EXT0START
+  C:13CAH         LINE#         80
+  C:13CAH         LINE#         81
+  C:13CAH         LINE#         83
+  -------         ENDPROC       EXT0START
+  -------         PROC          EXT0
+  C:10D5H         LINE#         93
+  C:10F2H         LINE#         95
+  C:110BH         LINE#         96
+  -------         ENDPROC       EXT0
+  -------         ENDMOD        HW_EXT0
+
+  -------         MODULE        HW_EXT1
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0090H         PUBLIC        P1
+  D:00B0H         PUBLIC        P3
+  B:00A8H.7       PUBLIC        EA
+  D:00A8H         PUBLIC        IE
+  D:00B8H         PUBLIC        IP
+  C:1032H         PUBLIC        _Ext1Init_NoOpen
+  C:1315H         SYMBOL        _interupt_ext1_function
+  D:0098H         PUBLIC        SCON
+  D:0088H         PUBLIC        TCON
+  X:00AAH         SYMBOL        _pointer_interupt_ext1
+  B:00A8H.0       PUBLIC        EX0
+  B:0088H.0       PUBLIC        IT0
+  C:13C5H         PUBLIC        Ext1Close
+  C:1126H         PUBLIC        Ext1
+  C:13CBH         PUBLIC        Ext1Pause
+  D:00C8H         PUBLIC        T2CON
+  C:13CCH         PUBLIC        Ext1Start
+  C:13C2H         PUBLIC        Ext1Open
+  C:0FE0H         PUBLIC        _Ext1Init
+  D:00D0H         PUBLIC        PSW
+  -------         PROC          _INTERUPT_EXT1_FUNCTION
+  D:0001H         SYMBOL        arg
+  -------         DO            
+  X:00A1H         SYMBOL        ptr
+  -------         ENDDO         
+  C:1315H         LINE#         11
+  C:1315H         LINE#         12
+  C:1315H         LINE#         13
+  C:1320H         LINE#         14
+  C:1323H         LINE#         15
+  -------         ENDPROC       _INTERUPT_EXT1_FUNCTION
+  -------         PROC          _EXT1INIT
+  D:0007H         SYMBOL        mode
+  X:00A4H         SYMBOL        pfunc
+  C:0FE0H         LINE#         23
+  C:0FEBH         LINE#         24
+  C:0FEBH         LINE#         25
+  C:0FEDH         LINE#         26
+  C:0FF4H         LINE#         27
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  07/08/2021  22:33:48  PAGE 25
+
+
+  C:0FF4H         LINE#         28
+  C:0FF6H         LINE#         29
+  C:0FF8H         LINE#         30
+  C:0FFAH         LINE#         31
+  C:0FFAH         LINE#         32
+  C:0FFAH         LINE#         33
+  C:0FFAH         LINE#         35
+  C:1008H         LINE#         36
+  C:1016H         LINE#         37
+  C:1018H         LINE#         38
+  C:102DH         LINE#         39
+  C:102DH         LINE#         41
+  C:102FH         LINE#         42
+  C:1031H         LINE#         43
+  -------         ENDPROC       _EXT1INIT
+  -------         PROC          _EXT1INIT_NOOPEN
+  D:0007H         SYMBOL        mode
+  X:00A7H         SYMBOL        pfunc
+  C:1032H         LINE#         46
+  C:103DH         LINE#         47
+  C:103DH         LINE#         48
+  C:103FH         LINE#         49
+  C:1046H         LINE#         50
+  C:1046H         LINE#         51
+  C:1048H         LINE#         52
+  C:104AH         LINE#         53
+  C:104CH         LINE#         54
+  C:104CH         LINE#         55
+  C:104CH         LINE#         56
+  C:104CH         LINE#         58
+  C:105AH         LINE#         59
+  C:1068H         LINE#         60
+  C:106AH         LINE#         61
+  C:107FH         LINE#         62
+  C:107FH         LINE#         64
+  C:1081H         LINE#         65
+  C:1083H         LINE#         66
+  -------         ENDPROC       _EXT1INIT_NOOPEN
+  -------         PROC          EXT1OPEN
+  C:13C2H         LINE#         68
+  C:13C2H         LINE#         69
+  C:13C2H         LINE#         70
+  C:13C4H         LINE#         71
+  -------         ENDPROC       EXT1OPEN
+  -------         PROC          EXT1CLOSE
+  C:13C5H         LINE#         72
+  C:13C5H         LINE#         73
+  C:13C5H         LINE#         74
+  C:13C7H         LINE#         75
+  -------         ENDPROC       EXT1CLOSE
+  -------         PROC          EXT1PAUSE
+  C:13CBH         LINE#         76
+  C:13CBH         LINE#         77
+  C:13CBH         LINE#         79
+  -------         ENDPROC       EXT1PAUSE
+  -------         PROC          EXT1START
+  C:13CCH         LINE#         80
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  07/08/2021  22:33:48  PAGE 26
+
+
+  C:13CCH         LINE#         81
+  C:13CCH         LINE#         83
+  -------         ENDPROC       EXT1START
+  -------         PROC          EXT1
+  C:1126H         LINE#         93
+  C:1143H         LINE#         95
+  C:115CH         LINE#         96
+  -------         ENDPROC       EXT1
+  -------         ENDMOD        HW_EXT1
+
   -------         MODULE        BSP_CONFIG
   C:0000H         SYMBOL        _ICE_DUMMY_
   D:0080H         PUBLIC        P0
   D:0090H         PUBLIC        P1
   D:00A0H         PUBLIC        P2
   D:00B0H         PUBLIC        P3
-BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  07/08/2021  21:48:03  PAGE 22
-
-
   D:00A8H         PUBLIC        IE
   D:00B8H         PUBLIC        IP
-  C:1176H         SYMBOL        bsp_gpio_config
+  C:1387H         SYMBOL        bsp_gpio_config
   D:0098H         PUBLIC        SCON
   D:0088H         PUBLIC        TCON
-  C:1113H         PUBLIC        bsp_init
+  C:1324H         PUBLIC        bsp_init
   D:00C8H         PUBLIC        T2CON
   D:00D0H         PUBLIC        PSW
   -------         PROC          BSP_GPIO_CONFIG
-  C:1176H         LINE#         4
-  C:1176H         LINE#         5
-  C:1176H         LINE#         6
-  C:1179H         LINE#         7
-  C:117CH         LINE#         8
-  C:117FH         LINE#         9
-  C:1182H         LINE#         10
+  C:1387H         LINE#         4
+  C:1387H         LINE#         5
+  C:1387H         LINE#         6
+  C:138AH         LINE#         7
+  C:138DH         LINE#         8
+  C:1390H         LINE#         9
+  C:1393H         LINE#         10
   -------         ENDPROC       BSP_GPIO_CONFIG
   -------         PROC          BSP_INIT
-  C:1113H         LINE#         12
-  C:1113H         LINE#         13
-  C:1113H         LINE#         14
-  C:1116H         LINE#         21
-  C:1119H         LINE#         22
-  C:111CH         LINE#         31
-  C:111FH         LINE#         32
+  C:1324H         LINE#         12
+  C:1324H         LINE#         13
+  C:1324H         LINE#         14
+  C:1327H         LINE#         21
+  C:132AH         LINE#         22
+  C:132DH         LINE#         31
+  C:1330H         LINE#         32
   -------         ENDPROC       BSP_INIT
   -------         ENDMOD        BSP_CONFIG
 
@@ -1296,16 +1552,19 @@ SYMBOL TABLE OF MODULE:  .\Objects\es_sdk (USER)
   D:00B0H         PUBLIC        P3
   D:00A8H         PUBLIC        IE
   D:00B8H         PUBLIC        IP
-  C:119BH         PUBLIC        main
+  C:0025H         PUBLIC        main
   D:0098H         PUBLIC        SCON
   D:0088H         PUBLIC        TCON
   D:00C8H         PUBLIC        T2CON
   D:00D0H         PUBLIC        PSW
   -------         PROC          MAIN
-  C:119BH         LINE#         5
-  C:119BH         LINE#         6
-  C:119BH         LINE#         7
-  C:119EH         LINE#         9
+  C:0025H         LINE#         5
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  07/08/2021  22:33:48  PAGE 27
+
+
+  C:0025H         LINE#         6
+  C:0025H         LINE#         7
+  C:0028H         LINE#         9
   -------         ENDPROC       MAIN
   -------         ENDMOD        ES_MAIN
 
@@ -1319,9 +1578,6 @@ SYMBOL TABLE OF MODULE:  .\Objects\es_sdk (USER)
   D:0082H         SYMBOL        DPL
   N:0000H         SYMBOL        IBPSTACK
   N:0100H         SYMBOL        IBPSTACKTOP
-BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  07/08/2021  21:48:03  PAGE 23
-
-
   N:0080H         SYMBOL        IDATALEN
   C:0B6CH         SYMBOL        IDATALOOP
   N:0000H         SYMBOL        PBPSTACK
@@ -1363,11 +1619,14 @@ SYMBOL TABLE OF MODULE:  .\Objects\es_sdk (USER)
   -------         ENDMOD        ?C?CSTPTR
 
   -------         MODULE        ?C?CSTOPTR
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  07/08/2021  22:33:48  PAGE 28
+
+
   C:00B9H         PUBLIC        ?C?CSTOPTR
   -------         ENDMOD        ?C?CSTOPTR
 
   -------         MODULE        ?C?SLDIV
-  C:0FDAH         PUBLIC        ?C?SLDIV
+  C:11C4H         PUBLIC        ?C?SLDIV
   -------         ENDMOD        ?C?SLDIV
 
   -------         MODULE        ?C?PLDOPTR
@@ -1379,9 +1638,6 @@ SYMBOL TABLE OF MODULE:  .\Objects\es_sdk (USER)
   -------         ENDMOD        ?C?PSTOPTR
 
   -------         MODULE        ?C?ICALL
-BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  07/08/2021  21:48:03  PAGE 24
-
-
   C:0164H         PUBLIC        ?C?ICALL
   C:0168H         PUBLIC        ?C?ICALL2
   -------         ENDMOD        ?C?ICALL
@@ -1423,6 +1679,9 @@ SYMBOL TABLE OF MODULE:  .\Objects\es_sdk (USER)
 
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
     SEGMENT: ?PR?_TEST1?USER
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  07/08/2021  22:33:48  PAGE 29
+
+
 
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
     SEGMENT: ?PR?_TEST2?USER
@@ -1438,9 +1697,6 @@ SYMBOL TABLE OF MODULE:  .\Objects\es_sdk (USER)
 
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
     SEGMENT: ?PR?_LED3?USER
-
-BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  07/08/2021  21:48:03  PAGE 25
-
 
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
     SEGMENT: ?PR?_LED4?USER
@@ -1483,6 +1739,9 @@ SYMBOL TABLE OF MODULE:  .\Objects\es_sdk (USER)
 
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
     SEGMENT: ?PR?TIMER2CLOSE?HW_TIMER2
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  07/08/2021  22:33:48  PAGE 30
+
+
 
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
     SEGMENT: ?PR?TIMER2PAUSE?HW_TIMER2
@@ -1490,5 +1749,45 @@ SYMBOL TABLE OF MODULE:  .\Objects\es_sdk (USER)
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
     SEGMENT: ?PR?TIMER2START?HW_TIMER2
 
-Program Size: data=9.1 xdata=149 code=4530
-LINK/LOCATE RUN COMPLETE.  23 WARNING(S),  0 ERROR(S)
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_EXT0INIT?HW_EXT0
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_EXT0INIT_NOOPEN?HW_EXT0
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?EXT0OPEN?HW_EXT0
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?EXT0CLOSE?HW_EXT0
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?EXT0PAUSE?HW_EXT0
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?EXT0START?HW_EXT0
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_EXT1INIT?HW_EXT1
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_EXT1INIT_NOOPEN?HW_EXT1
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?EXT1OPEN?HW_EXT1
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?EXT1CLOSE?HW_EXT1
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?EXT1PAUSE?HW_EXT1
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?EXT1START?HW_EXT1
+
+*** WARNING L5: CODE SPACE MEMORY OVERLAP
+    FROM:    0013H
+    TO:      0015H
+
+Program Size: data=9.1 xdata=173 code=5072
+LINK/LOCATE RUN COMPLETE.  36 WARNING(S),  0 ERROR(S)

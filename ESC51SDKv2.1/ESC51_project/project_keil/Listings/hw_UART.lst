@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   HW_UART                                                           07/08/2021 21:48:02 PAGE 1   
+C51 COMPILER V9.60.0.0   HW_UART                                                           07/08/2021 22:33:47 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE HW_UART
@@ -62,7 +62,7 @@ line level    source
               
               void UART_SendStr(uchar *str)
               {
-C51 COMPILER V9.60.0.0   HW_UART                                                           07/08/2021 21:48:02 PAGE 2   
+C51 COMPILER V9.60.0.0   HW_UART                                                           07/08/2021 22:33:47 PAGE 2   
 
                   while(*str!= '\0')
                       {
