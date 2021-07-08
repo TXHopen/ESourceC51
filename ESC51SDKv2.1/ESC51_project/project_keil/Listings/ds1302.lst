@@ -1,12 +1,12 @@
-C51 COMPILER V9.60.0.0   DS1302                                                            07/08/2021 22:33:43 PAGE 1   
+C51 COMPILER V9.60.0.0   DS1302                                                            07/08/2021 23:01:05 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE DS1302
 OBJECT MODULE PLACED IN .\Objects\ds1302.obj
-COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE ..\..\ESC51_sdk\HW_Driver\ds1302.c LARGE OPTIMIZE(8,SPEED) BROWSE INCDIR
-                    -(..\..\ESC51_sdk\es_sdkstatrt;..\..\ESC51_sdk\HW_Driver\header;..\..\ESC51_sdk\HW_Support\header;..\..\ESC51_sdk\SW_Supp
-                    -ort\header;..\..\ESC51_project;..\..\ESC51_sdk) DEBUG OBJECTEXTEND PRINT(.\Listings\ds1302.lst) OBJECT(.\Objects\ds1302.
-                    -obj)
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE ..\..\ESC51_sdk\OFC_Driver\ds1302.c LARGE OPTIMIZE(8,SPEED) BROWSE INCDI
+                    -R(..\..\ESC51_sdk\es_sdkstatrt;..\..\ESC51_sdk\OFC_Driver\header;..\..\ESC51_sdk\HW_Support\header;..\..\ESC51_sdk\SW_Su
+                    -pport\header;..\..\ESC51_project;..\..\ESC51_sdk) DEBUG OBJECTEXTEND PRINT(.\Listings\ds1302.lst) OBJECT(.\Objects\ds130
+                    -2.obj)
 
 line level    source
 
@@ -62,7 +62,7 @@ line level    source
                       {
                               if(DS1302_Data) {
                                       mask  |= 0x80;
-C51 COMPILER V9.60.0.0   DS1302                                                            07/08/2021 22:33:43 PAGE 2   
+C51 COMPILER V9.60.0.0   DS1302                                                            07/08/2021 23:01:05 PAGE 2   
 
                               }
                               mask     >>= 1;

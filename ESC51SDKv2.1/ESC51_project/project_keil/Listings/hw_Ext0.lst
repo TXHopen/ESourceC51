@@ -1,123 +1,123 @@
-C51 COMPILER V9.60.0.0   HW_EXT0                                                           07/08/2021 22:33:47 PAGE 1   
+C51 COMPILER V9.60.0.0   HW_EXT0                                                           07/08/2021 23:01:10 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE HW_EXT0
 OBJECT MODULE PLACED IN .\Objects\hw_Ext0.obj
 COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE ..\..\ESC51_sdk\HW_Support\hw_Ext0.c LARGE OPTIMIZE(8,SPEED) BROWSE INCD
-                    -IR(..\..\ESC51_sdk\es_sdkstatrt;..\..\ESC51_sdk\HW_Driver\header;..\..\ESC51_sdk\HW_Support\header;..\..\ESC51_sdk\SW_Su
-                    -pport\header;..\..\ESC51_project;..\..\ESC51_sdk) DEBUG OBJECTEXTEND PRINT(.\Listings\hw_Ext0.lst) OBJECT(.\Objects\hw_E
-                    -xt0.obj)
+                    -IR(..\..\ESC51_sdk\es_sdkstatrt;..\..\ESC51_sdk\OFC_Driver\header;..\..\ESC51_sdk\HW_Support\header;..\..\ESC51_sdk\SW_S
+                    -upport\header;..\..\ESC51_project;..\..\ESC51_sdk) DEBUG OBJECTEXTEND PRINT(.\Listings\hw_Ext0.lst) OBJECT(.\Objects\hw_
+                    -Ext0.obj)
 
 line level    source
 
    1          #include "hw_Ext0.h"
    2          
    3          #ifdef EXT1_CONFIG
-   4          
-   5          
-   6          
-   7          
-   8          
-   9          static int (*pointer_interupt_ext0)(void *arg);
-  10          
-  11          static int interupt_ext0_function (void *arg) 
-  12          {
-  13   1              void *ptr = arg;
-  14   1              return 0;
-  15   1      }
-  16          
-  17          /*******************************************************************************
-  18          * 函 数 名         : Ext0Init
-  19          * 函数功能                 : 1初始化
-  20          * 输    入         : 无
-  21          * 输    出         : 无
-  22          *******************************************************************************/
-  23          void Ext0Init(EXT0_MODE mode, void *pfunc)
-  24          {
-  25   1              EX0   = 0;//关闭中断允许
-  26   1              switch (mode)
-  27   1              {
-  28   2                      case EXT0_MODE_LEVEL:IT0 = 0;
-  29   2                                           break;
-  30   2                      case EXT0_MODE_FEDGE:IT0 = 1;
-  31   2                                           break;
-  32   2                      default:return ;     break;
-  33   2              }
-  34   1              
-  35   1              if (pfunc == NULL) {
-  36   2                      pointer_interupt_ext0 = interupt_ext0_function;
-  37   2              } else {
-  38   2                      pointer_interupt_ext0 = pfunc;
-  39   2              }
-  40   1      
-  41   1              EX0   = 1;//关闭中断允许
-  42   1              EA    = 1;//打开总中断
-  43   1      }
-  44          
-  45          
-  46          void Ext0Init_NoOpen(EXT0_MODE mode, void *pfunc)
-  47          {
-  48   1              EX0   = 0;//关闭中断允许
-  49   1              switch (mode)
-  50   1              {
-  51   2                      case EXT0_MODE_LEVEL:IT0 = 0;
-  52   2                                           break;
-C51 COMPILER V9.60.0.0   HW_EXT0                                                           07/08/2021 22:33:47 PAGE 2   
+              
+              
+              
+              
+              
+              static int (*pointer_interupt_ext0)(void *arg);
+              
+              static int interupt_ext0_function (void *arg) 
+              {
+                      void *ptr = arg;
+                      return 0;
+              }
+              
+              /*******************************************************************************
+              * 函 数 名         : Ext0Init
+              * 函数功能                 : 1初始化
+              * 输    入         : 无
+              * 输    出         : 无
+              *******************************************************************************/
+              void Ext0Init(EXT0_MODE mode, void *pfunc)
+              {
+                      EX0   = 0;//关闭中断允许
+                      switch (mode)
+                      {
+                              case EXT0_MODE_LEVEL:IT0 = 0;
+                                                   break;
+                              case EXT0_MODE_FEDGE:IT0 = 1;
+                                                   break;
+                              default:return ;     break;
+                      }
+                      
+                      if (pfunc == NULL) {
+                              pointer_interupt_ext0 = interupt_ext0_function;
+                      } else {
+                              pointer_interupt_ext0 = pfunc;
+                      }
+              
+                      EX0   = 1;//关闭中断允许
+                      EA    = 1;//打开总中断
+              }
+              
+              
+              void Ext0Init_NoOpen(EXT0_MODE mode, void *pfunc)
+              {
+                      EX0   = 0;//关闭中断允许
+                      switch (mode)
+                      {
+                              case EXT0_MODE_LEVEL:IT0 = 0;
+                                                   break;
+C51 COMPILER V9.60.0.0   HW_EXT0                                                           07/08/2021 23:01:10 PAGE 2   
 
-  53   2                      case EXT0_MODE_FEDGE:IT0 = 1;
-  54   2                                           break;
-  55   2                      default:return ;     break;
-  56   2              }
-  57   1              
-  58   1              if (pfunc == NULL) {
-  59   2                      pointer_interupt_ext0 = interupt_ext0_function;
-  60   2              } else {
-  61   2                      pointer_interupt_ext0 = pfunc;
-  62   2              }
-  63   1      
-  64   1              EX0   = 0;//关闭中断允许
-  65   1              EA    = 1;//打开总中断
-  66   1      }
-  67          
-  68          void Ext0Open(void)
-  69          {
-  70   1              EX0 = 1;
-  71   1      }
-  72          void Ext0Close(void)
-  73          {
-  74   1              EX0 = 0;
-  75   1      }
-  76          void Ext0Pause(void)
-  77          {
-  78   1              
-  79   1      }
-  80          void Ext0Start(void)
-  81          {
-  82   1              
-  83   1      }
-  84          
-  85          
-  86          
-  87          /*******************************************************************************
-  88          * 函 数 名         : void Ext0() interrupt 2
-  89          * 函数功能                 : 1中断函数
-  90          * 输    入         : 无
-  91          * 输    出         : 无
-  92          *******************************************************************************/
-  93          void Ext0() interrupt 2
-  94          {
-  95   1              pointer_interupt_ext0(NULL);
-  96   1      }
-  97          
-  98          
-  99          
- 100          #endif /* TIMER0_CONFIG */
+                              case EXT0_MODE_FEDGE:IT0 = 1;
+                                                   break;
+                              default:return ;     break;
+                      }
+                      
+                      if (pfunc == NULL) {
+                              pointer_interupt_ext0 = interupt_ext0_function;
+                      } else {
+                              pointer_interupt_ext0 = pfunc;
+                      }
+              
+                      EX0   = 0;//关闭中断允许
+                      EA    = 1;//打开总中断
+              }
+              
+              void Ext0Open(void)
+              {
+                      EX0 = 1;
+              }
+              void Ext0Close(void)
+              {
+                      EX0 = 0;
+              }
+              void Ext0Pause(void)
+              {
+                      
+              }
+              void Ext0Start(void)
+              {
+                      
+              }
+              
+              
+              
+              /*******************************************************************************
+              * 函 数 名         : void Ext0() interrupt 2
+              * 函数功能                 : 1中断函数
+              * 输    入         : 无
+              * 输    出         : 无
+              *******************************************************************************/
+              void Ext0() interrupt 2
+              {
+                      pointer_interupt_ext0(NULL);
+              }
+              
+              
+              
+              #endif /* TIMER0_CONFIG */
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =    268    ----
+   CODE SIZE        =   ----    ----
    CONSTANT SIZE    =   ----    ----
-   XDATA SIZE       =      3       9
+   XDATA SIZE       =   ----    ----
    PDATA SIZE       =   ----    ----
    DATA SIZE        =   ----    ----
    IDATA SIZE       =   ----    ----

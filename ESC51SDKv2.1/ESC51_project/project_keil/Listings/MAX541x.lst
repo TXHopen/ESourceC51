@@ -1,12 +1,12 @@
-C51 COMPILER V9.60.0.0   MAX541X                                                           07/08/2021 22:33:44 PAGE 1   
+C51 COMPILER V9.60.0.0   MAX541X                                                           07/08/2021 23:01:07 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE MAX541X
 OBJECT MODULE PLACED IN .\Objects\MAX541x.obj
-COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE ..\..\ESC51_sdk\HW_Driver\MAX541x.c LARGE OPTIMIZE(8,SPEED) BROWSE INCDI
-                    -R(..\..\ESC51_sdk\es_sdkstatrt;..\..\ESC51_sdk\HW_Driver\header;..\..\ESC51_sdk\HW_Support\header;..\..\ESC51_sdk\SW_Sup
-                    -port\header;..\..\ESC51_project;..\..\ESC51_sdk) DEBUG OBJECTEXTEND PRINT(.\Listings\MAX541x.lst) OBJECT(.\Objects\MAX54
-                    -1x.obj)
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE ..\..\ESC51_sdk\OFC_Driver\MAX541x.c LARGE OPTIMIZE(8,SPEED) BROWSE INCD
+                    -IR(..\..\ESC51_sdk\es_sdkstatrt;..\..\ESC51_sdk\OFC_Driver\header;..\..\ESC51_sdk\HW_Support\header;..\..\ESC51_sdk\SW_S
+                    -upport\header;..\..\ESC51_project;..\..\ESC51_sdk) DEBUG OBJECTEXTEND PRINT(.\Listings\MAX541x.lst) OBJECT(.\Objects\MAX
+                    -541x.obj)
 
 line level    source
 
@@ -62,7 +62,7 @@ line level    source
                       MAX541X_CLK             = 0;
                       __delay_nop();
                       MAX541X_CS        = 1;
-C51 COMPILER V9.60.0.0   MAX541X                                                           07/08/2021 22:33:44 PAGE 2   
+C51 COMPILER V9.60.0.0   MAX541X                                                           07/08/2021 23:01:07 PAGE 2   
 
                       __delay_nop();
                       MAX541X_CLK     =1;

@@ -324,7 +324,7 @@
               <MiscControls></MiscControls>
               <Define></Define>
               <Undefine></Undefine>
-              <IncludePath>..\..\ESC51_sdk\es_sdkstatrt;..\..\ESC51_sdk\HW_Driver\header;..\..\ESC51_sdk\HW_Support\header;..\..\ESC51_sdk\SW_Support\header;..\..\ESC51_project;..\..\ESC51_sdk</IncludePath>
+              <IncludePath>..\..\ESC51_sdk\es_sdkstatrt;..\..\ESC51_sdk\OFC_Driver\header;..\..\ESC51_sdk\HW_Support\header;..\..\ESC51_sdk\SW_Support\header;..\..\ESC51_project;..\..\ESC51_sdk</IncludePath>
             </VariousControls>
           </C51>
           <Ax51>
@@ -389,117 +389,117 @@
           </Files>
         </Group>
         <Group>
-          <GroupName>es_hw_driver</GroupName>
+          <GroupName>es_ofc_driver</GroupName>
           <Files>
             <File>
               <FileName>ad0809.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\ESC51_sdk\HW_Driver\ad0809.c</FilePath>
+              <FilePath>..\..\ESC51_sdk\OFC_Driver\ad0809.c</FilePath>
             </File>
             <File>
               <FileName>ad5320.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\ESC51_sdk\HW_Driver\ad5320.c</FilePath>
+              <FilePath>..\..\ESC51_sdk\OFC_Driver\ad5320.c</FilePath>
             </File>
             <File>
               <FileName>ad9850.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\ESC51_sdk\HW_Driver\ad9850.c</FilePath>
+              <FilePath>..\..\ESC51_sdk\OFC_Driver\ad9850.c</FilePath>
             </File>
             <File>
               <FileName>at24c02.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\ESC51_sdk\HW_Driver\at24c02.c</FilePath>
+              <FilePath>..\..\ESC51_sdk\OFC_Driver\at24c02.c</FilePath>
             </File>
             <File>
               <FileName>button4x4.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\ESC51_sdk\HW_Driver\button4x4.c</FilePath>
+              <FilePath>..\..\ESC51_sdk\OFC_Driver\button4x4.c</FilePath>
             </File>
             <File>
               <FileName>dht11.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\ESC51_sdk\HW_Driver\dht11.c</FilePath>
+              <FilePath>..\..\ESC51_sdk\OFC_Driver\dht11.c</FilePath>
             </File>
             <File>
               <FileName>DigitalTube6.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\ESC51_sdk\HW_Driver\DigitalTube6.c</FilePath>
+              <FilePath>..\..\ESC51_sdk\OFC_Driver\DigitalTube6.c</FilePath>
             </File>
             <File>
               <FileName>drv_button.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\ESC51_sdk\HW_Driver\drv_button.c</FilePath>
+              <FilePath>..\..\ESC51_sdk\OFC_Driver\drv_button.c</FilePath>
             </File>
             <File>
               <FileName>drv_CC1101.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\ESC51_sdk\HW_Driver\drv_CC1101.c</FilePath>
+              <FilePath>..\..\ESC51_sdk\OFC_Driver\drv_CC1101.c</FilePath>
             </File>
             <File>
               <FileName>drv_spi.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\ESC51_sdk\HW_Driver\drv_spi.c</FilePath>
+              <FilePath>..\..\ESC51_sdk\OFC_Driver\drv_spi.c</FilePath>
             </File>
             <File>
               <FileName>ds18b20.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\ESC51_sdk\HW_Driver\ds18b20.c</FilePath>
+              <FilePath>..\..\ESC51_sdk\OFC_Driver\ds18b20.c</FilePath>
             </File>
             <File>
               <FileName>ds1302.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\ESC51_sdk\HW_Driver\ds1302.c</FilePath>
+              <FilePath>..\..\ESC51_sdk\OFC_Driver\ds1302.c</FilePath>
             </File>
             <File>
               <FileName>esp8266.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\ESC51_sdk\HW_Driver\esp8266.c</FilePath>
+              <FilePath>..\..\ESC51_sdk\OFC_Driver\esp8266.c</FilePath>
             </File>
             <File>
               <FileName>hcsr04.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\ESC51_sdk\HW_Driver\hcsr04.c</FilePath>
+              <FilePath>..\..\ESC51_sdk\OFC_Driver\hcsr04.c</FilePath>
             </File>
             <File>
               <FileName>hx711.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\ESC51_sdk\HW_Driver\hx711.c</FilePath>
+              <FilePath>..\..\ESC51_sdk\OFC_Driver\hx711.c</FilePath>
             </File>
             <File>
               <FileName>iic.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\ESC51_sdk\HW_Driver\iic.c</FilePath>
+              <FilePath>..\..\ESC51_sdk\OFC_Driver\iic.c</FilePath>
             </File>
             <File>
               <FileName>LCD1602.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\ESC51_sdk\HW_Driver\LCD1602.c</FilePath>
+              <FilePath>..\..\ESC51_sdk\OFC_Driver\LCD1602.c</FilePath>
             </File>
             <File>
               <FileName>lcd12864.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\ESC51_sdk\HW_Driver\lcd12864.c</FilePath>
+              <FilePath>..\..\ESC51_sdk\OFC_Driver\lcd12864.c</FilePath>
             </File>
             <File>
               <FileName>max263.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\ESC51_sdk\HW_Driver\max263.c</FilePath>
+              <FilePath>..\..\ESC51_sdk\OFC_Driver\max263.c</FilePath>
             </File>
             <File>
               <FileName>MAX541x.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\ESC51_sdk\HW_Driver\MAX541x.c</FilePath>
+              <FilePath>..\..\ESC51_sdk\OFC_Driver\MAX541x.c</FilePath>
             </File>
             <File>
               <FileName>max1241.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\ESC51_sdk\HW_Driver\max1241.c</FilePath>
+              <FilePath>..\..\ESC51_sdk\OFC_Driver\max1241.c</FilePath>
             </File>
             <File>
               <FileName>pwm.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\ESC51_sdk\HW_Driver\pwm.c</FilePath>
+              <FilePath>..\..\ESC51_sdk\OFC_Driver\pwm.c</FilePath>
             </File>
           </Files>
         </Group>

@@ -1,12 +1,12 @@
-C51 COMPILER V9.60.0.0   HW_TIMER2                                                         07/08/2021 22:33:47 PAGE 1   
+C51 COMPILER V9.60.0.0   HW_TIMER2                                                         07/08/2021 23:01:10 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE HW_TIMER2
 OBJECT MODULE PLACED IN .\Objects\hw_Timer2.obj
 COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE ..\..\ESC51_sdk\HW_Support\hw_Timer2.c LARGE OPTIMIZE(8,SPEED) BROWSE IN
-                    -CDIR(..\..\ESC51_sdk\es_sdkstatrt;..\..\ESC51_sdk\HW_Driver\header;..\..\ESC51_sdk\HW_Support\header;..\..\ESC51_sdk\SW_
-                    -Support\header;..\..\ESC51_project;..\..\ESC51_sdk) DEBUG OBJECTEXTEND PRINT(.\Listings\hw_Timer2.lst) OBJECT(.\Objects\
-                    -hw_Timer2.obj)
+                    -CDIR(..\..\ESC51_sdk\es_sdkstatrt;..\..\ESC51_sdk\OFC_Driver\header;..\..\ESC51_sdk\HW_Support\header;..\..\ESC51_sdk\SW
+                    -_Support\header;..\..\ESC51_project;..\..\ESC51_sdk) DEBUG OBJECTEXTEND PRINT(.\Listings\hw_Timer2.lst) OBJECT(.\Objects
+                    -\hw_Timer2.obj)
 
 line level    source
 
@@ -62,7 +62,7 @@ line level    source
   50   1              RCAP2L = timer_l;
   51   1              TH2 = RCAP2H;
   52   1              TL2 = RCAP2L;
-C51 COMPILER V9.60.0.0   HW_TIMER2                                                         07/08/2021 22:33:47 PAGE 2   
+C51 COMPILER V9.60.0.0   HW_TIMER2                                                         07/08/2021 23:01:10 PAGE 2   
 
   53   1              
   54   1              EA  = 1;
@@ -126,7 +126,7 @@ line level    source
  112   1              TR2   = 0;//¹Ø±Õ¶¨Ê±Æ÷
  113   1      }
  114          
-C51 COMPILER V9.60.0.0   HW_TIMER2                                                         07/08/2021 22:33:47 PAGE 3   
+C51 COMPILER V9.60.0.0   HW_TIMER2                                                         07/08/2021 23:01:10 PAGE 3   
 
  115          void Timer2Start(void)
  116          {

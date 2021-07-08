@@ -9,7 +9,7 @@
 //#define TIMER2_CONFIG
 //#define UART_CONFIG
 #define EXT0_CONFIG
-#define EXT1_CONFIG
+//#define EXT1_CONFIG
 //#define MEMPOOL_CONFIG
 //#define GTIMER_CONFIG
 
