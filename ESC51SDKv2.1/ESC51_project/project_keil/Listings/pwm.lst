@@ -1,11 +1,11 @@
-C51 COMPILER V9.60.0.0   PWM                                                               07/08/2021 21:48:00 PAGE 1   
+C51 COMPILER V9.60.0.0   PWM                                                               07/08/2021 23:01:07 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE PWM
 OBJECT MODULE PLACED IN .\Objects\pwm.obj
-COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE ..\..\ESC51_sdk\HW_Driver\pwm.c LARGE OPTIMIZE(8,SPEED) BROWSE INCDIR(..
-                    -\..\ESC51_sdk\es_sdkstatrt;..\..\ESC51_sdk\HW_Driver\header;..\..\ESC51_sdk\HW_Support\header;..\..\ESC51_sdk\SW_Support
-                    -\header;..\..\ESC51_project;..\..\ESC51_sdk) DEBUG OBJECTEXTEND PRINT(.\Listings\pwm.lst) OBJECT(.\Objects\pwm.obj)
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE ..\..\ESC51_sdk\OFC_Driver\pwm.c LARGE OPTIMIZE(8,SPEED) BROWSE INCDIR(.
+                    -.\..\ESC51_sdk\es_sdkstatrt;..\..\ESC51_sdk\OFC_Driver\header;..\..\ESC51_sdk\HW_Support\header;..\..\ESC51_sdk\SW_Suppo
+                    -rt\header;..\..\ESC51_project;..\..\ESC51_sdk) DEBUG OBJECTEXTEND PRINT(.\Listings\pwm.lst) OBJECT(.\Objects\pwm.obj)
 
 line level    source
 
@@ -62,7 +62,7 @@ line level    source
               char PWM_Start (void)
               {
               
-C51 COMPILER V9.60.0.0   PWM                                                               07/08/2021 21:48:00 PAGE 2   
+C51 COMPILER V9.60.0.0   PWM                                                               07/08/2021 23:01:07 PAGE 2   
 
                       PWM_OUT    = 1;
                       PWM_CURPOS = 0;

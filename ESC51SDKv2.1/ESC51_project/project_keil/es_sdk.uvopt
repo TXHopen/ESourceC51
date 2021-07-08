@@ -207,8 +207,8 @@
   </Group>
 
   <Group>
-    <GroupName>es_hw_driver</GroupName>
-    <tvExp>0</tvExp>
+    <GroupName>es_ofc_driver</GroupName>
+    <tvExp>1</tvExp>
     <tvExpOptDlg>0</tvExpOptDlg>
     <cbSel>0</cbSel>
     <RteFlg>0</RteFlg>
@@ -219,7 +219,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\ESC51_sdk\HW_Driver\ad0809.c</PathWithFileName>
+      <PathWithFileName>..\..\ESC51_sdk\OFC_Driver\ad0809.c</PathWithFileName>
       <FilenameWithoutPath>ad0809.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -231,7 +231,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\ESC51_sdk\HW_Driver\ad5320.c</PathWithFileName>
+      <PathWithFileName>..\..\ESC51_sdk\OFC_Driver\ad5320.c</PathWithFileName>
       <FilenameWithoutPath>ad5320.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -243,7 +243,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\ESC51_sdk\HW_Driver\ad9850.c</PathWithFileName>
+      <PathWithFileName>..\..\ESC51_sdk\OFC_Driver\ad9850.c</PathWithFileName>
       <FilenameWithoutPath>ad9850.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -255,7 +255,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\ESC51_sdk\HW_Driver\at24c02.c</PathWithFileName>
+      <PathWithFileName>..\..\ESC51_sdk\OFC_Driver\at24c02.c</PathWithFileName>
       <FilenameWithoutPath>at24c02.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -267,7 +267,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\ESC51_sdk\HW_Driver\button4x4.c</PathWithFileName>
+      <PathWithFileName>..\..\ESC51_sdk\OFC_Driver\button4x4.c</PathWithFileName>
       <FilenameWithoutPath>button4x4.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -279,7 +279,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\ESC51_sdk\HW_Driver\dht11.c</PathWithFileName>
+      <PathWithFileName>..\..\ESC51_sdk\OFC_Driver\dht11.c</PathWithFileName>
       <FilenameWithoutPath>dht11.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -291,7 +291,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\ESC51_sdk\HW_Driver\DigitalTube6.c</PathWithFileName>
+      <PathWithFileName>..\..\ESC51_sdk\OFC_Driver\DigitalTube6.c</PathWithFileName>
       <FilenameWithoutPath>DigitalTube6.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -303,7 +303,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\ESC51_sdk\HW_Driver\drv_button.c</PathWithFileName>
+      <PathWithFileName>..\..\ESC51_sdk\OFC_Driver\drv_button.c</PathWithFileName>
       <FilenameWithoutPath>drv_button.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -315,7 +315,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\ESC51_sdk\HW_Driver\drv_CC1101.c</PathWithFileName>
+      <PathWithFileName>..\..\ESC51_sdk\OFC_Driver\drv_CC1101.c</PathWithFileName>
       <FilenameWithoutPath>drv_CC1101.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -327,7 +327,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\ESC51_sdk\HW_Driver\drv_spi.c</PathWithFileName>
+      <PathWithFileName>..\..\ESC51_sdk\OFC_Driver\drv_spi.c</PathWithFileName>
       <FilenameWithoutPath>drv_spi.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -339,7 +339,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\ESC51_sdk\HW_Driver\ds18b20.c</PathWithFileName>
+      <PathWithFileName>..\..\ESC51_sdk\OFC_Driver\ds18b20.c</PathWithFileName>
       <FilenameWithoutPath>ds18b20.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -351,7 +351,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\ESC51_sdk\HW_Driver\ds1302.c</PathWithFileName>
+      <PathWithFileName>..\..\ESC51_sdk\OFC_Driver\ds1302.c</PathWithFileName>
       <FilenameWithoutPath>ds1302.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -363,7 +363,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\ESC51_sdk\HW_Driver\esp8266.c</PathWithFileName>
+      <PathWithFileName>..\..\ESC51_sdk\OFC_Driver\esp8266.c</PathWithFileName>
       <FilenameWithoutPath>esp8266.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -375,7 +375,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\ESC51_sdk\HW_Driver\hcsr04.c</PathWithFileName>
+      <PathWithFileName>..\..\ESC51_sdk\OFC_Driver\hcsr04.c</PathWithFileName>
       <FilenameWithoutPath>hcsr04.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -387,7 +387,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\ESC51_sdk\HW_Driver\hx711.c</PathWithFileName>
+      <PathWithFileName>..\..\ESC51_sdk\OFC_Driver\hx711.c</PathWithFileName>
       <FilenameWithoutPath>hx711.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -399,7 +399,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\ESC51_sdk\HW_Driver\iic.c</PathWithFileName>
+      <PathWithFileName>..\..\ESC51_sdk\OFC_Driver\iic.c</PathWithFileName>
       <FilenameWithoutPath>iic.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -411,7 +411,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\ESC51_sdk\HW_Driver\LCD1602.c</PathWithFileName>
+      <PathWithFileName>..\..\ESC51_sdk\OFC_Driver\LCD1602.c</PathWithFileName>
       <FilenameWithoutPath>LCD1602.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -423,7 +423,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\ESC51_sdk\HW_Driver\lcd12864.c</PathWithFileName>
+      <PathWithFileName>..\..\ESC51_sdk\OFC_Driver\lcd12864.c</PathWithFileName>
       <FilenameWithoutPath>lcd12864.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -435,7 +435,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\ESC51_sdk\HW_Driver\max263.c</PathWithFileName>
+      <PathWithFileName>..\..\ESC51_sdk\OFC_Driver\max263.c</PathWithFileName>
       <FilenameWithoutPath>max263.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -447,7 +447,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\ESC51_sdk\HW_Driver\MAX541x.c</PathWithFileName>
+      <PathWithFileName>..\..\ESC51_sdk\OFC_Driver\MAX541x.c</PathWithFileName>
       <FilenameWithoutPath>MAX541x.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -459,7 +459,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\ESC51_sdk\HW_Driver\max1241.c</PathWithFileName>
+      <PathWithFileName>..\..\ESC51_sdk\OFC_Driver\max1241.c</PathWithFileName>
       <FilenameWithoutPath>max1241.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -471,7 +471,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\ESC51_sdk\HW_Driver\pwm.c</PathWithFileName>
+      <PathWithFileName>..\..\ESC51_sdk\OFC_Driver\pwm.c</PathWithFileName>
       <FilenameWithoutPath>pwm.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -480,7 +480,7 @@
 
   <Group>
     <GroupName>es_sw_support</GroupName>
-    <tvExp>1</tvExp>
+    <tvExp>0</tvExp>
     <tvExpOptDlg>0</tvExpOptDlg>
     <cbSel>0</cbSel>
     <RteFlg>0</RteFlg>
@@ -536,7 +536,7 @@
 
   <Group>
     <GroupName>es_hw_support</GroupName>
-    <tvExp>1</tvExp>
+    <tvExp>0</tvExp>
     <tvExpOptDlg>0</tvExpOptDlg>
     <cbSel>0</cbSel>
     <RteFlg>0</RteFlg>
@@ -627,6 +627,30 @@
     <File>
       <GroupNumber>4</GroupNumber>
       <FileNumber>36</FileNumber>
+      <FileType>1</FileType>
+      <tvExp>0</tvExp>
+      <tvExpOptDlg>0</tvExpOptDlg>
+      <bDave2>0</bDave2>
+      <PathWithFileName>..\..\ESC51_sdk\HW_Support\hw_Ext0.c</PathWithFileName>
+      <FilenameWithoutPath>hw_Ext0.c</FilenameWithoutPath>
+      <RteFlg>0</RteFlg>
+      <bShared>0</bShared>
+    </File>
+    <File>
+      <GroupNumber>4</GroupNumber>
+      <FileNumber>37</FileNumber>
+      <FileType>1</FileType>
+      <tvExp>0</tvExp>
+      <tvExpOptDlg>0</tvExpOptDlg>
+      <bDave2>0</bDave2>
+      <PathWithFileName>..\..\ESC51_sdk\HW_Support\hw_Ext1.c</PathWithFileName>
+      <FilenameWithoutPath>hw_Ext1.c</FilenameWithoutPath>
+      <RteFlg>0</RteFlg>
+      <bShared>0</bShared>
+    </File>
+    <File>
+      <GroupNumber>4</GroupNumber>
+      <FileNumber>38</FileNumber>
       <FileType>5</FileType>
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
@@ -638,7 +662,7 @@
     </File>
     <File>
       <GroupNumber>4</GroupNumber>
-      <FileNumber>37</FileNumber>
+      <FileNumber>39</FileNumber>
       <FileType>5</FileType>
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
@@ -652,13 +676,13 @@
 
   <Group>
     <GroupName>es_main</GroupName>
-    <tvExp>1</tvExp>
+    <tvExp>0</tvExp>
     <tvExpOptDlg>0</tvExpOptDlg>
     <cbSel>0</cbSel>
     <RteFlg>0</RteFlg>
     <File>
       <GroupNumber>5</GroupNumber>
-      <FileNumber>38</FileNumber>
+      <FileNumber>40</FileNumber>
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
@@ -670,7 +694,7 @@
     </File>
     <File>
       <GroupNumber>5</GroupNumber>
-      <FileNumber>39</FileNumber>
+      <FileNumber>41</FileNumber>
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
@@ -682,7 +706,7 @@
     </File>
     <File>
       <GroupNumber>5</GroupNumber>
-      <FileNumber>40</FileNumber>
+      <FileNumber>42</FileNumber>
       <FileType>5</FileType>
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
@@ -702,7 +726,7 @@
     <RteFlg>0</RteFlg>
     <File>
       <GroupNumber>6</GroupNumber>
-      <FileNumber>41</FileNumber>
+      <FileNumber>43</FileNumber>
       <FileType>2</FileType>
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>

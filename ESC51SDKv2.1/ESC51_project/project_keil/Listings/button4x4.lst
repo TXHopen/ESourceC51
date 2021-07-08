@@ -1,12 +1,12 @@
-C51 COMPILER V9.60.0.0   BUTTON4X4                                                         07/08/2021 21:47:57 PAGE 1   
+C51 COMPILER V9.60.0.0   BUTTON4X4                                                         07/08/2021 23:01:04 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE BUTTON4X4
 OBJECT MODULE PLACED IN .\Objects\button4x4.obj
-COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE ..\..\ESC51_sdk\HW_Driver\button4x4.c LARGE OPTIMIZE(8,SPEED) BROWSE INC
-                    -DIR(..\..\ESC51_sdk\es_sdkstatrt;..\..\ESC51_sdk\HW_Driver\header;..\..\ESC51_sdk\HW_Support\header;..\..\ESC51_sdk\SW_S
-                    -upport\header;..\..\ESC51_project;..\..\ESC51_sdk) DEBUG OBJECTEXTEND PRINT(.\Listings\button4x4.lst) OBJECT(.\Objects\b
-                    -utton4x4.obj)
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE ..\..\ESC51_sdk\OFC_Driver\button4x4.c LARGE OPTIMIZE(8,SPEED) BROWSE IN
+                    -CDIR(..\..\ESC51_sdk\es_sdkstatrt;..\..\ESC51_sdk\OFC_Driver\header;..\..\ESC51_sdk\HW_Support\header;..\..\ESC51_sdk\SW
+                    -_Support\header;..\..\ESC51_project;..\..\ESC51_sdk) DEBUG OBJECTEXTEND PRINT(.\Listings\button4x4.lst) OBJECT(.\Objects
+                    -\button4x4.obj)
 
 line level    source
 
@@ -62,7 +62,7 @@ line level    source
                                               case(0X07):     KeyValue=KeyValue+12;break;
                                               default:        KeyValue=17;
                                       }
-C51 COMPILER V9.60.0.0   BUTTON4X4                                                         07/08/2021 21:47:57 PAGE 2   
+C51 COMPILER V9.60.0.0   BUTTON4X4                                                         07/08/2021 23:01:04 PAGE 2   
 
                                       while(GPIO_KEY != 0x0f)  //∞¥º¸À… ÷ºÏ≤‚
                                       {
