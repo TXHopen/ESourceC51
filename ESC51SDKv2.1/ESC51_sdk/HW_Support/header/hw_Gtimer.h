@@ -44,6 +44,15 @@ char GTimer_OBJPause (__GTimerOBJ* GTimerobj);
 
 #define GTIMER_OBJ_DECL(GTimer)  \
     __GTimerOBJ GTimer
+	
+#define GTIMER_OBJ_DECL_XDATA(GTimer)  \
+    xdata __GTimerOBJ GTimer
+	
+#define GTIMER_OBJ_DECL_PDATA(GTimer)  \
+    pdata __GTimerOBJ GTimer
+	
+#define GTIMER_OBJ_DECL_IDATA(GTimer)  \
+    idata __GTimerOBJ GTimer
 
 #define GTIMER_OBJ_DECL_STATIC(GTimer)  \
     static __GTimerOBJ GTimer

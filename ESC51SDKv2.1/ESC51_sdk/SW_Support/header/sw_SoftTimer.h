@@ -45,6 +45,15 @@ char SOFTTimer_OBJSet(__SOFTTimerOBJ* pobj, int delms);
 
 #define SOFTTIMER_OBJ_DECL(STimer)  \
     __SOFTTimerOBJ STimer
+	
+#define SOFTTIMER_OBJ_DECL_XDATA(STimer)  \
+    xdata __SOFTTimerOBJ STimer
+	
+#define SOFTTIMER_OBJ_DECL_PDATA(STimer)  \
+    pdata __SOFTTimerOBJ STimer
+	
+#define SOFTTIMER_OBJ_DECL_IDATA(STimer)  \
+    idata __SOFTTimerOBJ STimer
 
 #define SOFTTIMER_OBJ_DECL_STATIC(STimer)  \
     static __SOFTTimerOBJ STimer

@@ -47,6 +47,15 @@ char PWMGroup_OBJSetDUTY (__PWMGROUP_Member *pobj, uint8_t duty);
 
 #define PWMGROUP_OBJ_DECL(PWMOBJ)  \
     __PWMGROUP_Member PWMOBJ
+	
+#define PWMGROUP_OBJ_DECL_XDATA(PWMOBJ)  \
+    xdata __PWMGROUP_Member PWMOBJ
+	
+#define PWMGROUP_OBJ_DECL_PDATA(PWMOBJ)  \
+    pdata __PWMGROUP_Member PWMOBJ
+	
+#define PWMGROUP_OBJ_DECL_IDATA(PWMOBJ)  \
+    idata __PWMGROUP_Member PWMOBJ
 
 #define PWMGROUP_OBJ_DECL_STATIC(PWMOBJ)  \
     static __PWMGROUP_Member PWMOBJ

@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   HCSR04                                                            07/08/2021 21:17:22 PAGE 1   
+C51 COMPILER V9.60.0.0   HCSR04                                                            07/08/2021 21:47:59 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE HCSR04
@@ -62,7 +62,7 @@ line level    source
                       
                       return 0;
               }
-C51 COMPILER V9.60.0.0   HCSR04                                                            07/08/2021 21:17:22 PAGE 2   
+C51 COMPILER V9.60.0.0   HCSR04                                                            07/08/2021 21:47:59 PAGE 2   
 
               
               uint HCSR04_IntReadcm (void)

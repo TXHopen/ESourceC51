@@ -19,9 +19,9 @@
 
 
 /* ------------------------------------------------------------ */
-#define SW_GDELAY_CONFIG
-#define SW_SOFTTIMER_CONFIG
-#define SW_GCAPTURE_CONFIG
+//#define SW_GDELAY_CONFIG
+//#define SW_SOFTTIMER_CONFIG
+//#define SW_GCAPTURE_CONFIG
 #define SW_PWMGROUP_CONFIG
 
 

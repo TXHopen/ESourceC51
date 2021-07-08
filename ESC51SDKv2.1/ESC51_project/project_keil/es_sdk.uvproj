@@ -49,7 +49,7 @@
           <OutputName>es_sdk</OutputName>
           <CreateExecutable>1</CreateExecutable>
           <CreateLib>0</CreateLib>
-          <CreateHexFile>0</CreateHexFile>
+          <CreateHexFile>1</CreateHexFile>
           <DebugInformation>1</DebugInformation>
           <BrowseInformation>1</BrowseInformation>
           <ListingPath>.\Listings\</ListingPath>
@@ -374,107 +374,17 @@
       </TargetOption>
       <Groups>
         <Group>
-          <GroupName>es_start</GroupName>
+          <GroupName>es_user</GroupName>
           <Files>
             <File>
-              <FileName>STARTUP.A51</FileName>
-              <FileType>2</FileType>
-              <FilePath>.\STARTUP.A51</FilePath>
-            </File>
-          </Files>
-        </Group>
-        <Group>
-          <GroupName>es_main</GroupName>
-          <Files>
-            <File>
-              <FileName>bsp_config.c</FileName>
+              <FileName>user.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\ESC51_sdk\es_sdkstatrt\bsp_config.c</FilePath>
+              <FilePath>..\user.c</FilePath>
             </File>
             <File>
-              <FileName>es_main.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\ESC51_sdk\es_sdkstatrt\es_main.c</FilePath>
-            </File>
-            <File>
-              <FileName>es_sys_package.h</FileName>
+              <FileName>user_config_prj.h</FileName>
               <FileType>5</FileType>
-              <FilePath>..\..\ESC51_sdk\es_sdkstatrt\es_sys_package.h</FilePath>
-            </File>
-          </Files>
-        </Group>
-        <Group>
-          <GroupName>es_hw_support</GroupName>
-          <Files>
-            <File>
-              <FileName>hw_Gtimer.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\ESC51_sdk\HW_Support\hw_Gtimer.c</FilePath>
-            </File>
-            <File>
-              <FileName>hw_ioctrl.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\ESC51_sdk\HW_Support\hw_ioctrl.c</FilePath>
-            </File>
-            <File>
-              <FileName>hw_MEMPool.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\ESC51_sdk\HW_Support\hw_MEMPool.c</FilePath>
-            </File>
-            <File>
-              <FileName>hw_Timer0.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\ESC51_sdk\HW_Support\hw_Timer0.c</FilePath>
-            </File>
-            <File>
-              <FileName>hw_Timer1.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\ESC51_sdk\HW_Support\hw_Timer1.c</FilePath>
-            </File>
-            <File>
-              <FileName>hw_Timer2.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\ESC51_sdk\HW_Support\hw_Timer2.c</FilePath>
-            </File>
-            <File>
-              <FileName>hw_UART.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\ESC51_sdk\HW_Support\hw_UART.c</FilePath>
-            </File>
-            <File>
-              <FileName>hw_critical.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\..\ESC51_sdk\HW_Support\header\hw_critical.h</FilePath>
-            </File>
-            <File>
-              <FileName>hw_vartype.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\..\ESC51_sdk\HW_Support\header\hw_vartype.h</FilePath>
-            </File>
-          </Files>
-        </Group>
-        <Group>
-          <GroupName>es_sw_support</GroupName>
-          <Files>
-            <File>
-              <FileName>sw_GCapture.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\ESC51_sdk\SW_Support\sw_GCapture.c</FilePath>
-            </File>
-            <File>
-              <FileName>sw_Gdelay.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\ESC51_sdk\SW_Support\sw_Gdelay.c</FilePath>
-            </File>
-            <File>
-              <FileName>sw_PWMGroup.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\ESC51_sdk\SW_Support\sw_PWMGroup.c</FilePath>
-            </File>
-            <File>
-              <FileName>sw_SoftTimer.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\ESC51_sdk\SW_Support\sw_SoftTimer.c</FilePath>
+              <FilePath>..\..\ESC51_sdk\es_sdkstatrt\user_config_prj.h</FilePath>
             </File>
           </Files>
         </Group>
@@ -594,17 +504,107 @@
           </Files>
         </Group>
         <Group>
-          <GroupName>es_user</GroupName>
+          <GroupName>es_sw_support</GroupName>
           <Files>
             <File>
-              <FileName>user.c</FileName>
+              <FileName>sw_GCapture.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\user.c</FilePath>
+              <FilePath>..\..\ESC51_sdk\SW_Support\sw_GCapture.c</FilePath>
             </File>
             <File>
-              <FileName>user_config_prj.h</FileName>
+              <FileName>sw_Gdelay.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\ESC51_sdk\SW_Support\sw_Gdelay.c</FilePath>
+            </File>
+            <File>
+              <FileName>sw_PWMGroup.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\ESC51_sdk\SW_Support\sw_PWMGroup.c</FilePath>
+            </File>
+            <File>
+              <FileName>sw_SoftTimer.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\ESC51_sdk\SW_Support\sw_SoftTimer.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>es_hw_support</GroupName>
+          <Files>
+            <File>
+              <FileName>hw_Gtimer.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\ESC51_sdk\HW_Support\hw_Gtimer.c</FilePath>
+            </File>
+            <File>
+              <FileName>hw_ioctrl.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\ESC51_sdk\HW_Support\hw_ioctrl.c</FilePath>
+            </File>
+            <File>
+              <FileName>hw_MEMPool.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\ESC51_sdk\HW_Support\hw_MEMPool.c</FilePath>
+            </File>
+            <File>
+              <FileName>hw_Timer0.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\ESC51_sdk\HW_Support\hw_Timer0.c</FilePath>
+            </File>
+            <File>
+              <FileName>hw_Timer1.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\ESC51_sdk\HW_Support\hw_Timer1.c</FilePath>
+            </File>
+            <File>
+              <FileName>hw_Timer2.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\ESC51_sdk\HW_Support\hw_Timer2.c</FilePath>
+            </File>
+            <File>
+              <FileName>hw_UART.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\ESC51_sdk\HW_Support\hw_UART.c</FilePath>
+            </File>
+            <File>
+              <FileName>hw_critical.h</FileName>
               <FileType>5</FileType>
-              <FilePath>..\..\ESC51_sdk\es_sdkstatrt\user_config_prj.h</FilePath>
+              <FilePath>..\..\ESC51_sdk\HW_Support\header\hw_critical.h</FilePath>
+            </File>
+            <File>
+              <FileName>hw_vartype.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\ESC51_sdk\HW_Support\header\hw_vartype.h</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>es_main</GroupName>
+          <Files>
+            <File>
+              <FileName>bsp_config.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\ESC51_sdk\es_sdkstatrt\bsp_config.c</FilePath>
+            </File>
+            <File>
+              <FileName>es_main.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\ESC51_sdk\es_sdkstatrt\es_main.c</FilePath>
+            </File>
+            <File>
+              <FileName>es_sys_package.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\ESC51_sdk\es_sdkstatrt\es_sys_package.h</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>es_start</GroupName>
+          <Files>
+            <File>
+              <FileName>STARTUP.A51</FileName>
+              <FileType>2</FileType>
+              <FilePath>.\STARTUP.A51</FilePath>
             </File>
           </Files>
         </Group>

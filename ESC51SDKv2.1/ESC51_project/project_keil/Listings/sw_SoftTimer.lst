@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   SW_SOFTTIMER                                                      07/08/2021 21:17:20 PAGE 1   
+C51 COMPILER V9.60.0.0   SW_SOFTTIMER                                                      07/08/2021 21:48:01 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE SW_SOFTTIMER
@@ -13,198 +13,198 @@ line level    source
    1          #include "sw_SoftTimer.h"
    2          
    3          #ifdef SW_SOFTTIMER_CONFIG
-   4          
-   5          
-   6          
-   7          
-   8          
-   9          
-  10          /* ------------------------------------------------------------ */
-  11          
-  12          
-  13          
-  14          static __SOFTTimerOBJ   *__stimerobj_head = NULL;
-  15          
-  16          
-  17          /* ------------------------------------------------------------ */
-  18          
-  19          
-  20          static void SOFTTimer_callback (void *arg)
-  21          {
-  22   1              void *ptr = arg;
-  23   1      
-  24   1              static __SOFTTimerOBJ *head = NULL;
-  25   1              head = __stimerobj_head;
-  26   1      
-  27   1              while (head != NULL)
-  28   1              {
-  29   2                      if (head->status == 2) {
-  30   3                              head->SoftTimer_obj_remain_ms--;
-  31   3                              if (head->SoftTimer_obj_remain_ms == 0) {
-  32   4                                      head->SoftTimer_obj_remain_ms = head->SoftTimer_obj_ms;
-  33   4                                      head->SoftTimer_obj_func(head->SoftTimer_obj_arg);
-  34   4                              }
-  35   3                      }
-  36   2                      head = head->next;
-  37   2              }
-  38   1      
-  39   1      }
-  40          
-  41          
-  42          
-  43          
-  44          
-  45          /* ------------------------------------------------------------ */
-  46          GTIMER_OBJ_DECL_STATIC(ST_GTimer);
-  47          
-  48          
-  49          void SOFTTimer_Init(void)
-  50          {
-  51   1              GTIMER_OBJ_INIT_STATIC(ST_GTimer, SOFTTimer_callback, NULL);
-  52   1              GTIMER_OBJ_JOIN(ST_GTimer);
-C51 COMPILER V9.60.0.0   SW_SOFTTIMER                                                      07/08/2021 21:17:20 PAGE 2   
+              
+              
+              
+              
+              
+              
+              /* ------------------------------------------------------------ */
+              
+              
+              
+              static __SOFTTimerOBJ   *__stimerobj_head = NULL;
+              
+              
+              /* ------------------------------------------------------------ */
+              
+              
+              static void SOFTTimer_callback (void *arg)
+              {
+                      void *ptr = arg;
+              
+                      static __SOFTTimerOBJ *head = NULL;
+                      head = __stimerobj_head;
+              
+                      while (head != NULL)
+                      {
+                              if (head->status == 2) {
+                                      head->SoftTimer_obj_remain_ms--;
+                                      if (head->SoftTimer_obj_remain_ms == 0) {
+                                              head->SoftTimer_obj_remain_ms = head->SoftTimer_obj_ms;
+                                              head->SoftTimer_obj_func(head->SoftTimer_obj_arg);
+                                      }
+                              }
+                              head = head->next;
+                      }
+              
+              }
+              
+              
+              
+              
+              
+              /* ------------------------------------------------------------ */
+              GTIMER_OBJ_DECL_STATIC(ST_GTimer);
+              
+              
+              void SOFTTimer_Init(void)
+              {
+                      GTIMER_OBJ_INIT_STATIC(ST_GTimer, SOFTTimer_callback, NULL);
+                      GTIMER_OBJ_JOIN(ST_GTimer);
+C51 COMPILER V9.60.0.0   SW_SOFTTIMER                                                      07/08/2021 21:48:01 PAGE 2   
 
-  53   1      }
-  54          
-  55          void SOFTTimer_Start(void)
-  56          {
-  57   1      
-  58   1              GTIMER_OBJ_RUN(ST_GTimer);
-  59   1      
-  60   1      }
-  61          
-  62          void SOFTTimer_Stop(void)
-  63          {
-  64   1      
-  65   1              GTIMER_OBJ_PAUSE(ST_GTimer);
-  66   1      
-  67   1      }
-  68          
-  69          
-  70          
-  71          
-  72          /* ------------------------------------------------------------ */
-  73          
-  74          
-  75          
-  76          
-  77          
-  78          
-  79          char SOFTTimer_OBJJoin(__SOFTTimerOBJ* pobj)
-  80          {
-  81   1              __SOFTTimerOBJ *head = __stimerobj_head;
-  82   1              
-  83   1              if (__stimerobj_head == NULL) {
-  84   2                      pobj->ID         = 0;
-  85   2                      pobj->status     = 1;
-  86   2                      pobj->next       = NULL;
-  87   2                      __stimerobj_head = pobj;
-  88   2                      return 0;
-  89   2              }
-  90   1              while (head->next != NULL)
-  91   1              {
-  92   2                      head = head->next;
-  93   2              }
-  94   1              pobj->ID      = head->ID + 1;
-  95   1              pobj->status  = 1;
-  96   1              pobj->next    = NULL;
-  97   1              head->next    = pobj;
-  98   1      
-  99   1              return 0;
- 100   1      }
- 101          
- 102          char SOFTTimer_OBJRemove(__SOFTTimerOBJ* pobj)
- 103          {
- 104   1              
- 105   1              __SOFTTimerOBJ *head = __stimerobj_head;
- 106   1              __SOFTTimerOBJ *pre  = __stimerobj_head;
- 107   1      
- 108   1              if (__stimerobj_head == NULL) {
- 109   2                      return -1;
- 110   2              } else if (__stimerobj_head->ID == pobj->ID) {
- 111   2                      __stimerobj_head = __stimerobj_head->next;
- 112   2                      return 0;
- 113   2              } else {
- 114   2                      pre  = head;
-C51 COMPILER V9.60.0.0   SW_SOFTTIMER                                                      07/08/2021 21:17:20 PAGE 3   
+              }
+              
+              void SOFTTimer_Start(void)
+              {
+              
+                      GTIMER_OBJ_RUN(ST_GTimer);
+              
+              }
+              
+              void SOFTTimer_Stop(void)
+              {
+              
+                      GTIMER_OBJ_PAUSE(ST_GTimer);
+              
+              }
+              
+              
+              
+              
+              /* ------------------------------------------------------------ */
+              
+              
+              
+              
+              
+              
+              char SOFTTimer_OBJJoin(__SOFTTimerOBJ* pobj)
+              {
+                      __SOFTTimerOBJ *head = __stimerobj_head;
+                      
+                      if (__stimerobj_head == NULL) {
+                              pobj->ID         = 0;
+                              pobj->status     = 1;
+                              pobj->next       = NULL;
+                              __stimerobj_head = pobj;
+                              return 0;
+                      }
+                      while (head->next != NULL)
+                      {
+                              head = head->next;
+                      }
+                      pobj->ID      = head->ID + 1;
+                      pobj->status  = 1;
+                      pobj->next    = NULL;
+                      head->next    = pobj;
+              
+                      return 0;
+              }
+              
+              char SOFTTimer_OBJRemove(__SOFTTimerOBJ* pobj)
+              {
+                      
+                      __SOFTTimerOBJ *head = __stimerobj_head;
+                      __SOFTTimerOBJ *pre  = __stimerobj_head;
+              
+                      if (__stimerobj_head == NULL) {
+                              return -1;
+                      } else if (__stimerobj_head->ID == pobj->ID) {
+                              __stimerobj_head = __stimerobj_head->next;
+                              return 0;
+                      } else {
+                              pre  = head;
+C51 COMPILER V9.60.0.0   SW_SOFTTIMER                                                      07/08/2021 21:48:01 PAGE 3   
 
- 115   2                      head = head->next;
- 116   2              }
- 117   1              while (head != NULL)
- 118   1              {
- 119   2                      if (head->ID == pobj->ID) {
- 120   3                              pre->next = head->next;
- 121   3                              return 0;
- 122   3                      }
- 123   2                      pre  = head;
- 124   2                      head = head->next;
- 125   2              }
- 126   1      
- 127   1              return -1;
- 128   1      }
- 129          
- 130          char SOFTTimer_OBJPause(__SOFTTimerOBJ* pobj)
- 131          {
- 132   1              __SOFTTimerOBJ*  head = __stimerobj_head;
- 133   1      
- 134   1              while (head != NULL)
- 135   1              {
- 136   2                      if (head->ID == pobj->ID) {
- 137   3                              head->status = 1;
- 138   3                              return 0;
- 139   3                      }
- 140   2                      head = head->next;
- 141   2              }
- 142   1              
- 143   1              return -1;
- 144   1      }
- 145          
- 146          char SOFTTimer_OBJRun(__SOFTTimerOBJ* pobj)
- 147          {
- 148   1              __SOFTTimerOBJ*  head = __stimerobj_head;
- 149   1      
- 150   1              while (head != NULL)
- 151   1              {
- 152   2                      if (head->ID == pobj->ID) {
- 153   3                              head->status = 2;
- 154   3                              return 0;
- 155   3                      }
- 156   2                      head = head->next;
- 157   2              }
- 158   1              
- 159   1              return -1;
- 160   1      }
- 161          
- 162          
- 163          char SOFTTimer_OBJSet(__SOFTTimerOBJ* pobj, int delms)
- 164          {
- 165   1              __SOFTTimerOBJ*  head = __stimerobj_head;
- 166   1      
- 167   1              while (head != NULL)
- 168   1              {
- 169   2                      if (head->ID == pobj->ID) {
- 170   3                              head->SoftTimer_obj_ms        = delms/10;
- 171   3                              head->SoftTimer_obj_remain_ms = delms/10;
- 172   3                              return 0;
- 173   3                      }
- 174   2                      head = head->next;
- 175   2              }
- 176   1      
-C51 COMPILER V9.60.0.0   SW_SOFTTIMER                                                      07/08/2021 21:17:20 PAGE 4   
+                              head = head->next;
+                      }
+                      while (head != NULL)
+                      {
+                              if (head->ID == pobj->ID) {
+                                      pre->next = head->next;
+                                      return 0;
+                              }
+                              pre  = head;
+                              head = head->next;
+                      }
+              
+                      return -1;
+              }
+              
+              char SOFTTimer_OBJPause(__SOFTTimerOBJ* pobj)
+              {
+                      __SOFTTimerOBJ*  head = __stimerobj_head;
+              
+                      while (head != NULL)
+                      {
+                              if (head->ID == pobj->ID) {
+                                      head->status = 1;
+                                      return 0;
+                              }
+                              head = head->next;
+                      }
+                      
+                      return -1;
+              }
+              
+              char SOFTTimer_OBJRun(__SOFTTimerOBJ* pobj)
+              {
+                      __SOFTTimerOBJ*  head = __stimerobj_head;
+              
+                      while (head != NULL)
+                      {
+                              if (head->ID == pobj->ID) {
+                                      head->status = 2;
+                                      return 0;
+                              }
+                              head = head->next;
+                      }
+                      
+                      return -1;
+              }
+              
+              
+              char SOFTTimer_OBJSet(__SOFTTimerOBJ* pobj, int delms)
+              {
+                      __SOFTTimerOBJ*  head = __stimerobj_head;
+              
+                      while (head != NULL)
+                      {
+                              if (head->ID == pobj->ID) {
+                                      head->SoftTimer_obj_ms        = delms/10;
+                                      head->SoftTimer_obj_remain_ms = delms/10;
+                                      return 0;
+                              }
+                              head = head->next;
+                      }
+              
+C51 COMPILER V9.60.0.0   SW_SOFTTIMER                                                      07/08/2021 21:48:01 PAGE 4   
 
- 177   1              return -1;
- 178   1      }
- 179          
- 180          
- 181          /* ------------------------------------------------------------ */
- 182          
- 183          #endif /* SW_SOFTTIMER_CONFIG */
+                      return -1;
+              }
+              
+              
+              /* ------------------------------------------------------------ */
+              
+              #endif /* SW_SOFTTIMER_CONFIG */
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =   1151    ----
+   CODE SIZE        =   ----    ----
    CONSTANT SIZE    =   ----    ----
-   XDATA SIZE       =     17      38
+   XDATA SIZE       =   ----    ----
    PDATA SIZE       =   ----    ----
    DATA SIZE        =   ----    ----
    IDATA SIZE       =   ----    ----
