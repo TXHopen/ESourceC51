@@ -1,0 +1,91 @@
+C51 COMPILER V9.60.0.0   BUTTON4X4                                                         07/08/2021 21:17:21 PAGE 1   
+
+
+C51 COMPILER V9.60.0.0, COMPILATION OF MODULE BUTTON4X4
+OBJECT MODULE PLACED IN .\Objects\button4x4.obj
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE ..\..\ESC51_sdk\HW_Driver\button4x4.c LARGE OPTIMIZE(8,SPEED) BROWSE INC
+                    -DIR(..\..\ESC51_sdk\es_sdkstatrt;..\..\ESC51_sdk\HW_Driver\header;..\..\ESC51_sdk\HW_Support\header;..\..\ESC51_sdk\SW_S
+                    -upport\header;..\..\ESC51_project;..\..\ESC51_sdk) DEBUG OBJECTEXTEND PRINT(.\Listings\button4x4.lst) OBJECT(.\Objects\b
+                    -utton4x4.obj)
+
+line level    source
+
+   1          #include "button4x4.h"
+   2          
+   3          #ifdef KEY4X4_CONFIG
+              
+              
+              
+              static void __key_delay_ms (uint ms)
+              {
+                      uint i = 0;
+                      while (ms > 0){
+                              for (i = 0; i < 110; i++);
+                              ms--;
+                      }
+              }
+              
+              
+              /*******************************************************************************
+              * 函 数 名         : KeyDown
+              * 函数功能                 : 检测有按键按下并读取键值
+              * 输    入         : 无
+              * 输    出         : 无
+              *******************************************************************************/
+              u8 KeyDown(void)
+              {
+                      u8    KeyValue = 17;
+                      
+                      GPIO_KEY=0xF0;
+                      if(GPIO_KEY!=0xF0)
+                {
+                              __key_delay_ms(20);
+                              if(GPIO_KEY!=0x0f)
+                              {
+                                      GPIO_KEY=0XF0;
+                                      switch(GPIO_KEY)
+                                      {
+                                              case(0XE0):     KeyValue=0;break;
+                                              case(0XD0):     KeyValue=1;break;
+                                              case(0XB0): KeyValue=2;break;
+                                              case(0X70):     KeyValue=3;break;
+                                              default:        KeyValue=17;
+                                      }
+                                      //测试行
+                                      GPIO_KEY=0X0F;
+                                      __key_delay_ms(20);
+                                      switch(GPIO_KEY)
+                                      {
+                                              case(0X0E):     KeyValue=KeyValue;   break;
+                                              case(0X0D):     KeyValue=KeyValue+4; break;
+                                              case(0X0B): KeyValue=KeyValue+8; break;
+                                              case(0X07):     KeyValue=KeyValue+12;break;
+                                              default:        KeyValue=17;
+                                      }
+C51 COMPILER V9.60.0.0   BUTTON4X4                                                         07/08/2021 21:17:21 PAGE 2   
+
+                                      while(GPIO_KEY != 0x0f)  //按键松手检测
+                                      {
+                                              __key_delay_ms(10);
+                                      }
+                              }
+                      }
+                      
+                      return KeyValue;
+              }
+              
+              #endif /* KEY4X4_CONFIG */
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =   ----    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

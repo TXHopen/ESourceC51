@@ -1,0 +1,200 @@
+C51 COMPILER V9.60.0.0   USER                                                              07/08/2021 21:17:24 PAGE 1   
+
+
+C51 COMPILER V9.60.0.0, COMPILATION OF MODULE USER
+OBJECT MODULE PLACED IN .\Objects\user.obj
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE ..\user.c LARGE OPTIMIZE(8,SPEED) BROWSE INCDIR(..\..\ESC51_sdk\es_sdkst
+                    -atrt;..\..\ESC51_sdk\HW_Driver\header;..\..\ESC51_sdk\HW_Support\header;..\..\ESC51_sdk\SW_Support\header;..\..\ESC51_pr
+                    -oject;..\..\ESC51_sdk) DEBUG OBJECTEXTEND PRINT(.\Listings\user.lst) OBJECT(.\Objects\user.obj)
+
+line level    source
+
+   1          #include "es_sys_package.h"
+   2          
+   3          int mm = 0;
+   4          int nn = 0;
+   5          int jj = 0;
+   6          
+   7          sbit LED1 = P1^0;
+   8          sbit LED2 = P1^1;
+   9          sbit LED3 = P1^2;
+  10          sbit LED4 = P1^3;
+  11          sbit LED5 = P1^4;
+  12          sbit LED6 = P1^5;
+  13          sbit LED7 = P1^6;
+  14          sbit LED8 = P1^7;
+  15          
+  16          static void test (void* arg)
+  17          {
+  18   1              void* ptr = arg;
+  19   1              mm++;
+  20   1              if (mm == 60) {
+  21   2                      P2 = ~P2;
+  22   2                      mm = 0;
+  23   2              }
+  24   1              
+  25   1      }
+  26          
+  27          
+  28          void test1 (void* arg)
+  29          {
+  30   1              void* ptr = arg;
+  31   1      
+  32   1              P0 = ~P0;
+  33   1      }
+  34          
+  35          
+  36          void test2 (void* arg)
+  37          {
+  38   1              void* ptr = arg;
+  39   1      
+  40   1              nn++;
+  41   1              if (nn == 100) {
+  42   2                      P2 = ~P2;
+  43   2                      nn = 0;
+  44   2              }
+  45   1      }
+  46          
+  47          void test3 (void* arg)
+  48          {
+  49   1              void* ptr = arg;
+  50   1      
+  51   1              jj++;
+  52   1              if (jj == 40) {
+  53   2                      P3 = ~P3;
+C51 COMPILER V9.60.0.0   USER                                                              07/08/2021 21:17:24 PAGE 2   
+
+  54   2                      jj = 0;
+  55   2              }
+  56   1      }
+  57          
+  58          
+  59          void led1(void* arg)
+  60          {
+  61   1              void* ptr = arg;
+  62   1              LED1 = ~LED1;
+  63   1      }
+  64          
+  65          void led2(void* arg)
+  66          {
+  67   1              void* ptr = arg;
+  68   1              LED2 = ~LED2;
+  69   1      }
+  70          
+  71          void led3(void* arg)
+  72          {
+  73   1              void* ptr = arg;
+  74   1              LED3 = ~LED3;
+  75   1      }
+  76          
+  77          void led4(void* arg)
+  78          {
+  79   1              void* ptr = arg;
+  80   1              LED4 = ~LED4;
+  81   1      }
+  82          
+  83          void led5(void* arg)
+  84          {
+  85   1              void* ptr = arg;
+  86   1              LED5 = ~LED5;
+  87   1      }
+  88          
+  89          void led6(void* arg)
+  90          {
+  91   1              void* ptr = arg;
+  92   1              LED6 = ~LED6;
+  93   1      }
+  94          
+  95          
+  96          //SOFTTIMER_OBJ_DECL(LD1);
+  97          //SOFTTIMER_OBJ_DECL(LD2);
+  98          //SOFTTIMER_OBJ_DECL(LD3);
+  99          //SOFTTIMER_OBJ_DECL(LD4);
+ 100          PWMGROUP_OBJ_DECL(PWM1);
+ 101          PWMGROUP_OBJ_DECL(PWM2);
+ 102          PWMGROUP_OBJ_DECL(PWM3);
+ 103          PWMGROUP_OBJ_DECL(PWM4);
+ 104          
+ 105          void es_main(void)
+ 106          {
+ 107   1      //      GTIMER_OBJ_DECL_STATIC(GTimer2);
+ 108   1      //      GTIMER_OBJ_DECL_STATIC(GTimer3);
+ 109   1      //      GTIMER_OBJ_DECL_STATIC(GTimer1);
+ 110   1      //      GTIMER_OBJ_DECL_STATIC(GTimer4);
+ 111   1      //      
+ 112   1      //      
+ 113   1      //      
+ 114   1      //      
+ 115   1      //      GTIMER_OBJ_INIT_STATIC(GTimer2, test, NULL);
+C51 COMPILER V9.60.0.0   USER                                                              07/08/2021 21:17:24 PAGE 3   
+
+ 116   1      //      GTIMER_OBJ_JOIN(GTimer2);
+ 117   1      //      GTIMER_OBJ_RUN(GTimer2);
+ 118   1      //      
+ 119   1      //      GTIMER_OBJ_INIT_STATIC(GTimer3, test2, NULL);
+ 120   1      //      GTIMER_OBJ_JOIN(GTimer3);
+ 121   1      //      GTIMER_OBJ_RUN(GTimer3);
+ 122   1      
+ 123   1      //      GTIMER_OBJ_INIT_STATIC(GTimer1, test3, NULL);
+ 124   1      //      GTIMER_OBJ_JOIN(GTimer1);
+ 125   1      //      GTIMER_OBJ_RUN(GTimer1);
+ 126   1      //      
+ 127   1      //      GTIMER_OBJ_INIT_STATIC(GTimer4, test1, NULL);
+ 128   1      //      GTIMER_OBJ_JOIN(GTimer4);
+ 129   1      //      GTIMER_OBJ_RUN(GTimer4);
+ 130   1      //      
+ 131   1      //      SOFTTIMER_OBJ_INIT(LD1, led1, NULL, 500);
+ 132   1      //      SOFTTIMER_OBJ_INIT(LD2, led2, NULL, 500);
+ 133   1      //      SOFTTIMER_OBJ_INIT(LD3, led3, NULL, 500);
+ 134   1      //      SOFTTIMER_OBJ_INIT(LD4, led4, NULL, 500);
+ 135   1      //      
+ 136   1      //      SOFTTIMER_OBJ_JOIN(LD1);
+ 137   1      //      SOFTTIMER_OBJ_JOIN(LD2);
+ 138   1      //      SOFTTIMER_OBJ_JOIN(LD3);
+ 139   1      //      SOFTTIMER_OBJ_JOIN(LD4);
+ 140   1      //      
+ 141   1      //      SOFTTIMER_OBJ_RUN(LD1);
+ 142   1      //      SOFTTIMER_OBJ_RUN(LD2);
+ 143   1      //      SOFTTIMER_OBJ_RUN(LD3);
+ 144   1      //      SOFTTIMER_OBJ_RUN(LD4);
+ 145   1              
+ 146   1              
+ 147   1              PWMGROUP_OBJ_INIT(PWM1, IO_P1, IO_Bit4, 50);
+ 148   1              PWMGROUP_OBJ_INIT(PWM2, IO_P1, IO_Bit5, 90);
+ 149   1              PWMGROUP_OBJ_INIT(PWM3, IO_P1, IO_Bit6, 50);
+ 150   1              PWMGROUP_OBJ_INIT(PWM4, IO_P1, IO_Bit7, 10);
+ 151   1              
+ 152   1              PWMGROUP_OBJ_JOIN(PWM1);
+ 153   1              PWMGROUP_OBJ_JOIN(PWM2);
+ 154   1              PWMGROUP_OBJ_JOIN(PWM3);
+ 155   1              PWMGROUP_OBJ_JOIN(PWM4);
+ 156   1      //      
+ 157   1              PWMGROUP_OBJ_RUN(PWM1);
+ 158   1              PWMGROUP_OBJ_RUN(PWM4);
+ 159   1              PWMGROUP_OBJ_RUN(PWM2);
+ 160   1              PWMGROUP_OBJ_RUN(PWM3);
+ 161   1              
+ 162   1              
+ 163   1      
+ 164   1              while (1)
+ 165   1              {
+ 166   2                      
+ 167   2                      
+ 168   2              }
+ 169   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    428    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =     42      30
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+C51 COMPILER V9.60.0.0   USER                                                              07/08/2021 21:17:24 PAGE 4   
+
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

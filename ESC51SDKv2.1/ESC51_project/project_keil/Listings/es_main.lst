@@ -1,0 +1,38 @@
+C51 COMPILER V9.60.0.0   ES_MAIN                                                           07/08/2021 21:17:17 PAGE 1   
+
+
+C51 COMPILER V9.60.0.0, COMPILATION OF MODULE ES_MAIN
+OBJECT MODULE PLACED IN .\Objects\es_main.obj
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE ..\..\ESC51_sdk\es_sdkstatrt\es_main.c LARGE OPTIMIZE(8,SPEED) BROWSE IN
+                    -CDIR(..\..\ESC51_sdk\es_sdkstatrt;..\..\ESC51_sdk\HW_Driver\header;..\..\ESC51_sdk\HW_Support\header;..\..\ESC51_sdk\SW_
+                    -Support\header;..\..\ESC51_project;..\..\ESC51_sdk) DEBUG OBJECTEXTEND PRINT(.\Listings\es_main.lst) OBJECT(.\Objects\es
+                    -_main.obj)
+
+line level    source
+
+   1          #include "es_sys_package.h"
+   2          
+   3          extern void es_main(void);
+   4          
+   5          void main()
+   6          {
+   7   1              bsp_init ();
+   8   1              
+   9   1              es_main();
+  10   1      }
+  11          
+  12          
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =      6    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

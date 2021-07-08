@@ -1,0 +1,42 @@
+C51 COMPILER V9.60.0.0   HW_MEMPOOL                                                        07/08/2021 21:17:18 PAGE 1   
+
+
+C51 COMPILER V9.60.0.0, COMPILATION OF MODULE HW_MEMPOOL
+OBJECT MODULE PLACED IN .\Objects\hw_MEMPool.obj
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE ..\..\ESC51_sdk\HW_Support\hw_MEMPool.c LARGE OPTIMIZE(8,SPEED) BROWSE I
+                    -NCDIR(..\..\ESC51_sdk\es_sdkstatrt;..\..\ESC51_sdk\HW_Driver\header;..\..\ESC51_sdk\HW_Support\header;..\..\ESC51_sdk\SW
+                    -_Support\header;..\..\ESC51_project;..\..\ESC51_sdk) DEBUG OBJECTEXTEND PRINT(.\Listings\hw_MEMPool.lst) OBJECT(.\Object
+                    -s\hw_MEMPool.obj)
+
+line level    source
+
+   1          #include "hw_MEMPool.h"
+   2          
+   3          #ifdef MEMPOOL_CONFIG
+              
+              xdata char mempool[MEMPOOL_SIZE] = {0};
+              
+              void mempool_init (void)
+              {
+                      
+                      init_mempool (mempool, MEMPOOL_SIZE);
+                      
+              }
+              
+              
+              
+              #endif /* MEMPOOL_CONFIG */
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =   ----    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

@@ -1,0 +1,117 @@
+C51 COMPILER V9.60.0.0   AD0809                                                            07/08/2021 21:17:20 PAGE 1   
+
+
+C51 COMPILER V9.60.0.0, COMPILATION OF MODULE AD0809
+OBJECT MODULE PLACED IN .\Objects\ad0809.obj
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE ..\..\ESC51_sdk\HW_Driver\ad0809.c LARGE OPTIMIZE(8,SPEED) BROWSE INCDIR
+                    -(..\..\ESC51_sdk\es_sdkstatrt;..\..\ESC51_sdk\HW_Driver\header;..\..\ESC51_sdk\HW_Support\header;..\..\ESC51_sdk\SW_Supp
+                    -ort\header;..\..\ESC51_project;..\..\ESC51_sdk) DEBUG OBJECTEXTEND PRINT(.\Listings\ad0809.lst) OBJECT(.\Objects\ad0809.
+                    -obj)
+
+line level    source
+
+   1          #include "ad0809.h"
+   2          
+   3          #ifdef AD0809_CONFIG
+              
+              
+              
+              static void ad0809_delay(uchar i)
+              {
+                      uchar j;
+                      while(i--)
+                      {
+                              for(j=125;j>0;j--);
+                      }
+              }
+              
+              
+              int ad0809_read(uchar channel, uchar *ad_data)
+              {
+                      AD_START = 0;
+                      switch (channel)
+                      {
+                              case 0:AD_ADDCS_A = 0;
+                                     AD_ADDCS_B = 0;
+                                         AD_ADDCS_C = 0;
+                                     break;
+                              case 1:AD_ADDCS_A = 1;
+                                     AD_ADDCS_B = 0;
+                                         AD_ADDCS_C = 0;
+                                     break;
+                              case 2:AD_ADDCS_A = 0;
+                                     AD_ADDCS_B = 1;
+                                         AD_ADDCS_C = 0;
+                                     break;
+                              case 3:AD_ADDCS_A = 1;
+                                     AD_ADDCS_B = 1;
+                                         AD_ADDCS_C = 0;
+                                     break;
+                              case 4:AD_ADDCS_A = 0;
+                                     AD_ADDCS_B = 0;
+                                         AD_ADDCS_C = 1;
+                                     break;
+                              case 5:AD_ADDCS_A = 1;
+                                     AD_ADDCS_B = 0;
+                                         AD_ADDCS_C = 1;
+                                     break;
+                              case 6:AD_ADDCS_A = 0;
+                                     AD_ADDCS_B = 1;
+                                         AD_ADDCS_C = 1;
+                                     break;
+                              case 7:AD_ADDCS_A = 1;
+                                     AD_ADDCS_B = 1;
+                                         AD_ADDCS_C = 1;
+C51 COMPILER V9.60.0.0   AD0809                                                            07/08/2021 21:17:20 PAGE 2   
+
+                                     break;
+                              default:
+                                         AD_ADDCS_A = 0;
+                                     AD_ADDCS_B = 0;
+                                         AD_ADDCS_C = 0;
+                                     break;
+                      }
+                      ad0809_delay(10);
+                      AD_START = 1;
+                      ad0809_delay(10);
+                      AD_START = 0;
+                      while(0  == AD_EOC);
+                      AD_OUTEN = 1;
+                      *ad_data = AD_DATA;
+                      AD_OUTEN = 0;
+                      
+                      return 0;
+              }
+              
+              void ad0809_clk_init()
+              {
+                      EA       = 1;    //开总中断
+                      TMOD     = 0x02; //设定定时器T0工作方式
+                      TH0      = 216;  //利用T0中断产生CLK信号
+                      TL0      = 216;
+                      TR0      = 1;    //启动定时器T0
+                      ET0      = 1;
+                      AD_START = 0;
+                      AD_OUTEN = 0;
+              }
+              
+              void t0(void) interrupt 1 using 0
+              {
+                      AD_CLK =~ AD_CLK;
+              }
+              
+              #endif /* AD0809_CONFIG */
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =   ----    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

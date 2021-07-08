@@ -1,0 +1,60 @@
+C51 COMPILER V9.60.0.0   BSP_CONFIG                                                        07/08/2021 21:17:17 PAGE 1   
+
+
+C51 COMPILER V9.60.0.0, COMPILATION OF MODULE BSP_CONFIG
+OBJECT MODULE PLACED IN .\Objects\bsp_config.obj
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE ..\..\ESC51_sdk\es_sdkstatrt\bsp_config.c LARGE OPTIMIZE(8,SPEED) BROWSE
+                    - INCDIR(..\..\ESC51_sdk\es_sdkstatrt;..\..\ESC51_sdk\HW_Driver\header;..\..\ESC51_sdk\HW_Support\header;..\..\ESC51_sdk\
+                    -SW_Support\header;..\..\ESC51_project;..\..\ESC51_sdk) DEBUG OBJECTEXTEND PRINT(.\Listings\bsp_config.lst) OBJECT(.\Obje
+                    -cts\bsp_config.obj)
+
+line level    source
+
+   1          #include "es_sys_package.h"
+   2          
+   3          
+   4          static void bsp_gpio_config (void)
+   5          {
+   6   1              P0=0xff;
+   7   1              P1=0xff;
+   8   1              P2=0xff;
+   9   1              P3=0xff;
+  10   1      }
+  11          
+  12          void bsp_init (void)
+  13          {
+  14   1              bsp_gpio_config ();
+  15   1              
+  16   1      #ifdef MEMPOOL_CONFIG
+                      mempool_init ();
+              #endif /* MEMPOOL_CONFIG */
+  19   1              
+  20   1      #ifdef GTIMER_CONFIG
+  21   1              GTimer_Init ();
+  22   1              GTimer_Start ();
+  23   1      #endif /* GTIMER_CONFIG */
+  24   1              
+  25   1      #ifdef SW_SOFTTIMER_CONFIG
+  26   1              SOFTTimer_Init ();
+  27   1              SOFTTimer_Start ();
+  28   1      #endif /* SW_SOFTTIMER_CONFIG */
+  29   1              
+  30   1      #ifdef SW_PWMGROUP_CONFIG
+  31   1              PWMGroup_Init ();
+  32   1              PWMGroup_Start ();
+  33   1      #endif /* SW_PWMGROUP_CONFIG */
+  34   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     34    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

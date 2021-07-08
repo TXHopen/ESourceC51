@@ -1,0 +1,71 @@
+C51 COMPILER V9.60.0.0   AT24C02                                                           07/08/2021 21:17:21 PAGE 1   
+
+
+C51 COMPILER V9.60.0.0, COMPILATION OF MODULE AT24C02
+OBJECT MODULE PLACED IN .\Objects\at24c02.obj
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE ..\..\ESC51_sdk\HW_Driver\at24c02.c LARGE OPTIMIZE(8,SPEED) BROWSE INCDI
+                    -R(..\..\ESC51_sdk\es_sdkstatrt;..\..\ESC51_sdk\HW_Driver\header;..\..\ESC51_sdk\HW_Support\header;..\..\ESC51_sdk\SW_Sup
+                    -port\header;..\..\ESC51_project;..\..\ESC51_sdk) DEBUG OBJECTEXTEND PRINT(.\Listings\at24c02.lst) OBJECT(.\Objects\at24c
+                    -02.obj)
+
+line level    source
+
+   1          #include "at24c02.h"
+   2          
+   3          #ifdef AT24C02_CONFIG
+              #ifdef IIC_CONFIG
+              
+              /*******************************************************************************
+              * 函数名         : void At24c02Write(unsigned char addr,unsigned char dat)
+              * 函数功能             : 往24c02的一个地址写入一个数据
+              * 输入           : 无
+              * 输出                 : 无
+              *******************************************************************************/
+              
+              void At24c02Write(unsigned char addr,unsigned char dat)
+              {
+                      I2cStart();
+                      I2cSendByte(0xa0);//发送写器件地址
+                      I2cSendByte(addr);//发送要写入内存地址
+                      I2cSendByte(dat);       //发送数据
+                      I2cStop();
+              }
+              /*******************************************************************************
+              * 函数名         : unsigned char At24c02Read(unsigned char addr)
+              * 函数功能             : 读取24c02的一个地址的一个数据
+              * 输入           : 无
+              * 输出                 : 无
+              *******************************************************************************/
+              
+              unsigned char At24c02Read(unsigned char addr)
+              {
+                      unsigned char num;
+                      I2cStart();
+                      I2cSendByte(0xa0); //发送写器件地址
+                      I2cSendByte(addr); //发送要读取的地址
+                      I2cStart();
+                      I2cSendByte(0xa1); //发送读器件地址
+                      num=I2cReadByte(); //读取数据
+                      I2cStop();
+                      return num;     
+              }
+              
+              
+              #endif /* IIC_CONFIG */
+              #endif /* AT24C02_CONFIG */
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =   ----    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+C51 COMPILER V9.60.0.0   AT24C02                                                           07/08/2021 21:17:21 PAGE 2   
+
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

@@ -1,0 +1,228 @@
+C51 COMPILER V9.60.0.0   SW_PWMGROUP                                                       07/08/2021 21:17:20 PAGE 1   
+
+
+C51 COMPILER V9.60.0.0, COMPILATION OF MODULE SW_PWMGROUP
+OBJECT MODULE PLACED IN .\Objects\sw_PWMGroup.obj
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE ..\..\ESC51_sdk\SW_Support\sw_PWMGroup.c LARGE OPTIMIZE(8,SPEED) BROWSE 
+                    -INCDIR(..\..\ESC51_sdk\es_sdkstatrt;..\..\ESC51_sdk\HW_Driver\header;..\..\ESC51_sdk\HW_Support\header;..\..\ESC51_sdk\S
+                    -W_Support\header;..\..\ESC51_project;..\..\ESC51_sdk) DEBUG OBJECTEXTEND PRINT(.\Listings\sw_PWMGroup.lst) OBJECT(.\Obje
+                    -cts\sw_PWMGroup.obj)
+
+line level    source
+
+   1          #include "sw_PWMGroup.h"
+   2          
+   3          #ifdef SW_PWMGROUP_CONFIG
+   4          
+   5          
+   6          
+   7          
+   8          
+   9          /* ------------------------------------------------------------ */
+  10          
+  11          
+  12          
+  13          static __PWMGROUP_Member    *__PWMGroup_OBJ = NULL;
+  14          
+  15          
+  16          
+  17          /* ------------------------------------------------------------ */
+  18          static void PWMGroup_function (void *arg) 
+  19          {
+  20   1              void *ptr = arg;
+  21   1      
+  22   1              static __PWMGROUP_Member  *head = NULL;
+  23   1              head = __PWMGroup_OBJ;
+  24   1      
+  25   1              while (head != NULL)
+  26   1              {
+  27   2                      if (head->status == 2) {
+  28   3                              head->OutCurPOS++;
+  29   3                              if (head->OutCurPOS == head->OutPosCYC) {
+  30   4                                      io_ctrl_set_low (head->OutPort, head->OutBit);
+  31   4                              } else if (head->OutCurPOS == 100) {
+  32   4                                      io_ctrl_set_high (head->OutPort, head->OutBit);
+  33   4                                      head->OutCurPOS = 0;
+  34   4                              }
+  35   3                      }
+  36   2                      head = head->next;
+  37   2              }
+  38   1      }
+  39          
+  40          
+  41          
+  42          
+  43          
+  44          /* ------------------------------------------------------------ */
+  45          GTIMER_OBJ_DECL_STATIC(PWMGROUP);
+  46          
+  47          
+  48          
+  49          char PWMGroup_Init (void)
+  50          {
+  51   1              GTIMER_OBJ_INIT_STATIC(PWMGROUP, PWMGroup_function, NULL);
+  52   1              
+C51 COMPILER V9.60.0.0   SW_PWMGROUP                                                       07/08/2021 21:17:20 PAGE 2   
+
+  53   1              GTIMER_OBJ_JOIN(PWMGROUP);
+  54   1              
+  55   1              return 0;
+  56   1      }
+  57          
+  58          
+  59          char PWMGroup_Start (void)
+  60          {
+  61   1              
+  62   1              GTIMER_OBJ_RUN(PWMGROUP);
+  63   1              
+  64   1              return 0;
+  65   1      }
+  66          
+  67          char PWMGroup_Stop (void)
+  68          {
+  69   1      
+  70   1              GTIMER_OBJ_PAUSE(PWMGROUP);
+  71   1              
+  72   1              return 0;
+  73   1      }
+  74          
+  75          
+  76          
+  77          /* ------------------------------------------------------------ */
+  78          
+  79          char PWMGroup_OBJJoin (__PWMGROUP_Member *pobj)
+  80          {
+  81   1              __PWMGROUP_Member  *head = __PWMGroup_OBJ;
+  82   1      
+  83   1              if (__PWMGroup_OBJ == NULL) {
+  84   2                      pobj->ID         = 0;
+  85   2                      pobj->status     = 1;
+  86   2                      pobj->next       = NULL;
+  87   2                      __PWMGroup_OBJ   = pobj;
+  88   2                      return 0;
+  89   2              }
+  90   1              while (head->next != NULL)
+  91   1              {
+  92   2                      head = head->next;
+  93   2              }
+  94   1              pobj->ID      = head->ID + 1;
+  95   1              pobj->status  = 1;
+  96   1              pobj->next    = NULL;
+  97   1              head->next    = pobj;
+  98   1              
+  99   1              return 0;
+ 100   1      }
+ 101          
+ 102          char PWMGroup_OBJRemove (__PWMGROUP_Member *pobj)
+ 103          {
+ 104   1      
+ 105   1              __PWMGROUP_Member  *head = __PWMGroup_OBJ;
+ 106   1              __PWMGROUP_Member  *pre  = __PWMGroup_OBJ;
+ 107   1      
+ 108   1              if (__PWMGroup_OBJ == NULL) {
+ 109   2                      return -1;
+ 110   2              } else if (__PWMGroup_OBJ->ID == pobj->ID) {
+ 111   2                      __PWMGroup_OBJ = __PWMGroup_OBJ->next;
+ 112   2                      return 0;
+ 113   2              } else {
+ 114   2                      pre  = head;
+C51 COMPILER V9.60.0.0   SW_PWMGROUP                                                       07/08/2021 21:17:20 PAGE 3   
+
+ 115   2                      head = head->next;
+ 116   2              }
+ 117   1              while (head != NULL)
+ 118   1              {
+ 119   2                      if (head->ID == pobj->ID) {
+ 120   3                              pre->next = head->next;
+ 121   3                              return 0;
+ 122   3                      }
+ 123   2                      pre  = head;
+ 124   2                      head = head->next;
+ 125   2              }
+ 126   1              
+ 127   1              return 0;
+ 128   1      }
+ 129          
+ 130          char PWMGroup_OBJRun (__PWMGROUP_Member *pobj)
+ 131          {
+ 132   1      
+ 133   1              __PWMGROUP_Member*  head = __PWMGroup_OBJ;
+ 134   1      
+ 135   1              while (head != NULL)
+ 136   1              {
+ 137   2                      if (head->ID == pobj->ID) {
+ 138   3                              head->status = 2;
+ 139   3                              return 0;
+ 140   3                      }
+ 141   2                      head = head->next;
+ 142   2              }
+ 143   1              
+ 144   1              return 0;
+ 145   1      }
+ 146          
+ 147          char PWMGroup_OBJPause (__PWMGROUP_Member *pobj)
+ 148          {
+ 149   1              __PWMGROUP_Member*  head = __PWMGroup_OBJ;
+ 150   1      
+ 151   1              while (head != NULL)
+ 152   1              {
+ 153   2                      if (head->ID == pobj->ID) {
+ 154   3                              head->status = 1;
+ 155   3                              return 0;
+ 156   3                      }
+ 157   2                      head = head->next;
+ 158   2              }
+ 159   1              
+ 160   1              return 0;
+ 161   1      }
+ 162          
+ 163          char PWMGroup_OBJSetDUTY (__PWMGROUP_Member *pobj, uint8_t duty)
+ 164          {
+ 165   1              __PWMGROUP_Member*  head = __PWMGroup_OBJ;
+ 166   1      
+ 167   1              while (head != NULL)
+ 168   1              {
+ 169   2                      if (head->ID == pobj->ID) {
+ 170   3                              head->OutPosCYC = duty;
+ 171   3                              head->OutCurPOS = 0;
+ 172   3                              return 0;
+ 173   3                      }
+ 174   2                      head = head->next;
+ 175   2              }
+ 176   1              
+C51 COMPILER V9.60.0.0   SW_PWMGROUP                                                       07/08/2021 21:17:20 PAGE 4   
+
+ 177   1              return 0;
+ 178   1      }
+ 179          
+ 180          
+ 181          
+ 182          
+ 183          /* ------------------------------------------------------------ */
+ 184          
+ 185          
+ 186          
+ 187          
+ 188          
+ 189          
+ 190          
+ 191          
+ 192          
+ 193          
+ 194          
+ 195          
+ 196          #endif /* SW_PWMGROUP_CONFIG */
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =   1143    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =     17      36
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

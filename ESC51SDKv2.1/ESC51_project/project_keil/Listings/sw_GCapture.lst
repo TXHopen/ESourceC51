@@ -1,0 +1,48 @@
+C51 COMPILER V9.60.0.0   SW_GCAPTURE                                                       07/08/2021 21:17:19 PAGE 1   
+
+
+C51 COMPILER V9.60.0.0, COMPILATION OF MODULE SW_GCAPTURE
+OBJECT MODULE PLACED IN .\Objects\sw_GCapture.obj
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE ..\..\ESC51_sdk\SW_Support\sw_GCapture.c LARGE OPTIMIZE(8,SPEED) BROWSE 
+                    -INCDIR(..\..\ESC51_sdk\es_sdkstatrt;..\..\ESC51_sdk\HW_Driver\header;..\..\ESC51_sdk\HW_Support\header;..\..\ESC51_sdk\S
+                    -W_Support\header;..\..\ESC51_project;..\..\ESC51_sdk) DEBUG OBJECTEXTEND PRINT(.\Listings\sw_GCapture.lst) OBJECT(.\Obje
+                    -cts\sw_GCapture.obj)
+
+line level    source
+
+   1          #include "sw_GCapture.h"
+   2          
+   3          #ifdef SW_GCAPTURE_CONFIG
+   4          
+   5          
+   6          
+   7          
+   8          /* ------------------------------------------------------------ */
+   9          
+  10          
+  11          
+  12          
+  13          
+  14          
+  15          /* ------------------------------------------------------------ */
+  16          
+  17          
+  18          
+  19          
+  20          /* ------------------------------------------------------------ */
+  21          
+  22          #endif /* SW_GCAPTURE_CONFIG */
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =   ----    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

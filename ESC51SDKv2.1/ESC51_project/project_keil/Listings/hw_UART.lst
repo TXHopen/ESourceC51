@@ -1,0 +1,114 @@
+C51 COMPILER V9.60.0.0   HW_UART                                                           07/08/2021 21:17:19 PAGE 1   
+
+
+C51 COMPILER V9.60.0.0, COMPILATION OF MODULE HW_UART
+OBJECT MODULE PLACED IN .\Objects\hw_UART.obj
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE ..\..\ESC51_sdk\HW_Support\hw_UART.c LARGE OPTIMIZE(8,SPEED) BROWSE INCD
+                    -IR(..\..\ESC51_sdk\es_sdkstatrt;..\..\ESC51_sdk\HW_Driver\header;..\..\ESC51_sdk\HW_Support\header;..\..\ESC51_sdk\SW_Su
+                    -pport\header;..\..\ESC51_project;..\..\ESC51_sdk) DEBUG OBJECTEXTEND PRINT(.\Listings\hw_UART.lst) OBJECT(.\Objects\hw_U
+                    -ART.obj)
+
+line level    source
+
+   1          #include "hw_UART.h"
+   2          
+   3          #ifdef UART_CONFIG
+              
+              
+              
+              
+              
+              #ifndef TIMER1_CONFIG
+              
+              
+              
+              
+              int (*pointer_interupt_uart)(void *arg);
+              
+              static int interupt_uart_function (void *arg) 
+              {
+                      void *ptr = arg;
+                      return 0;
+              }
+              
+              void UART_Init(void *callback)
+              {
+                      if (callback == NULL) {
+                              pointer_interupt_uart = interupt_uart_function;
+                      } else {
+                              pointer_interupt_uart = callback;
+                      }
+                      
+                      SCON  = 0X50;                   //设置为工作方式1
+                      TMOD &= 0X0F;                   //设置计数器工作方式2
+                      TMOD |= 0X20;                   //设置计数器工作方式2
+                      PCON  = 0X80;                   //波特率加倍
+                      TH1   = RELOAD_COUNT;   //计数器初始值设置
+                      TL1   = TH1;
+                      ES  = 1;                                //关闭接收中断
+                      EA  = 1;                                //打开总中断
+                      TR1 = 1;                                //打开计数器
+              }
+              
+              void UART_SendByte(u8 dat)
+              {
+                      ES = 0;               //关闭串口中断
+                      TI = 0;               //清发送完毕中断请求标志位
+                      SBUF = dat;           //发送
+                      while(TI == 0);       //等待发送完毕
+                      TI = 0;               //清发送完毕中断请求标志位
+                      ES = 1;               //允许串口中断
+              }
+              
+              void UART_SendStr(uchar *str)
+              {
+C51 COMPILER V9.60.0.0   HW_UART                                                           07/08/2021 21:17:19 PAGE 2   
+
+                  while(*str!= '\0')
+                      {
+                      UART_SendByte(*str);
+                      str++;
+                  }
+              }
+              
+              void UART_SendByteArr(uchar *byte_arr, uint arr_len)
+              {
+                      int curt_num = 0;
+                      for(curt_num = 0; curt_num < arr_len; curt_num++)
+                      {
+                      UART_SendByte(byte_arr[curt_num]);
+                      arr_len--;
+                  }
+              }
+              
+              void Usart() interrupt 4
+              {
+                      
+                      pointer_interupt_uart(NULL);
+              
+              }
+              
+              
+              
+              #else
+              
+              #warning UART is Disable
+              
+              #endif /* TIMER1_CONFIG */
+              
+              
+              #endif /* UART_CONFIG */
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =   ----    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)
