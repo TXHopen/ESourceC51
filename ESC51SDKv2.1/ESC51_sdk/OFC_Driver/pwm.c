@@ -24,6 +24,8 @@ static int pwm_int_function (void *arg)
 }
 
 
+
+
 char PWM_Init (uchar duty)
 {
 	if (duty == 0) {

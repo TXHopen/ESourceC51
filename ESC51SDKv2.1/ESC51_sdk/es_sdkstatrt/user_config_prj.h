@@ -4,7 +4,7 @@
 
 /* ------------------------------------------------------------ */
 //#define IOCTRL_CONFIG
-#define TIMER0_CONFIG
+//#define TIMER0_CONFIG
 //#define TIMER1_CONFIG
 //#define TIMER2_CONFIG
 //#define UART_CONFIG
@@ -12,6 +12,7 @@
 //#define EXT1_CONFIG
 //#define MEMPOOL_CONFIG
 //#define GTIMER_CONFIG
+
 
 
 
@@ -36,7 +37,7 @@
 //#define AD0809_CONFIG
 //#define AD9850_CONFIG
 //#define PWM_CONFIG
-//#define PFM_CONFIG
+#define PFM_CONFIG
 //#define DHT11_CONFIG
 //#define DS1302_CONFIG
 //#define DS18B20_CONFIG
@@ -62,6 +63,12 @@
 
 
 /* ------------------------------------------------------------ */
+#ifdef   PFM_CONFIG
+#ifndef  TIMER0_CONFIG
+#define  TIMER0_CONFIG
+#endif   /* TIMER0_CONFIG */
+#endif   /* PFM_CONFIG */
+
 #ifdef   SW_BUTTONGP_CONFIG
 #ifndef  IOCTRL_CONFIG
 #define  IOCTRL_CONFIG

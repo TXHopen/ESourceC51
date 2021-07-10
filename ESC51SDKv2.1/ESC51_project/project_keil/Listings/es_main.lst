@@ -1,12 +1,12 @@
-C51 COMPILER V9.60.0.0   ES_MAIN                                                           07/10/2021 16:41:32 PAGE 1   
+C51 COMPILER V9.60.0.0   ES_MAIN                                                           07/11/2021 00:31:34 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE ES_MAIN
 OBJECT MODULE PLACED IN .\Objects\es_main.obj
-COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE ..\..\ESC51_sdk\es_sdkstatrt\es_main.c LARGE OPTIMIZE(8,SPEED) BROWSE IN
-                    -CDIR(..\..\ESC51_sdk\es_sdkstatrt;..\..\ESC51_sdk\OFC_Driver\header;..\..\ESC51_sdk\HW_Support\header;..\..\ESC51_sdk\SW
-                    -_Support\header;..\..\ESC51_project;..\..\ESC51_sdk) DEBUG OBJECTEXTEND PRINT(.\Listings\es_main.lst) OBJECT(.\Objects\e
-                    -s_main.obj)
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE ..\..\ESC51_sdk\es_sdkstatrt\es_main.c LARGE WARNINGLEVEL(1) OPTIMIZE(8,
+                    -SPEED) BROWSE INCDIR(..\..\ESC51_sdk\es_sdkstatrt;..\..\ESC51_sdk\OFC_Driver\header;..\..\ESC51_sdk\HW_Support\header;..
+                    -\..\ESC51_sdk\SW_Support\header;..\..\ESC51_project;..\..\ESC51_sdk) DEBUG OBJECTEXTEND PRINT(.\Listings\es_main.lst) OB
+                    -JECT(.\Objects\es_main.obj)
 
 line level    source
 

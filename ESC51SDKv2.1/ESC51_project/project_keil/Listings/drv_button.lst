@@ -1,12 +1,12 @@
-C51 COMPILER V9.60.0.0   DRV_BUTTON                                                        07/10/2021 16:41:28 PAGE 1   
+C51 COMPILER V9.60.0.0   DRV_BUTTON                                                        07/11/2021 00:31:28 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE DRV_BUTTON
 OBJECT MODULE PLACED IN .\Objects\drv_button.obj
-COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE ..\..\ESC51_sdk\OFC_Driver\drv_button.c LARGE OPTIMIZE(8,SPEED) BROWSE I
-                    -NCDIR(..\..\ESC51_sdk\es_sdkstatrt;..\..\ESC51_sdk\OFC_Driver\header;..\..\ESC51_sdk\HW_Support\header;..\..\ESC51_sdk\S
-                    -W_Support\header;..\..\ESC51_project;..\..\ESC51_sdk) DEBUG OBJECTEXTEND PRINT(.\Listings\drv_button.lst) OBJECT(.\Objec
-                    -ts\drv_button.obj)
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE ..\..\ESC51_sdk\OFC_Driver\drv_button.c LARGE WARNINGLEVEL(1) OPTIMIZE(8
+                    -,SPEED) BROWSE INCDIR(..\..\ESC51_sdk\es_sdkstatrt;..\..\ESC51_sdk\OFC_Driver\header;..\..\ESC51_sdk\HW_Support\header;.
+                    -.\..\ESC51_sdk\SW_Support\header;..\..\ESC51_project;..\..\ESC51_sdk) DEBUG OBJECTEXTEND PRINT(.\Listings\drv_button.lst
+                    -) OBJECT(.\Objects\drv_button.obj)
 
 line level    source
 
@@ -62,7 +62,7 @@ line level    source
                       //BUTTON引脚配置为输入
                       BUTTON_PxM0 = IO_IN_PUT_ONLY_M0 << BUTTON_PIN_BIT;
                       BUTTON_PxM1 = IO_IN_PUT_ONLY_M1 << BUTTON_PIN_BIT;
-C51 COMPILER V9.60.0.0   DRV_BUTTON                                                        07/10/2021 16:41:28 PAGE 2   
+C51 COMPILER V9.60.0.0   DRV_BUTTON                                                        07/11/2021 00:31:28 PAGE 2   
 
                       
                       BUTTON_PIN = 1;         //默认状态置高

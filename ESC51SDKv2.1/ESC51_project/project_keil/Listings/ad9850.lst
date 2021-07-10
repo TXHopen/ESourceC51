@@ -1,18 +1,19 @@
-C51 COMPILER V9.60.0.0   AD9850                                                            07/10/2021 16:41:27 PAGE 1   
+C51 COMPILER V9.60.0.0   AD9850                                                            07/11/2021 00:31:27 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE AD9850
 OBJECT MODULE PLACED IN .\Objects\ad9850.obj
-COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE ..\..\ESC51_sdk\OFC_Driver\ad9850.c LARGE OPTIMIZE(8,SPEED) BROWSE INCDI
-                    -R(..\..\ESC51_sdk\es_sdkstatrt;..\..\ESC51_sdk\OFC_Driver\header;..\..\ESC51_sdk\HW_Support\header;..\..\ESC51_sdk\SW_Su
-                    -pport\header;..\..\ESC51_project;..\..\ESC51_sdk) DEBUG OBJECTEXTEND PRINT(.\Listings\ad9850.lst) OBJECT(.\Objects\ad985
-                    -0.obj)
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE ..\..\ESC51_sdk\OFC_Driver\ad9850.c LARGE WARNINGLEVEL(1) OPTIMIZE(8,SPE
+                    -ED) BROWSE INCDIR(..\..\ESC51_sdk\es_sdkstatrt;..\..\ESC51_sdk\OFC_Driver\header;..\..\ESC51_sdk\HW_Support\header;..\..
+                    -\ESC51_sdk\SW_Support\header;..\..\ESC51_project;..\..\ESC51_sdk) DEBUG OBJECTEXTEND PRINT(.\Listings\ad9850.lst) OBJECT
+                    -(.\Objects\ad9850.obj)
 
 line level    source
 
    1          #include "ad9850.h"
    2          
    3          #ifdef AD9850_CONFIG
+              
               
               
               
@@ -61,9 +62,9 @@ line level    source
                               AD9850_DATA=(w>>i)&0x01;
                               AD9850_CLK=1;
                               AD9850_CLK=0;
-                      }
-C51 COMPILER V9.60.0.0   AD9850                                                            07/10/2021 16:41:27 PAGE 2   
+C51 COMPILER V9.60.0.0   AD9850                                                            07/11/2021 00:31:27 PAGE 2   
 
+                      }
                       //Ð´w2Êý¾Ý
                       w=(y>>16);
                       for(i=0;i<8;i++)
@@ -95,7 +96,7 @@ line level    source
               
               
               #endif /* AD9850_CONFIG */
-  84          
+  85          
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE

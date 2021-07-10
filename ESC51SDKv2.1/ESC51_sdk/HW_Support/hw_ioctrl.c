@@ -145,6 +145,7 @@ char io_ctrl_set_low (IOPort Port, IOBit Bit)
     return 0;
 }
 
+
 char io_ctrl_read (IOPort Port, IOBit Bit)
 {
     char status = -1;

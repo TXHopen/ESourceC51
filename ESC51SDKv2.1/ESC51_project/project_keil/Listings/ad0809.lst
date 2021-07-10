@@ -1,18 +1,19 @@
-C51 COMPILER V9.60.0.0   AD0809                                                            07/10/2021 16:41:27 PAGE 1   
+C51 COMPILER V9.60.0.0   AD0809                                                            07/11/2021 00:31:27 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE AD0809
 OBJECT MODULE PLACED IN .\Objects\ad0809.obj
-COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE ..\..\ESC51_sdk\OFC_Driver\ad0809.c LARGE OPTIMIZE(8,SPEED) BROWSE INCDI
-                    -R(..\..\ESC51_sdk\es_sdkstatrt;..\..\ESC51_sdk\OFC_Driver\header;..\..\ESC51_sdk\HW_Support\header;..\..\ESC51_sdk\SW_Su
-                    -pport\header;..\..\ESC51_project;..\..\ESC51_sdk) DEBUG OBJECTEXTEND PRINT(.\Listings\ad0809.lst) OBJECT(.\Objects\ad080
-                    -9.obj)
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE ..\..\ESC51_sdk\OFC_Driver\ad0809.c LARGE WARNINGLEVEL(1) OPTIMIZE(8,SPE
+                    -ED) BROWSE INCDIR(..\..\ESC51_sdk\es_sdkstatrt;..\..\ESC51_sdk\OFC_Driver\header;..\..\ESC51_sdk\HW_Support\header;..\..
+                    -\ESC51_sdk\SW_Support\header;..\..\ESC51_project;..\..\ESC51_sdk) DEBUG OBJECTEXTEND PRINT(.\Listings\ad0809.lst) OBJECT
+                    -(.\Objects\ad0809.obj)
 
 line level    source
 
    1          #include "ad0809.h"
    2          
    3          #ifdef AD0809_CONFIG
+              
               
               
               
@@ -24,6 +25,7 @@ line level    source
                               for(j=125;j>0;j--);
                       }
               }
+              
               
               
               int ad0809_read(uchar channel, uchar *ad_data)
@@ -60,10 +62,10 @@ line level    source
                                          AD_ADDCS_C = 1;
                                      break;
                               case 7:AD_ADDCS_A = 1;
+C51 COMPILER V9.60.0.0   AD0809                                                            07/11/2021 00:31:27 PAGE 2   
+
                                      AD_ADDCS_B = 1;
                                          AD_ADDCS_C = 1;
-C51 COMPILER V9.60.0.0   AD0809                                                            07/10/2021 16:41:27 PAGE 2   
-
                                      break;
                               default:
                                          AD_ADDCS_A = 0;

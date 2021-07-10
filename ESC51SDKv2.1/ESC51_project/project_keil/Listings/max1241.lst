@@ -1,12 +1,12 @@
-C51 COMPILER V9.60.0.0   MAX1241                                                           07/10/2021 16:41:30 PAGE 1   
+C51 COMPILER V9.60.0.0   MAX1241                                                           07/11/2021 00:31:31 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE MAX1241
 OBJECT MODULE PLACED IN .\Objects\max1241.obj
-COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE ..\..\ESC51_sdk\OFC_Driver\max1241.c LARGE OPTIMIZE(8,SPEED) BROWSE INCD
-                    -IR(..\..\ESC51_sdk\es_sdkstatrt;..\..\ESC51_sdk\OFC_Driver\header;..\..\ESC51_sdk\HW_Support\header;..\..\ESC51_sdk\SW_S
-                    -upport\header;..\..\ESC51_project;..\..\ESC51_sdk) DEBUG OBJECTEXTEND PRINT(.\Listings\max1241.lst) OBJECT(.\Objects\max
-                    -1241.obj)
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE ..\..\ESC51_sdk\OFC_Driver\max1241.c LARGE WARNINGLEVEL(1) OPTIMIZE(8,SP
+                    -EED) BROWSE INCDIR(..\..\ESC51_sdk\es_sdkstatrt;..\..\ESC51_sdk\OFC_Driver\header;..\..\ESC51_sdk\HW_Support\header;..\.
+                    -.\ESC51_sdk\SW_Support\header;..\..\ESC51_project;..\..\ESC51_sdk) DEBUG OBJECTEXTEND PRINT(.\Listings\max1241.lst) OBJE
+                    -CT(.\Objects\max1241.obj)
 
 line level    source
 

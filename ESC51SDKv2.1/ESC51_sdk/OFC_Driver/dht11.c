@@ -16,6 +16,8 @@ static void delay_ms (uint ms)
 	}
 }
 
+
+
 //复位DHT11
 void DHT11_Rst()	   
 {
