@@ -9,7 +9,7 @@
 #include "es_sys_package.h"
 
 
-sbit     PFM_OUT = P3^7;
+sbit     PFM_OUT = P2^7;
 
 
 

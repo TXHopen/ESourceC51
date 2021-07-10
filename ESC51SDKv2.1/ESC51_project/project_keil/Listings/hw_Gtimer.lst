@@ -1,12 +1,12 @@
-C51 COMPILER V9.60.0.0   HW_GTIMER                                                         07/10/2021 16:41:31 PAGE 1   
+C51 COMPILER V9.60.0.0   HW_GTIMER                                                         07/11/2021 00:07:25 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE HW_GTIMER
 OBJECT MODULE PLACED IN .\Objects\hw_Gtimer.obj
-COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE ..\..\ESC51_sdk\HW_Support\hw_Gtimer.c LARGE OPTIMIZE(8,SPEED) BROWSE IN
-                    -CDIR(..\..\ESC51_sdk\es_sdkstatrt;..\..\ESC51_sdk\OFC_Driver\header;..\..\ESC51_sdk\HW_Support\header;..\..\ESC51_sdk\SW
-                    -_Support\header;..\..\ESC51_project;..\..\ESC51_sdk) DEBUG OBJECTEXTEND PRINT(.\Listings\hw_Gtimer.lst) OBJECT(.\Objects
-                    -\hw_Gtimer.obj)
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE ..\..\ESC51_sdk\HW_Support\hw_Gtimer.c LARGE WARNINGLEVEL(1) OPTIMIZE(8,
+                    -SPEED) BROWSE INCDIR(..\..\ESC51_sdk\es_sdkstatrt;..\..\ESC51_sdk\OFC_Driver\header;..\..\ESC51_sdk\HW_Support\header;..
+                    -\..\ESC51_sdk\SW_Support\header;..\..\ESC51_project;..\..\ESC51_sdk) DEBUG OBJECTEXTEND PRINT(.\Listings\hw_Gtimer.lst) 
+                    -OBJECT(.\Objects\hw_Gtimer.obj)
 
 line level    source
 
@@ -62,7 +62,7 @@ line level    source
               }
               
               
-C51 COMPILER V9.60.0.0   HW_GTIMER                                                         07/10/2021 16:41:31 PAGE 2   
+C51 COMPILER V9.60.0.0   HW_GTIMER                                                         07/11/2021 00:07:25 PAGE 2   
 
               
               
@@ -126,7 +126,7 @@ line level    source
               
                       while (head != NULL)
                       {
-C51 COMPILER V9.60.0.0   HW_GTIMER                                                         07/10/2021 16:41:31 PAGE 3   
+C51 COMPILER V9.60.0.0   HW_GTIMER                                                         07/11/2021 00:07:25 PAGE 3   
 
                               if (head->ID == GTimerobj->ID) {
                                       head->status = 2;

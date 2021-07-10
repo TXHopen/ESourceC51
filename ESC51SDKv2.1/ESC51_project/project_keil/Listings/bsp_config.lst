@@ -1,12 +1,12 @@
-C51 COMPILER V9.60.0.0   BSP_CONFIG                                                        07/10/2021 16:41:32 PAGE 1   
+C51 COMPILER V9.60.0.0   BSP_CONFIG                                                        07/11/2021 00:07:27 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE BSP_CONFIG
 OBJECT MODULE PLACED IN .\Objects\bsp_config.obj
-COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE ..\..\ESC51_sdk\es_sdkstatrt\bsp_config.c LARGE OPTIMIZE(8,SPEED) BROWSE
-                    - INCDIR(..\..\ESC51_sdk\es_sdkstatrt;..\..\ESC51_sdk\OFC_Driver\header;..\..\ESC51_sdk\HW_Support\header;..\..\ESC51_sdk
-                    -\SW_Support\header;..\..\ESC51_project;..\..\ESC51_sdk) DEBUG OBJECTEXTEND PRINT(.\Listings\bsp_config.lst) OBJECT(.\Obj
-                    -ects\bsp_config.obj)
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE ..\..\ESC51_sdk\es_sdkstatrt\bsp_config.c LARGE WARNINGLEVEL(1) OPTIMIZE
+                    -(8,SPEED) BROWSE INCDIR(..\..\ESC51_sdk\es_sdkstatrt;..\..\ESC51_sdk\OFC_Driver\header;..\..\ESC51_sdk\HW_Support\header
+                    -;..\..\ESC51_sdk\SW_Support\header;..\..\ESC51_project;..\..\ESC51_sdk) DEBUG OBJECTEXTEND PRINT(.\Listings\bsp_config.l
+                    -st) OBJECT(.\Objects\bsp_config.obj)
 
 line level    source
 

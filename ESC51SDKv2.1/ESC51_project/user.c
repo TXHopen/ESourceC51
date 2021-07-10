@@ -147,8 +147,9 @@ void es_main(void)
 //	PWMGROUP_OBJ_RUN(PWM2);
 //	PWMGROUP_OBJ_RUN(PWM3);
 	
-	
-	
+	PFM_Init(100);
+	PFM_Start();
+	PFM_SetFrq(2000);
 
 	while (1)
 	{

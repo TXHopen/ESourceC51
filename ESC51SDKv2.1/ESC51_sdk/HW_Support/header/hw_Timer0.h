@@ -5,9 +5,8 @@
 #include "user_config_prj.h"
 
 #ifdef TIMER0_CONFIG
-//#ifndef GTIMER_CONFIG
 
-#include "hw_config.h"
+#include "es_sys_package.h"
 
 
 
@@ -20,14 +19,18 @@ typedef enum _TIMER0_MODE
 } TIMER0_MODE;
 
 
-void Timer0Init(TIMER0_MODE mode, uint us, void *callback);
 
-void Timer0Init_NoOpen(TIMER0_MODE mode, uint us, void *callback);
+
+void Timer0Init(TIMER0_MODE mode, uint16_t us, void *callback);
+
+void Timer0Settime(uint16_t us);
+
+void Timer0Init_NoOpen(TIMER0_MODE mode, uint16_t us, void *callback);
 void Timer0Open(void);
 void Timer0Close(void);
 
 
-//#endif /* GTIMER_CONFIG */
+
 
 #endif /* TIMER0_CONFIG */
 

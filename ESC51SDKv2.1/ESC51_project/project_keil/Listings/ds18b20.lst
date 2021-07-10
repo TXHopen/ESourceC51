@@ -1,12 +1,12 @@
-C51 COMPILER V9.60.0.0   DS18B20                                                           07/10/2021 16:41:28 PAGE 1   
+C51 COMPILER V9.60.0.0   DS18B20                                                           07/11/2021 00:07:22 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE DS18B20
 OBJECT MODULE PLACED IN .\Objects\ds18b20.obj
-COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE ..\..\ESC51_sdk\OFC_Driver\ds18b20.c LARGE OPTIMIZE(8,SPEED) BROWSE INCD
-                    -IR(..\..\ESC51_sdk\es_sdkstatrt;..\..\ESC51_sdk\OFC_Driver\header;..\..\ESC51_sdk\HW_Support\header;..\..\ESC51_sdk\SW_S
-                    -upport\header;..\..\ESC51_project;..\..\ESC51_sdk) DEBUG OBJECTEXTEND PRINT(.\Listings\ds18b20.lst) OBJECT(.\Objects\ds1
-                    -8b20.obj)
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE ..\..\ESC51_sdk\OFC_Driver\ds18b20.c LARGE WARNINGLEVEL(1) OPTIMIZE(8,SP
+                    -EED) BROWSE INCDIR(..\..\ESC51_sdk\es_sdkstatrt;..\..\ESC51_sdk\OFC_Driver\header;..\..\ESC51_sdk\HW_Support\header;..\.
+                    -.\ESC51_sdk\SW_Support\header;..\..\ESC51_project;..\..\ESC51_sdk) DEBUG OBJECTEXTEND PRINT(.\Listings\ds18b20.lst) OBJE
+                    -CT(.\Objects\ds18b20.obj)
 
 line level    source
 
@@ -62,7 +62,7 @@ line level    source
               void Ds18b20WriteByte(unsigned char dat)
               {
                       unsigned int i,j;
-C51 COMPILER V9.60.0.0   DS18B20                                                           07/10/2021 16:41:28 PAGE 2   
+C51 COMPILER V9.60.0.0   DS18B20                                                           07/11/2021 00:07:22 PAGE 2   
 
                       for(j=0;j<8;j++)
                       {
@@ -126,7 +126,7 @@ line level    source
               *******************************************************************************/
               
               void  Ds18b20ReadTempCom()
-C51 COMPILER V9.60.0.0   DS18B20                                                           07/10/2021 16:41:28 PAGE 3   
+C51 COMPILER V9.60.0.0   DS18B20                                                           07/11/2021 00:07:22 PAGE 3   
 
               {       
               

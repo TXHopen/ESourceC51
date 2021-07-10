@@ -1,12 +1,12 @@
-C51 COMPILER V9.60.0.0   ESP8266                                                           07/10/2021 16:41:29 PAGE 1   
+C51 COMPILER V9.60.0.0   ESP8266                                                           07/11/2021 00:07:23 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE ESP8266
 OBJECT MODULE PLACED IN .\Objects\esp8266.obj
-COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE ..\..\ESC51_sdk\OFC_Driver\esp8266.c LARGE OPTIMIZE(8,SPEED) BROWSE INCD
-                    -IR(..\..\ESC51_sdk\es_sdkstatrt;..\..\ESC51_sdk\OFC_Driver\header;..\..\ESC51_sdk\HW_Support\header;..\..\ESC51_sdk\SW_S
-                    -upport\header;..\..\ESC51_project;..\..\ESC51_sdk) DEBUG OBJECTEXTEND PRINT(.\Listings\esp8266.lst) OBJECT(.\Objects\esp
-                    -8266.obj)
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE ..\..\ESC51_sdk\OFC_Driver\esp8266.c LARGE WARNINGLEVEL(1) OPTIMIZE(8,SP
+                    -EED) BROWSE INCDIR(..\..\ESC51_sdk\es_sdkstatrt;..\..\ESC51_sdk\OFC_Driver\header;..\..\ESC51_sdk\HW_Support\header;..\.
+                    -.\ESC51_sdk\SW_Support\header;..\..\ESC51_project;..\..\ESC51_sdk) DEBUG OBJECTEXTEND PRINT(.\Listings\esp8266.lst) OBJE
+                    -CT(.\Objects\esp8266.obj)
 
 line level    source
 
@@ -62,7 +62,7 @@ line level    source
                       ESP8266_RST_Pin=1;
                       ESP8266_CH_PD_Pin=1;
               
-C51 COMPILER V9.60.0.0   ESP8266                                                           07/10/2021 16:41:29 PAGE 2   
+C51 COMPILER V9.60.0.0   ESP8266                                                           07/11/2021 00:07:23 PAGE 2   
 
                       ESP8266_SendCmd("AT+CWMODE=3");//设置路由器模式 1 staTIon模式 2 AP点 路由器模式 3 station+
              -AP混合模式

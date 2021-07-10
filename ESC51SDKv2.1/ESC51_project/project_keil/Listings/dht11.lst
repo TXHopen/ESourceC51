@@ -1,12 +1,12 @@
-C51 COMPILER V9.60.0.0   DHT11                                                             07/10/2021 16:41:27 PAGE 1   
+C51 COMPILER V9.60.0.0   DHT11                                                             07/11/2021 00:07:21 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE DHT11
 OBJECT MODULE PLACED IN .\Objects\dht11.obj
-COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE ..\..\ESC51_sdk\OFC_Driver\dht11.c LARGE OPTIMIZE(8,SPEED) BROWSE INCDIR
-                    -(..\..\ESC51_sdk\es_sdkstatrt;..\..\ESC51_sdk\OFC_Driver\header;..\..\ESC51_sdk\HW_Support\header;..\..\ESC51_sdk\SW_Sup
-                    -port\header;..\..\ESC51_project;..\..\ESC51_sdk) DEBUG OBJECTEXTEND PRINT(.\Listings\dht11.lst) OBJECT(.\Objects\dht11.o
-                    -bj)
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE ..\..\ESC51_sdk\OFC_Driver\dht11.c LARGE WARNINGLEVEL(1) OPTIMIZE(8,SPEE
+                    -D) BROWSE INCDIR(..\..\ESC51_sdk\es_sdkstatrt;..\..\ESC51_sdk\OFC_Driver\header;..\..\ESC51_sdk\HW_Support\header;..\..\
+                    -ESC51_sdk\SW_Support\header;..\..\ESC51_project;..\..\ESC51_sdk) DEBUG OBJECTEXTEND PRINT(.\Listings\dht11.lst) OBJECT(.
+                    -\Objects\dht11.obj)
 
 line level    source
 
@@ -62,7 +62,7 @@ line level    source
               }
               
               
-C51 COMPILER V9.60.0.0   DHT11                                                             07/10/2021 16:41:27 PAGE 2   
+C51 COMPILER V9.60.0.0   DHT11                                                             07/11/2021 00:07:21 PAGE 2   
 
               //DHT11初始化 
               //返回0：初始化成功，1：失败
@@ -126,7 +126,7 @@ line level    source
                                       buf[i]=DHT11_Read_Byte();
                               }
                               if((buf[0]+buf[1]+buf[2]+buf[3])==buf[4])
-C51 COMPILER V9.60.0.0   DHT11                                                             07/10/2021 16:41:27 PAGE 3   
+C51 COMPILER V9.60.0.0   DHT11                                                             07/11/2021 00:07:21 PAGE 3   
 
                               {
                                       *humi=buf[0];

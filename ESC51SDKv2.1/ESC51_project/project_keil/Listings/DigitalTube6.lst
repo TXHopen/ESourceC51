@@ -1,12 +1,12 @@
-C51 COMPILER V9.60.0.0   DIGITALTUBE6                                                      07/10/2021 16:41:28 PAGE 1   
+C51 COMPILER V9.60.0.0   DIGITALTUBE6                                                      07/11/2021 00:07:21 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE DIGITALTUBE6
 OBJECT MODULE PLACED IN .\Objects\DigitalTube6.obj
-COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE ..\..\ESC51_sdk\OFC_Driver\DigitalTube6.c LARGE OPTIMIZE(8,SPEED) BROWSE
-                    - INCDIR(..\..\ESC51_sdk\es_sdkstatrt;..\..\ESC51_sdk\OFC_Driver\header;..\..\ESC51_sdk\HW_Support\header;..\..\ESC51_sdk
-                    -\SW_Support\header;..\..\ESC51_project;..\..\ESC51_sdk) DEBUG OBJECTEXTEND PRINT(.\Listings\DigitalTube6.lst) OBJECT(.\O
-                    -bjects\DigitalTube6.obj)
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE ..\..\ESC51_sdk\OFC_Driver\DigitalTube6.c LARGE WARNINGLEVEL(1) OPTIMIZE
+                    -(8,SPEED) BROWSE INCDIR(..\..\ESC51_sdk\es_sdkstatrt;..\..\ESC51_sdk\OFC_Driver\header;..\..\ESC51_sdk\HW_Support\header
+                    -;..\..\ESC51_sdk\SW_Support\header;..\..\ESC51_project;..\..\ESC51_sdk) DEBUG OBJECTEXTEND PRINT(.\Listings\DigitalTube6
+                    -.lst) OBJECT(.\Objects\DigitalTube6.obj)
 
 line level    source
 
@@ -62,7 +62,7 @@ MODULE INFORMATION:   STATIC OVERLAYABLE
    PDATA SIZE       =   ----    ----
    DATA SIZE        =   ----    ----
    IDATA SIZE       =   ----    ----
-C51 COMPILER V9.60.0.0   DIGITALTUBE6                                                      07/10/2021 16:41:28 PAGE 2   
+C51 COMPILER V9.60.0.0   DIGITALTUBE6                                                      07/11/2021 00:07:21 PAGE 2   
 
    BIT SIZE         =   ----    ----
 END OF MODULE INFORMATION.

@@ -1,12 +1,12 @@
-C51 COMPILER V9.60.0.0   HW_UART                                                           07/10/2021 16:41:32 PAGE 1   
+C51 COMPILER V9.60.0.0   HW_UART                                                           07/11/2021 00:07:26 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE HW_UART
 OBJECT MODULE PLACED IN .\Objects\hw_UART.obj
-COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE ..\..\ESC51_sdk\HW_Support\hw_UART.c LARGE OPTIMIZE(8,SPEED) BROWSE INCD
-                    -IR(..\..\ESC51_sdk\es_sdkstatrt;..\..\ESC51_sdk\OFC_Driver\header;..\..\ESC51_sdk\HW_Support\header;..\..\ESC51_sdk\SW_S
-                    -upport\header;..\..\ESC51_project;..\..\ESC51_sdk) DEBUG OBJECTEXTEND PRINT(.\Listings\hw_UART.lst) OBJECT(.\Objects\hw_
-                    -UART.obj)
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE ..\..\ESC51_sdk\HW_Support\hw_UART.c LARGE WARNINGLEVEL(1) OPTIMIZE(8,SP
+                    -EED) BROWSE INCDIR(..\..\ESC51_sdk\es_sdkstatrt;..\..\ESC51_sdk\OFC_Driver\header;..\..\ESC51_sdk\HW_Support\header;..\.
+                    -.\ESC51_sdk\SW_Support\header;..\..\ESC51_project;..\..\ESC51_sdk) DEBUG OBJECTEXTEND PRINT(.\Listings\hw_UART.lst) OBJE
+                    -CT(.\Objects\hw_UART.obj)
 
 line level    source
 
@@ -62,7 +62,7 @@ line level    source
               void UART_SendStr(uchar *str)
               {
                   while(*str!= '\0')
-C51 COMPILER V9.60.0.0   HW_UART                                                           07/10/2021 16:41:32 PAGE 2   
+C51 COMPILER V9.60.0.0   HW_UART                                                           07/11/2021 00:07:26 PAGE 2   
 
                       {
                       UART_SendByte(*str);

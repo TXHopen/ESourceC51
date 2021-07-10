@@ -1,12 +1,12 @@
-C51 COMPILER V9.60.0.0   LCD12864                                                          07/10/2021 16:41:29 PAGE 1   
+C51 COMPILER V9.60.0.0   LCD12864                                                          07/11/2021 00:07:23 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE LCD12864
 OBJECT MODULE PLACED IN .\Objects\lcd12864.obj
-COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE ..\..\ESC51_sdk\OFC_Driver\lcd12864.c LARGE OPTIMIZE(8,SPEED) BROWSE INC
-                    -DIR(..\..\ESC51_sdk\es_sdkstatrt;..\..\ESC51_sdk\OFC_Driver\header;..\..\ESC51_sdk\HW_Support\header;..\..\ESC51_sdk\SW_
-                    -Support\header;..\..\ESC51_project;..\..\ESC51_sdk) DEBUG OBJECTEXTEND PRINT(.\Listings\lcd12864.lst) OBJECT(.\Objects\l
-                    -cd12864.obj)
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE ..\..\ESC51_sdk\OFC_Driver\lcd12864.c LARGE WARNINGLEVEL(1) OPTIMIZE(8,S
+                    -PEED) BROWSE INCDIR(..\..\ESC51_sdk\es_sdkstatrt;..\..\ESC51_sdk\OFC_Driver\header;..\..\ESC51_sdk\HW_Support\header;..\
+                    -..\ESC51_sdk\SW_Support\header;..\..\ESC51_project;..\..\ESC51_sdk) DEBUG OBJECTEXTEND PRINT(.\Listings\lcd12864.lst) OB
+                    -JECT(.\Objects\lcd12864.obj)
 
 line level    source
 
@@ -62,7 +62,7 @@ line level    source
                       delay_10us(20);
                       LCD12864_EN = 0;
               }
-C51 COMPILER V9.60.0.0   LCD12864                                                          07/10/2021 16:41:29 PAGE 2   
+C51 COMPILER V9.60.0.0   LCD12864                                                          07/11/2021 00:07:23 PAGE 2   
 
               
               
@@ -126,7 +126,7 @@ line level    source
               {
                       LCD12864_Write_Command(0x30);
                       LCD12864_Write_Command(0x06);
-C51 COMPILER V9.60.0.0   LCD12864                                                          07/10/2021 16:41:29 PAGE 3   
+C51 COMPILER V9.60.0.0   LCD12864                                                          07/11/2021 00:07:23 PAGE 3   
 
                       LCD12864_Write_Command(addresses[x-1]+(y-1));
                       while(*dat != '\0')
