@@ -14,8 +14,6 @@ static __GTimerOBJ    *GTimer_Head = NULL;
 
 static char GTimer_function (void *arg) 
 {
-	void *ptr = arg;
-
 	static __GTimerOBJ *head = NULL;
 	head = GTimer_Head;
 	while (head != NULL)

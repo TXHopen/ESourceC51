@@ -10,7 +10,6 @@ static int (*pointer_interupt_ext0)(void *arg);
 
 static int interupt_ext0_function (void *arg) 
 {
-	void *ptr = arg;
 	return 0;
 }
 

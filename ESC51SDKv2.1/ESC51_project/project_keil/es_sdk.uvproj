@@ -344,11 +344,11 @@
             <linkonly>0</linkonly>
             <UseMemoryFromTarget>1</UseMemoryFromTarget>
             <CaseSensitiveSymbols>0</CaseSensitiveSymbols>
-            <WarningLevel>2</WarningLevel>
+            <WarningLevel>0</WarningLevel>
             <DataOverlaying>1</DataOverlaying>
             <OverlayString></OverlayString>
             <MiscControls></MiscControls>
-            <DisableWarningNumbers></DisableWarningNumbers>
+            <DisableWarningNumbers>16</DisableWarningNumbers>
             <LinkerCmdFile></LinkerCmdFile>
             <Assign></Assign>
             <ReserveString></ReserveString>
@@ -500,6 +500,11 @@
               <FileName>pwm.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\ESC51_sdk\OFC_Driver\pwm.c</FilePath>
+            </File>
+            <File>
+              <FileName>pfm.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\ESC51_sdk\OFC_Driver\pfm.c</FilePath>
             </File>
           </Files>
         </Group>

@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   DS18B20                                                           07/08/2021 23:01:05 PAGE 1   
+C51 COMPILER V9.60.0.0   DS18B20                                                           07/10/2021 16:41:28 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE DS18B20
@@ -62,7 +62,7 @@ line level    source
               void Ds18b20WriteByte(unsigned char dat)
               {
                       unsigned int i,j;
-C51 COMPILER V9.60.0.0   DS18B20                                                           07/08/2021 23:01:05 PAGE 2   
+C51 COMPILER V9.60.0.0   DS18B20                                                           07/10/2021 16:41:28 PAGE 2   
 
                       for(j=0;j<8;j++)
                       {
@@ -126,7 +126,7 @@ line level    source
               *******************************************************************************/
               
               void  Ds18b20ReadTempCom()
-C51 COMPILER V9.60.0.0   DS18B20                                                           07/08/2021 23:01:05 PAGE 3   
+C51 COMPILER V9.60.0.0   DS18B20                                                           07/10/2021 16:41:28 PAGE 3   
 
               {       
               

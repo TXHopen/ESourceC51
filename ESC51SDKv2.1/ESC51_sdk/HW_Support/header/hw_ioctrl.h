@@ -17,7 +17,7 @@ sfr IO_P2M1			= 0x96;
 sfr IO_P3M0			= 0xB1;
 sfr IO_P3M1			= 0xB2;
 
-/** IO属性定义 */
+/** IO属性定�? */
 //准双向口
 #define IO_IN_OUT_PUT_M0			((uint8_t)0x00)
 #define IO_IN_OUT_PUT_M1			((uint8_t)0x00)
@@ -27,7 +27,7 @@ sfr IO_P3M1			= 0xB2;
 //仅为输入(高阻)
 #define IO_IN_PUT_ONLY_M0			((uint8_t)0x01)
 #define IO_IN_PUT_ONLY_M1			((uint8_t)0x00)
-//开漏
+//开�?
 #define IO_OPEN_DRAIN_M0			((uint8_t)0x01)
 #define IO_OPEN_DRAIN_M1			((uint8_t)0x01)
 
@@ -68,17 +68,17 @@ typedef enum
 
 
 
-#define ES_GPIO_SET_HIGH(GPIO)    GPIO = 1;
-#define ES_GPIO_SET_LOW(GPIO)     GPIO = 0;
-#define ES_GPIO_SET_TOGGLE(GPIO)  GPIO = ~GPIO;
+#define ES_GPIO_SET_HIGH(GPIO)             GPIO = 1;
+#define ES_GPIO_SET_LOW(GPIO)              GPIO = 0;
+#define ES_GPIO_SET_TOGGLE(GPIO)           GPIO = ~GPIO;
+#define ES_GPIO_PORT_SET_DATA(PORT, DATA)  PORT  =  DATA;
+#define ES_GPIO_READ_PORT(PORT)            PORT;
+#define ES_GPIO_READ_BIT(PORT)             PORT;
 
-#define ES_IO_CTRL_SET_HIGH(PORT, BIT)  PORT |=  (0x01 << BIT);
-#define ES_IO_CTRL_SET_LOW(PORT, BIT)   PORT &= ~(0x01 << BIT);
-
-
-#define ES_IO_CTRL_PORT_SET_HIGH(PORT, DATA)     PORT  =  DATA;
-
-
+#define ES_IO_CTRL_SET_HIGH(PORT, BIT)     PORT |=  (0x01 << BIT);
+#define ES_IO_CTRL_SET_LOW(PORT, BIT)      PORT &= ~(0x01 << BIT);
+//#define ES_IO_CTRL_READ_PORT(PORT, BIT)    PORT &= ~(0x01 << BIT);
+//#define ES_IO_CTRL_READ_BIT(PORT, BIT)     PORT &= ~(0x01 << BIT);
 
 
 

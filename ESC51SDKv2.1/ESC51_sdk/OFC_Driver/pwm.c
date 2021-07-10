@@ -11,8 +11,6 @@ static uchar PWM_CURPOS = 0;
 
 static int pwm_int_function (void *arg) 
 {
-	void *ptr = arg;
-	
 	PWM_CURPOS++;
 	
 	if (PWM_CURPOS == PWM_PosCYC) {

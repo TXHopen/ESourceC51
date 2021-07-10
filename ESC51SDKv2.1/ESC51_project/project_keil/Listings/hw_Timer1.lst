@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   HW_TIMER1                                                         07/08/2021 23:01:09 PAGE 1   
+C51 COMPILER V9.60.0.0   HW_TIMER1                                                         07/10/2021 16:41:32 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE HW_TIMER1
@@ -26,7 +26,6 @@ line level    source
               
               static int interupt_timer_function (void *arg) 
               {
-                      void *ptr = arg;
                       return 0;
               }
               
@@ -62,9 +61,9 @@ line level    source
                       } else {
                               pointer_interupt_timer1 = callback;
                       }
-C51 COMPILER V9.60.0.0   HW_TIMER1                                                         07/08/2021 23:01:09 PAGE 2   
-
                       
+C51 COMPILER V9.60.0.0   HW_TIMER1                                                         07/10/2021 16:41:32 PAGE 2   
+
                       TH1   = timer_h;        //给定时器赋初值
                       TL1   = timer_l;        
                       ET1=1;//打开定时器1中断允许
@@ -126,9 +125,9 @@ line level    source
                       TL1   = timer_l;        
               }
               
-C51 COMPILER V9.60.0.0   HW_TIMER1                                                         07/08/2021 23:01:09 PAGE 3   
-
               void Timer1Pause(void)
+C51 COMPILER V9.60.0.0   HW_TIMER1                                                         07/10/2021 16:41:32 PAGE 3   
+
               {
                       TR1   = 0;//关闭定时器
                       ET1   = 0;//关闭定时器0中断允许
@@ -164,7 +163,7 @@ line level    source
               
               //#endif /* GTIMER_CONFIG */
               #endif /* TIMER1_CONFIG */
- 151          
+ 150          
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE

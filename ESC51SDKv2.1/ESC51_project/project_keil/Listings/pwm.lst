@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   PWM                                                               07/08/2021 23:01:07 PAGE 1   
+C51 COMPILER V9.60.0.0   PWM                                                               07/10/2021 16:41:30 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE PWM
@@ -22,8 +22,6 @@ line level    source
               
               static int pwm_int_function (void *arg) 
               {
-                      void *ptr = arg;
-                      
                       PWM_CURPOS++;
                       
                       if (PWM_CURPOS == PWM_PosCYC) {
@@ -62,10 +60,10 @@ line level    source
               char PWM_Start (void)
               {
               
-C51 COMPILER V9.60.0.0   PWM                                                               07/08/2021 23:01:07 PAGE 2   
-
                       PWM_OUT    = 1;
                       PWM_CURPOS = 0;
+C51 COMPILER V9.60.0.0   PWM                                                               07/10/2021 16:41:30 PAGE 2   
+
                       
                       GTimer_OBJRun (pwm_int_function);
                       

@@ -12,7 +12,6 @@ int (*pointer_interupt_timer2)(void *arg);
 
 static int interupt_timer_function (void *arg) 
 {
-	void *ptr = arg;
 	return 0;
 }
 

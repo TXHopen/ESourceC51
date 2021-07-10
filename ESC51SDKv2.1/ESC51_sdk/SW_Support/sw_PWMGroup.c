@@ -17,8 +17,6 @@ static __PWMGROUP_Member    *__PWMGroup_OBJ = NULL;
 /* ------------------------------------------------------------ */
 static void PWMGroup_function (void *arg) 
 {
-	void *ptr = arg;
-
 	static __PWMGROUP_Member  *head = NULL;
 	head = __PWMGroup_OBJ;
 
