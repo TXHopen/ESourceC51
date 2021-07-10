@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   USER                                                              07/11/2021 00:19:14 PAGE 1   
+C51 COMPILER V9.60.0.0   USER                                                              07/11/2021 00:31:27 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE USER
@@ -62,7 +62,7 @@ line level    source
   51          
   52          void led1(void* arg)
   53          {
-C51 COMPILER V9.60.0.0   USER                                                              07/11/2021 00:19:14 PAGE 2   
+C51 COMPILER V9.60.0.0   USER                                                              07/11/2021 00:31:27 PAGE 2   
 
   54   1              LED1 = ~LED1;
   55   1      }
@@ -126,7 +126,7 @@ line level    source
  113   1      //      GTIMER_OBJ_RUN(GTimer1);
  114   1      //      
  115   1      //      GTIMER_OBJ_INIT_STATIC(GTimer4, test1, NULL);
-C51 COMPILER V9.60.0.0   USER                                                              07/11/2021 00:19:14 PAGE 3   
+C51 COMPILER V9.60.0.0   USER                                                              07/11/2021 00:31:27 PAGE 3   
 
  116   1      //      GTIMER_OBJ_JOIN(GTimer4);
  117   1      //      GTIMER_OBJ_RUN(GTimer4);
@@ -147,31 +147,33 @@ line level    source
  132   1      //      SOFTTIMER_OBJ_RUN(LD4);
  133   1              
  134   1              
- 135   1      //      PWMGROUP_OBJ_INIT(PWM1, IO_P1, IO_Bit4, 50);
- 136   1      //      PWMGROUP_OBJ_INIT(PWM2, IO_P1, IO_Bit5, 90);
- 137   1      //      PWMGROUP_OBJ_INIT(PWM3, IO_P1, IO_Bit6, 50);
- 138   1      //      PWMGROUP_OBJ_INIT(PWM4, IO_P1, IO_Bit7, 10);
- 139   1      //      
- 140   1      //      PWMGROUP_OBJ_JOIN(PWM1);
- 141   1      //      PWMGROUP_OBJ_JOIN(PWM2);
- 142   1      //      PWMGROUP_OBJ_JOIN(PWM3);
- 143   1      //      PWMGROUP_OBJ_JOIN(PWM4);
- 144   1      //
- 145   1      //      PWMGROUP_OBJ_RUN(PWM1);
- 146   1      //      PWMGROUP_OBJ_RUN(PWM4);
- 147   1      //      PWMGROUP_OBJ_RUN(PWM2);
- 148   1      //      PWMGROUP_OBJ_RUN(PWM3);
- 149   1              
- 150   1              PFM_Init(100);
- 151   1              PFM_Start();
- 152   1              PFM_SetFrq(2000);
- 153   1      
- 154   1              while (1)
- 155   1              {
- 156   2                      
- 157   2                      
- 158   2              }
- 159   1      }
+ 135   1              
+ 136   1      //      PWMGROUP_OBJ_INIT(PWM1, IO_P1, IO_Bit4, 50);
+ 137   1      //      PWMGROUP_OBJ_INIT(PWM2, IO_P1, IO_Bit5, 90);
+ 138   1      //      PWMGROUP_OBJ_INIT(PWM3, IO_P1, IO_Bit6, 50);
+ 139   1      //      PWMGROUP_OBJ_INIT(PWM4, IO_P1, IO_Bit7, 10);
+ 140   1      //      
+ 141   1      //      PWMGROUP_OBJ_JOIN(PWM1);
+ 142   1      //      PWMGROUP_OBJ_JOIN(PWM2);
+ 143   1      //      PWMGROUP_OBJ_JOIN(PWM3);
+ 144   1      //      PWMGROUP_OBJ_JOIN(PWM4);
+ 145   1      //
+ 146   1      //      PWMGROUP_OBJ_RUN(PWM1);
+ 147   1      //      PWMGROUP_OBJ_RUN(PWM4);
+ 148   1      //      PWMGROUP_OBJ_RUN(PWM2);
+ 149   1      //      PWMGROUP_OBJ_RUN(PWM3);
+ 150   1              
+ 151   1              PFM_Init(100);
+ 152   1              PFM_Start();
+ 153   1              PFM_SetFrq(2000);
+ 154   1      
+ 155   1      
+ 156   1              while (1)
+ 157   1              {
+ 158   2                      
+ 159   2                      
+ 160   2              }
+ 161   1      }
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE

@@ -4,6 +4,7 @@
 
 
 
+
 static void ad0809_delay(uchar i)
 {
 	uchar j;
@@ -12,6 +13,7 @@ static void ad0809_delay(uchar i)
 		for(j=125;j>0;j--);
 	}
 }
+
 
 
 int ad0809_read(uchar channel, uchar *ad_data)

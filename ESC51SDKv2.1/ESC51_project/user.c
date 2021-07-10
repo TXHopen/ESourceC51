@@ -132,6 +132,7 @@ void es_main(void)
 //	SOFTTIMER_OBJ_RUN(LD4);
 	
 	
+	
 //	PWMGROUP_OBJ_INIT(PWM1, IO_P1, IO_Bit4, 50);
 //	PWMGROUP_OBJ_INIT(PWM2, IO_P1, IO_Bit5, 90);
 //	PWMGROUP_OBJ_INIT(PWM3, IO_P1, IO_Bit6, 50);
@@ -150,6 +151,7 @@ void es_main(void)
 	PFM_Init(100);
 	PFM_Start();
 	PFM_SetFrq(2000);
+
 
 	while (1)
 	{

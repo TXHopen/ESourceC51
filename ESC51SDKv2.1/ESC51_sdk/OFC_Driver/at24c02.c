@@ -10,6 +10,7 @@
 * 输出         	 : 无
 *******************************************************************************/
 
+
 void At24c02Write(unsigned char addr,unsigned char dat)
 {
 	I2cStart();
@@ -18,6 +19,9 @@ void At24c02Write(unsigned char addr,unsigned char dat)
 	I2cSendByte(dat);	//发送数据
 	I2cStop();
 }
+
+
+
 /*******************************************************************************
 * 函数名         : unsigned char At24c02Read(unsigned char addr)
 * 函数功能		   : 读取24c02的一个地址的一个数据

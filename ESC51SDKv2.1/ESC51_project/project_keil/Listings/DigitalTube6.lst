@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   DIGITALTUBE6                                                      07/11/2021 00:19:16 PAGE 1   
+C51 COMPILER V9.60.0.0   DIGITALTUBE6                                                      07/11/2021 00:31:28 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE DIGITALTUBE6
@@ -32,6 +32,8 @@ line level    source
                       0xc6,0xa1,0x86,0x8e
               };
               
+              
+              
               /*------------------------------------------------
                                数码管显示延时
               ------------------------------------------------*/
@@ -60,10 +62,10 @@ MODULE INFORMATION:   STATIC OVERLAYABLE
    CONSTANT SIZE    =   ----    ----
    XDATA SIZE       =   ----    ----
    PDATA SIZE       =   ----    ----
+C51 COMPILER V9.60.0.0   DIGITALTUBE6                                                      07/11/2021 00:31:28 PAGE 2   
+
    DATA SIZE        =   ----    ----
    IDATA SIZE       =   ----    ----
-C51 COMPILER V9.60.0.0   DIGITALTUBE6                                                      07/11/2021 00:19:16 PAGE 2   
-
    BIT SIZE         =   ----    ----
 END OF MODULE INFORMATION.
 

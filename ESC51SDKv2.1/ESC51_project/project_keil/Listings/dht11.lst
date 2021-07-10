@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   DHT11                                                             07/11/2021 00:19:15 PAGE 1   
+C51 COMPILER V9.60.0.0   DHT11                                                             07/11/2021 00:31:28 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE DHT11
@@ -27,6 +27,8 @@ line level    source
                               ms--;
                       }
               }
+              
+              
               
               //复位DHT11
               void DHT11_Rst()           
@@ -60,10 +62,10 @@ line level    source
                       }
                       return 0;
               }
-              
-              
-C51 COMPILER V9.60.0.0   DHT11                                                             07/11/2021 00:19:15 PAGE 2   
+C51 COMPILER V9.60.0.0   DHT11                                                             07/11/2021 00:31:28 PAGE 2   
 
+              
+              
               //DHT11初始化 
               //返回0：初始化成功，1：失败
               uint8 DHT11_Init()
@@ -124,10 +126,10 @@ line level    source
                               for(i=0;i<5;i++) //读取40位数据
                               {
                                       buf[i]=DHT11_Read_Byte();
+C51 COMPILER V9.60.0.0   DHT11                                                             07/11/2021 00:31:28 PAGE 3   
+
                               }
                               if((buf[0]+buf[1]+buf[2]+buf[3])==buf[4])
-C51 COMPILER V9.60.0.0   DHT11                                                             07/11/2021 00:19:15 PAGE 3   
-
                               {
                                       *humi=buf[0];
                                       *temp=buf[2];

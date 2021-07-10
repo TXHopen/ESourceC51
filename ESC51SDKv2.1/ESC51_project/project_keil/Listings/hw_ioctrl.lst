@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   HW_IOCTRL                                                         07/11/2021 00:19:20 PAGE 1   
+C51 COMPILER V9.60.0.0   HW_IOCTRL                                                         07/11/2021 00:31:32 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE HW_IOCTRL
@@ -62,7 +62,7 @@ line level    source
                                   IO_P1M0 = IO_OUT_PUT_PP_M0 << Bit;
                                   IO_P1M1 = IO_OUT_PUT_PP_M1 << Bit;
                                   break;
-C51 COMPILER V9.60.0.0   HW_IOCTRL                                                         07/11/2021 00:19:20 PAGE 2   
+C51 COMPILER V9.60.0.0   HW_IOCTRL                                                         07/11/2021 00:31:32 PAGE 2   
 
                               case IO_IN_PUT_ONLY:
                                   IO_P1M0 = IO_IN_PUT_ONLY_M0 << Bit;
@@ -126,7 +126,7 @@ line level    source
                           break;
                   }
                       
-C51 COMPILER V9.60.0.0   HW_IOCTRL                                                         07/11/2021 00:19:20 PAGE 3   
+C51 COMPILER V9.60.0.0   HW_IOCTRL                                                         07/11/2021 00:31:32 PAGE 3   
 
                       return 0;
               }
@@ -161,6 +161,7 @@ line level    source
                   return 0;
               }
               
+              
               char io_ctrl_read (IOPort Port, IOBit Bit)
               {
                   char status = -1;
@@ -189,9 +190,9 @@ line level    source
               
               
               
-              
-C51 COMPILER V9.60.0.0   HW_IOCTRL                                                         07/11/2021 00:19:20 PAGE 4   
+C51 COMPILER V9.60.0.0   HW_IOCTRL                                                         07/11/2021 00:31:32 PAGE 4   
 
+              
               
               #endif /* IOCTRL_CONFIG */
 

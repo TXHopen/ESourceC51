@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   SW_SOFTTIMER                                                      07/11/2021 00:19:19 PAGE 1   
+C51 COMPILER V9.60.0.0   SW_SOFTTIMER                                                      07/11/2021 00:31:32 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE SW_SOFTTIMER
@@ -62,7 +62,7 @@ line level    source
                       GTIMER_OBJ_JOIN(ST_GTimer);
               }
               
-C51 COMPILER V9.60.0.0   SW_SOFTTIMER                                                      07/11/2021 00:19:19 PAGE 2   
+C51 COMPILER V9.60.0.0   SW_SOFTTIMER                                                      07/11/2021 00:31:32 PAGE 2   
 
               void SOFTTimer_Start(void)
               {
@@ -126,7 +126,7 @@ line level    source
                               pre  = head;
                               head = head->next;
                       }
-C51 COMPILER V9.60.0.0   SW_SOFTTIMER                                                      07/11/2021 00:19:19 PAGE 3   
+C51 COMPILER V9.60.0.0   SW_SOFTTIMER                                                      07/11/2021 00:31:32 PAGE 3   
 
                       while (head != NULL)
                       {
@@ -190,7 +190,7 @@ line level    source
               
                       return -1;
               }
-C51 COMPILER V9.60.0.0   SW_SOFTTIMER                                                      07/11/2021 00:19:19 PAGE 4   
+C51 COMPILER V9.60.0.0   SW_SOFTTIMER                                                      07/11/2021 00:31:32 PAGE 4   
 
               
               

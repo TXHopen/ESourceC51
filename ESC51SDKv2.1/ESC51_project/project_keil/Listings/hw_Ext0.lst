@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   HW_EXT0                                                           07/11/2021 00:19:21 PAGE 1   
+C51 COMPILER V9.60.0.0   HW_EXT0                                                           07/11/2021 00:31:33 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE HW_EXT0
@@ -62,7 +62,7 @@ line level    source
                               case EXT0_MODE_LEVEL:IT0 = 0;
                                                    break;
                               case EXT0_MODE_FEDGE:IT0 = 1;
-C51 COMPILER V9.60.0.0   HW_EXT0                                                           07/11/2021 00:19:21 PAGE 2   
+C51 COMPILER V9.60.0.0   HW_EXT0                                                           07/11/2021 00:31:33 PAGE 2   
 
                                                    break;
                               default:return ;     break;

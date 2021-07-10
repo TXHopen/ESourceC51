@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   HW_TIMER1                                                         07/11/2021 00:19:20 PAGE 1   
+C51 COMPILER V9.60.0.0   HW_TIMER1                                                         07/11/2021 00:31:33 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE HW_TIMER1
@@ -22,7 +22,9 @@ line level    source
               
               static bit mode_flg = 0;
               
+              
               static int (*pointer_interupt_timer1)(void *arg);
+              
               
               static int interupt_timer_function (void *arg) 
               {
@@ -60,10 +62,10 @@ line level    source
                               pointer_interupt_timer1 = interupt_timer_function;
                       } else {
                               pointer_interupt_timer1 = callback;
+C51 COMPILER V9.60.0.0   HW_TIMER1                                                         07/11/2021 00:31:33 PAGE 2   
+
                       }
                       
-C51 COMPILER V9.60.0.0   HW_TIMER1                                                         07/11/2021 00:19:20 PAGE 2   
-
                       TH1   = timer_h;        //给定时器赋初值
                       TL1   = timer_l;        
                       ET1=1;//打开定时器1中断允许
@@ -124,10 +126,10 @@ line level    source
                       TR1   = 0;//关闭定时器
                       ET1   = 0;//关闭定时器0中断允许
                       TH1   = timer_h;        //给定时器赋初值
+C51 COMPILER V9.60.0.0   HW_TIMER1                                                         07/11/2021 00:31:33 PAGE 3   
+
                       TL1   = timer_l;        
               }
-C51 COMPILER V9.60.0.0   HW_TIMER1                                                         07/11/2021 00:19:20 PAGE 3   
-
               
               void Timer1Pause(void)
               {
@@ -165,7 +167,7 @@ line level    source
               
               //#endif /* GTIMER_CONFIG */
               #endif /* TIMER1_CONFIG */
- 152          
+ 154          
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE

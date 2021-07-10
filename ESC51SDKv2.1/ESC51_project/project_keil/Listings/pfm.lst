@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   PFM                                                               07/11/2021 00:19:19 PAGE 1   
+C51 COMPILER V9.60.0.0   PFM                                                               07/11/2021 00:31:31 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE PFM
@@ -33,36 +33,38 @@ line level    source
   21   1      }
   22          
   23          
-  24          char PFM_Start (void)
-  25          {
-  26   1              Timer0Open();
-  27   1              
-  28   1              return 0;
-  29   1      }
-  30          
-  31          char PFM_Stop (void)
-  32          {
-  33   1              Timer0Close();
-  34   1              
-  35   1              return 0;
-  36   1      }
-  37          
-  38          
-  39          char PFM_SetFrq (uint frq)
-  40          {
-  41   1              uint16_t us10 = 0;
-  42   1              us10 = frq   / 10;
-  43   1              us10 = 50000 / us10;
-  44   1              
-  45   1              Timer0Settime(us10);
+  24          
+  25          
+  26          char PFM_Start (void)
+  27          {
+  28   1              Timer0Open();
+  29   1              
+  30   1              return 0;
+  31   1      }
+  32          
+  33          char PFM_Stop (void)
+  34          {
+  35   1              Timer0Close();
+  36   1              
+  37   1              return 0;
+  38   1      }
+  39          
+  40          
+  41          char PFM_SetFrq (uint frq)
+  42          {
+  43   1              uint16_t us10 = 0;
+  44   1              us10 = frq   / 10;
+  45   1              us10 = 50000 / us10;
   46   1              
-  47   1              return 0;
-  48   1      }
-  49          
-  50          #endif /* PFM_CONFIG */
+  47   1              Timer0Settime(us10);
+  48   1              
+  49   1              return 0;
+  50   1      }
+  51          
+  52          #endif /* PFM_CONFIG */
+C51 COMPILER V9.60.0.0   PFM                                                               07/11/2021 00:31:31 PAGE 2   
 
 
-C51 COMPILER V9.60.0.0   PFM                                                               07/11/2021 00:19:19 PAGE 2   
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
    CODE SIZE        =    111    ----

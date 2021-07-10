@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   AD0809                                                            07/11/2021 00:19:14 PAGE 1   
+C51 COMPILER V9.60.0.0   AD0809                                                            07/11/2021 00:31:27 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE AD0809
@@ -16,6 +16,7 @@ line level    source
               
               
               
+              
               static void ad0809_delay(uchar i)
               {
                       uchar j;
@@ -24,6 +25,7 @@ line level    source
                               for(j=125;j>0;j--);
                       }
               }
+              
               
               
               int ad0809_read(uchar channel, uchar *ad_data)
@@ -60,10 +62,10 @@ line level    source
                                          AD_ADDCS_C = 1;
                                      break;
                               case 7:AD_ADDCS_A = 1;
+C51 COMPILER V9.60.0.0   AD0809                                                            07/11/2021 00:31:27 PAGE 2   
+
                                      AD_ADDCS_B = 1;
                                          AD_ADDCS_C = 1;
-C51 COMPILER V9.60.0.0   AD0809                                                            07/11/2021 00:19:14 PAGE 2   
-
                                      break;
                               default:
                                          AD_ADDCS_A = 0;

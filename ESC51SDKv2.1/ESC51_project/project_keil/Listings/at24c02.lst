@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   AT24C02                                                           07/11/2021 00:19:15 PAGE 1   
+C51 COMPILER V9.60.0.0   AT24C02                                                           07/11/2021 00:31:27 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE AT24C02
@@ -22,6 +22,7 @@ line level    source
               * 输出                 : 无
               *******************************************************************************/
               
+              
               void At24c02Write(unsigned char addr,unsigned char dat)
               {
                       I2cStart();
@@ -30,6 +31,9 @@ line level    source
                       I2cSendByte(dat);       //发送数据
                       I2cStop();
               }
+              
+              
+              
               /*******************************************************************************
               * 函数名         : unsigned char At24c02Read(unsigned char addr)
               * 函数功能             : 读取24c02的一个地址的一个数据
@@ -58,12 +62,12 @@ line level    source
 MODULE INFORMATION:   STATIC OVERLAYABLE
    CODE SIZE        =   ----    ----
    CONSTANT SIZE    =   ----    ----
+C51 COMPILER V9.60.0.0   AT24C02                                                           07/11/2021 00:31:27 PAGE 2   
+
    XDATA SIZE       =   ----    ----
    PDATA SIZE       =   ----    ----
    DATA SIZE        =   ----    ----
    IDATA SIZE       =   ----    ----
-C51 COMPILER V9.60.0.0   AT24C02                                                           07/11/2021 00:19:15 PAGE 2   
-
    BIT SIZE         =   ----    ----
 END OF MODULE INFORMATION.
 
