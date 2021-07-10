@@ -43,4 +43,6 @@ typedef unsigned        int     uint32_t;
 //typedef unsigned              uint64_t;
 
 
+
+
 #endif /* __HW_VARTYPE_H */

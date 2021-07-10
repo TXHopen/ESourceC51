@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   USER                                                              07/08/2021 23:01:03 PAGE 1   
+C51 COMPILER V9.60.0.0   USER                                                              07/10/2021 16:41:26 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE USER
@@ -26,175 +26,174 @@ line level    source
   15          
   16          static void test (void* arg)
   17          {
-  18   1              void* ptr = arg;
-  19   1              mm++;
-  20   1              if (mm == 60) {
-  21   2                      P2 = ~P2;
-  22   2                      mm = 0;
-  23   2              }
-  24   1              
-  25   1      }
+  18   1              mm++;
+  19   1              if (mm == 60) {
+  20   2                      P2 = ~P2;
+  21   2                      mm = 0;
+  22   2              }
+  23   1              
+  24   1      }
+*** WARNING C280 IN LINE 16 OF ..\user.c: 'arg': unreferenced local variable
+  25          
   26          
-  27          
-  28          void test1 (void* arg)
-  29          {
-  30   1              void* ptr = arg;
-  31   1      
-  32   1              P0 = ~P0;
-  33   1      }
-  34          
-  35          
-  36          void test2 (void* arg)
-  37          {
-  38   1              void* ptr = arg;
-  39   1      
-  40   1              nn++;
-  41   1              if (nn == 100) {
-  42   2                      P2 = ~P2;
-  43   2                      nn = 0;
-  44   2              }
-  45   1      }
-  46          
-  47          void test3 (void* arg)
-  48          {
-  49   1              void* ptr = arg;
-  50   1      
-  51   1              jj++;
-  52   1              if (jj == 40) {
-  53   2                      P3 = ~P3;
-C51 COMPILER V9.60.0.0   USER                                                              07/08/2021 23:01:03 PAGE 2   
+  27          void test1 (void* arg)
+  28          {
+  29   1              P0 = ~P0;
+  30   1      }
+*** WARNING C280 IN LINE 27 OF ..\user.c: 'arg': unreferenced local variable
+  31          
+  32          
+  33          void test2 (void* arg)
+  34          {
+  35   1              nn++;
+  36   1              if (nn == 100) {
+  37   2                      P2 = ~P2;
+  38   2                      nn = 0;
+  39   2              }
+  40   1      }
+*** WARNING C280 IN LINE 33 OF ..\user.c: 'arg': unreferenced local variable
+  41          
+  42          void test3 (void* arg)
+  43          {
+  44   1              jj++;
+  45   1              if (jj == 40) {
+  46   2                      P3 = ~P3;
+  47   2                      jj = 0;
+  48   2              }
+  49   1      }
+*** WARNING C280 IN LINE 42 OF ..\user.c: 'arg': unreferenced local variable
+C51 COMPILER V9.60.0.0   USER                                                              07/10/2021 16:41:26 PAGE 2   
 
-  54   2                      jj = 0;
-  55   2              }
-  56   1      }
-  57          
-  58          
-  59          void led1(void* arg)
-  60          {
-  61   1              void* ptr = arg;
-  62   1              LED1 = ~LED1;
-  63   1      }
-  64          
-  65          void led2(void* arg)
-  66          {
-  67   1              void* ptr = arg;
-  68   1              LED2 = ~LED2;
-  69   1      }
-  70          
-  71          void led3(void* arg)
-  72          {
-  73   1              void* ptr = arg;
-  74   1              LED3 = ~LED3;
+  50          
+  51          
+  52          void led1(void* arg)
+  53          {
+  54   1              LED1 = ~LED1;
+  55   1      }
+*** WARNING C280 IN LINE 52 OF ..\user.c: 'arg': unreferenced local variable
+  56          
+  57          void led2(void* arg)
+  58          {
+  59   1              LED2 = ~LED2;
+  60   1      }
+*** WARNING C280 IN LINE 57 OF ..\user.c: 'arg': unreferenced local variable
+  61          
+  62          void led3(void* arg)
+  63          {
+  64   1              LED3 = ~LED3;
+  65   1      }
+*** WARNING C280 IN LINE 62 OF ..\user.c: 'arg': unreferenced local variable
+  66          
+  67          void led4(void* arg)
+  68          {
+  69   1              LED4 = ~LED4;
+  70   1      }
+*** WARNING C280 IN LINE 67 OF ..\user.c: 'arg': unreferenced local variable
+  71          
+  72          void led5(void* arg)
+  73          {
+  74   1              LED5 = ~LED5;
   75   1      }
+*** WARNING C280 IN LINE 72 OF ..\user.c: 'arg': unreferenced local variable
   76          
-  77          void led4(void* arg)
+  77          void led6(void* arg)
   78          {
-  79   1              void* ptr = arg;
-  80   1              LED4 = ~LED4;
-  81   1      }
+  79   1              LED6 = ~LED6;
+  80   1      }
+*** WARNING C280 IN LINE 77 OF ..\user.c: 'arg': unreferenced local variable
+  81          
   82          
-  83          void led5(void* arg)
-  84          {
-  85   1              void* ptr = arg;
-  86   1              LED5 = ~LED5;
-  87   1      }
-  88          
-  89          void led6(void* arg)
-  90          {
-  91   1              void* ptr = arg;
-  92   1              LED6 = ~LED6;
-  93   1      }
-  94          
-  95          
-  96          //SOFTTIMER_OBJ_DECL(LD1);
-  97          //SOFTTIMER_OBJ_DECL(LD2);
-  98          //SOFTTIMER_OBJ_DECL(LD3);
-  99          //SOFTTIMER_OBJ_DECL(LD4);
- 100          PWMGROUP_OBJ_DECL(PWM1);
- 101          PWMGROUP_OBJ_DECL(PWM2);
- 102          PWMGROUP_OBJ_DECL(PWM3);
- 103          PWMGROUP_OBJ_DECL(PWM4);
- 104          
- 105          void es_main(void)
- 106          {
- 107   1      //      GTIMER_OBJ_DECL_STATIC(GTimer2);
- 108   1      //      GTIMER_OBJ_DECL_STATIC(GTimer3);
- 109   1      //      GTIMER_OBJ_DECL_STATIC(GTimer1);
- 110   1      //      GTIMER_OBJ_DECL_STATIC(GTimer4);
- 111   1      //      
- 112   1      //      
- 113   1      //      
- 114   1      //      
- 115   1      //      GTIMER_OBJ_INIT_STATIC(GTimer2, test, NULL);
-C51 COMPILER V9.60.0.0   USER                                                              07/08/2021 23:01:03 PAGE 3   
+  83          //SOFTTIMER_OBJ_DECL(LD1);
+  84          //SOFTTIMER_OBJ_DECL(LD2);
+  85          //SOFTTIMER_OBJ_DECL(LD3);
+  86          //SOFTTIMER_OBJ_DECL(LD4);
+  87          //PWMGROUP_OBJ_DECL(PWM1);
+  88          //PWMGROUP_OBJ_DECL(PWM2);
+  89          //PWMGROUP_OBJ_DECL(PWM3);
+  90          //PWMGROUP_OBJ_DECL(PWM4);
+  91          
+  92          void es_main(void)
+  93          {
+  94   1      
+  95   1      //      GTIMER_OBJ_DECL_STATIC(GTimer2);
+  96   1      //      GTIMER_OBJ_DECL_STATIC(GTimer3);
+  97   1      //      GTIMER_OBJ_DECL_STATIC(GTimer1);
+  98   1      //      GTIMER_OBJ_DECL_STATIC(GTimer4);
+  99   1      //      
+ 100   1      //      
+ 101   1      //      
+ 102   1      //      
+ 103   1      //      GTIMER_OBJ_INIT_STATIC(GTimer2, test, NULL);
+ 104   1      //      GTIMER_OBJ_JOIN(GTimer2);
+ 105   1      //      GTIMER_OBJ_RUN(GTimer2);
+C51 COMPILER V9.60.0.0   USER                                                              07/10/2021 16:41:26 PAGE 3   
 
- 116   1      //      GTIMER_OBJ_JOIN(GTimer2);
- 117   1      //      GTIMER_OBJ_RUN(GTimer2);
+ 106   1      //      
+ 107   1      //      GTIMER_OBJ_INIT_STATIC(GTimer3, test2, NULL);
+ 108   1      //      GTIMER_OBJ_JOIN(GTimer3);
+ 109   1      //      GTIMER_OBJ_RUN(GTimer3);
+ 110   1      
+ 111   1      //      GTIMER_OBJ_INIT_STATIC(GTimer1, test3, NULL);
+ 112   1      //      GTIMER_OBJ_JOIN(GTimer1);
+ 113   1      //      GTIMER_OBJ_RUN(GTimer1);
+ 114   1      //      
+ 115   1      //      GTIMER_OBJ_INIT_STATIC(GTimer4, test1, NULL);
+ 116   1      //      GTIMER_OBJ_JOIN(GTimer4);
+ 117   1      //      GTIMER_OBJ_RUN(GTimer4);
  118   1      //      
- 119   1      //      GTIMER_OBJ_INIT_STATIC(GTimer3, test2, NULL);
- 120   1      //      GTIMER_OBJ_JOIN(GTimer3);
- 121   1      //      GTIMER_OBJ_RUN(GTimer3);
- 122   1      
- 123   1      //      GTIMER_OBJ_INIT_STATIC(GTimer1, test3, NULL);
- 124   1      //      GTIMER_OBJ_JOIN(GTimer1);
- 125   1      //      GTIMER_OBJ_RUN(GTimer1);
- 126   1      //      
- 127   1      //      GTIMER_OBJ_INIT_STATIC(GTimer4, test1, NULL);
- 128   1      //      GTIMER_OBJ_JOIN(GTimer4);
- 129   1      //      GTIMER_OBJ_RUN(GTimer4);
- 130   1      //      
- 131   1      //      SOFTTIMER_OBJ_INIT(LD1, led1, NULL, 500);
- 132   1      //      SOFTTIMER_OBJ_INIT(LD2, led2, NULL, 500);
- 133   1      //      SOFTTIMER_OBJ_INIT(LD3, led3, NULL, 500);
- 134   1      //      SOFTTIMER_OBJ_INIT(LD4, led4, NULL, 500);
- 135   1      //      
- 136   1      //      SOFTTIMER_OBJ_JOIN(LD1);
- 137   1      //      SOFTTIMER_OBJ_JOIN(LD2);
- 138   1      //      SOFTTIMER_OBJ_JOIN(LD3);
- 139   1      //      SOFTTIMER_OBJ_JOIN(LD4);
- 140   1      //      
- 141   1      //      SOFTTIMER_OBJ_RUN(LD1);
- 142   1      //      SOFTTIMER_OBJ_RUN(LD2);
- 143   1      //      SOFTTIMER_OBJ_RUN(LD3);
- 144   1      //      SOFTTIMER_OBJ_RUN(LD4);
- 145   1              
- 146   1              
- 147   1              PWMGROUP_OBJ_INIT(PWM1, IO_P1, IO_Bit4, 50);
- 148   1              PWMGROUP_OBJ_INIT(PWM2, IO_P1, IO_Bit5, 90);
- 149   1              PWMGROUP_OBJ_INIT(PWM3, IO_P1, IO_Bit6, 50);
- 150   1              PWMGROUP_OBJ_INIT(PWM4, IO_P1, IO_Bit7, 10);
+ 119   1      //      SOFTTIMER_OBJ_INIT(LD1, led1, NULL, 500);
+ 120   1      //      SOFTTIMER_OBJ_INIT(LD2, led2, NULL, 500);
+ 121   1      //      SOFTTIMER_OBJ_INIT(LD3, led3, NULL, 500);
+ 122   1      //      SOFTTIMER_OBJ_INIT(LD4, led4, NULL, 500);
+ 123   1      //      
+ 124   1      //      SOFTTIMER_OBJ_JOIN(LD1);
+ 125   1      //      SOFTTIMER_OBJ_JOIN(LD2);
+ 126   1      //      SOFTTIMER_OBJ_JOIN(LD3);
+ 127   1      //      SOFTTIMER_OBJ_JOIN(LD4);
+ 128   1      //      
+ 129   1      //      SOFTTIMER_OBJ_RUN(LD1);
+ 130   1      //      SOFTTIMER_OBJ_RUN(LD2);
+ 131   1      //      SOFTTIMER_OBJ_RUN(LD3);
+ 132   1      //      SOFTTIMER_OBJ_RUN(LD4);
+ 133   1              
+ 134   1              
+ 135   1      //      PWMGROUP_OBJ_INIT(PWM1, IO_P1, IO_Bit4, 50);
+ 136   1      //      PWMGROUP_OBJ_INIT(PWM2, IO_P1, IO_Bit5, 90);
+ 137   1      //      PWMGROUP_OBJ_INIT(PWM3, IO_P1, IO_Bit6, 50);
+ 138   1      //      PWMGROUP_OBJ_INIT(PWM4, IO_P1, IO_Bit7, 10);
+ 139   1      //      
+ 140   1      //      PWMGROUP_OBJ_JOIN(PWM1);
+ 141   1      //      PWMGROUP_OBJ_JOIN(PWM2);
+ 142   1      //      PWMGROUP_OBJ_JOIN(PWM3);
+ 143   1      //      PWMGROUP_OBJ_JOIN(PWM4);
+ 144   1      //
+ 145   1      //      PWMGROUP_OBJ_RUN(PWM1);
+ 146   1      //      PWMGROUP_OBJ_RUN(PWM4);
+ 147   1      //      PWMGROUP_OBJ_RUN(PWM2);
+ 148   1      //      PWMGROUP_OBJ_RUN(PWM3);
+ 149   1              
+ 150   1              
  151   1              
- 152   1              PWMGROUP_OBJ_JOIN(PWM1);
- 153   1              PWMGROUP_OBJ_JOIN(PWM2);
- 154   1              PWMGROUP_OBJ_JOIN(PWM3);
- 155   1              PWMGROUP_OBJ_JOIN(PWM4);
- 156   1      //      
- 157   1              PWMGROUP_OBJ_RUN(PWM1);
- 158   1              PWMGROUP_OBJ_RUN(PWM4);
- 159   1              PWMGROUP_OBJ_RUN(PWM2);
- 160   1              PWMGROUP_OBJ_RUN(PWM3);
- 161   1              
- 162   1              
- 163   1      
- 164   1              while (1)
- 165   1              {
- 166   2                      
- 167   2                      
- 168   2              }
- 169   1      }
+ 152   1      
+ 153   1              while (1)
+ 154   1              {
+ 155   2                      
+ 156   2                      
+ 157   2              }
+ 158   1      }
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =    428    ----
+   CODE SIZE        =    242    ----
    CONSTANT SIZE    =   ----    ----
-   XDATA SIZE       =     42      30
+   XDATA SIZE       =      6      30
    PDATA SIZE       =   ----    ----
    DATA SIZE        =   ----    ----
-C51 COMPILER V9.60.0.0   USER                                                              07/08/2021 23:01:03 PAGE 4   
-
    IDATA SIZE       =   ----    ----
+C51 COMPILER V9.60.0.0   USER                                                              07/10/2021 16:41:26 PAGE 4   
+
    BIT SIZE         =   ----    ----
 END OF MODULE INFORMATION.
 
 
-C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)
+C51 COMPILATION COMPLETE.  10 WARNING(S),  0 ERROR(S)

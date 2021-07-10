@@ -10,11 +10,10 @@ static u8 timer_l;
 
 static bit mode_flg = 0;
 
-int (*pointer_interupt_timer1)(void *arg);
+static int (*pointer_interupt_timer1)(void *arg);
 
 static int interupt_timer_function (void *arg) 
 {
-	void *ptr = arg;
 	return 0;
 }
 
@@ -57,6 +56,8 @@ void Timer1Init(TIMER1_MODE mode, uint us, void *callback)
 	EA=1;//打开总中断
 	TR1=1;//打开定时器			
 }
+
+
 
 
 

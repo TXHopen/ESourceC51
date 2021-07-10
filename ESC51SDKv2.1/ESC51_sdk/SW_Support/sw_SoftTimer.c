@@ -19,8 +19,6 @@ static __SOFTTimerOBJ   *__stimerobj_head = NULL;
 
 static void SOFTTimer_callback (void *arg)
 {
-	void *ptr = arg;
-
 	static __SOFTTimerOBJ *head = NULL;
 	head = __stimerobj_head;
 

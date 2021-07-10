@@ -15,7 +15,6 @@ sbit LED8 = P1^7;
 
 static void test (void* arg)
 {
-	void* ptr = arg;
 	mm++;
 	if (mm == 60) {
 		P2 = ~P2;
@@ -27,16 +26,12 @@ static void test (void* arg)
 
 void test1 (void* arg)
 {
-	void* ptr = arg;
-
 	P0 = ~P0;
 }
 
 
 void test2 (void* arg)
 {
-	void* ptr = arg;
-
 	nn++;
 	if (nn == 100) {
 		P2 = ~P2;
@@ -46,8 +41,6 @@ void test2 (void* arg)
 
 void test3 (void* arg)
 {
-	void* ptr = arg;
-
 	jj++;
 	if (jj == 40) {
 		P3 = ~P3;
@@ -58,37 +51,31 @@ void test3 (void* arg)
 
 void led1(void* arg)
 {
-	void* ptr = arg;
 	LED1 = ~LED1;
 }
 
 void led2(void* arg)
 {
-	void* ptr = arg;
 	LED2 = ~LED2;
 }
 
 void led3(void* arg)
 {
-	void* ptr = arg;
 	LED3 = ~LED3;
 }
 
 void led4(void* arg)
 {
-	void* ptr = arg;
 	LED4 = ~LED4;
 }
 
 void led5(void* arg)
 {
-	void* ptr = arg;
 	LED5 = ~LED5;
 }
 
 void led6(void* arg)
 {
-	void* ptr = arg;
 	LED6 = ~LED6;
 }
 
@@ -97,13 +84,14 @@ void led6(void* arg)
 //SOFTTIMER_OBJ_DECL(LD2);
 //SOFTTIMER_OBJ_DECL(LD3);
 //SOFTTIMER_OBJ_DECL(LD4);
-PWMGROUP_OBJ_DECL(PWM1);
-PWMGROUP_OBJ_DECL(PWM2);
-PWMGROUP_OBJ_DECL(PWM3);
-PWMGROUP_OBJ_DECL(PWM4);
+//PWMGROUP_OBJ_DECL(PWM1);
+//PWMGROUP_OBJ_DECL(PWM2);
+//PWMGROUP_OBJ_DECL(PWM3);
+//PWMGROUP_OBJ_DECL(PWM4);
 
 void es_main(void)
 {
+
 //	GTIMER_OBJ_DECL_STATIC(GTimer2);
 //	GTIMER_OBJ_DECL_STATIC(GTimer3);
 //	GTIMER_OBJ_DECL_STATIC(GTimer1);
@@ -144,20 +132,21 @@ void es_main(void)
 //	SOFTTIMER_OBJ_RUN(LD4);
 	
 	
-	PWMGROUP_OBJ_INIT(PWM1, IO_P1, IO_Bit4, 50);
-	PWMGROUP_OBJ_INIT(PWM2, IO_P1, IO_Bit5, 90);
-	PWMGROUP_OBJ_INIT(PWM3, IO_P1, IO_Bit6, 50);
-	PWMGROUP_OBJ_INIT(PWM4, IO_P1, IO_Bit7, 10);
-	
-	PWMGROUP_OBJ_JOIN(PWM1);
-	PWMGROUP_OBJ_JOIN(PWM2);
-	PWMGROUP_OBJ_JOIN(PWM3);
-	PWMGROUP_OBJ_JOIN(PWM4);
+//	PWMGROUP_OBJ_INIT(PWM1, IO_P1, IO_Bit4, 50);
+//	PWMGROUP_OBJ_INIT(PWM2, IO_P1, IO_Bit5, 90);
+//	PWMGROUP_OBJ_INIT(PWM3, IO_P1, IO_Bit6, 50);
+//	PWMGROUP_OBJ_INIT(PWM4, IO_P1, IO_Bit7, 10);
 //	
-	PWMGROUP_OBJ_RUN(PWM1);
-	PWMGROUP_OBJ_RUN(PWM4);
-	PWMGROUP_OBJ_RUN(PWM2);
-	PWMGROUP_OBJ_RUN(PWM3);
+//	PWMGROUP_OBJ_JOIN(PWM1);
+//	PWMGROUP_OBJ_JOIN(PWM2);
+//	PWMGROUP_OBJ_JOIN(PWM3);
+//	PWMGROUP_OBJ_JOIN(PWM4);
+//
+//	PWMGROUP_OBJ_RUN(PWM1);
+//	PWMGROUP_OBJ_RUN(PWM4);
+//	PWMGROUP_OBJ_RUN(PWM2);
+//	PWMGROUP_OBJ_RUN(PWM3);
+	
 	
 	
 

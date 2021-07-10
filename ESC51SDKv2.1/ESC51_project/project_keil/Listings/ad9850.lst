@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   AD9850                                                            07/08/2021 23:01:03 PAGE 1   
+C51 COMPILER V9.60.0.0   AD9850                                                            07/10/2021 16:41:27 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE AD9850
@@ -62,7 +62,7 @@ line level    source
                               AD9850_CLK=1;
                               AD9850_CLK=0;
                       }
-C51 COMPILER V9.60.0.0   AD9850                                                            07/08/2021 23:01:03 PAGE 2   
+C51 COMPILER V9.60.0.0   AD9850                                                            07/10/2021 16:41:27 PAGE 2   
 
                       //Ð´w2Êý¾Ý
                       w=(y>>16);

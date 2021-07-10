@@ -87,7 +87,9 @@
 #include "sw_PWMGroup.h"
 #endif /* SW_PWMGROUP_CONFIG */
 
-
+#ifdef SW_BUTTONGP_CONFIG
+#include "sw_ButtonGP.h"
+#endif /* SW_BUTTONGP_CONFIG */
 
 
 
@@ -126,6 +128,10 @@
 #ifdef PWM_CONFIG
 #include "pwm.h"
 #endif /* PWM_CONFIG */
+
+#ifdef PFM_CONFIG
+#include "pfm.h"
+#endif /* PFM_CONFIG */
 
 #ifdef DHT11_CONFIG
 #include "dht11.h"

@@ -21,6 +21,7 @@
 ".\Objects\MAX541x.obj",
 ".\Objects\max1241.obj",
 ".\Objects\pwm.obj",
+".\Objects\pfm.obj",
 ".\Objects\sw_GCapture.obj",
 ".\Objects\sw_Gdelay.obj",
 ".\Objects\sw_PWMGroup.obj",
@@ -39,3 +40,4 @@
 ".\Objects\STARTUP.obj" 
 TO ".\Objects\es_sdk" 
 PRINT(".\Listings\es_sdk.m51") RAMSIZE(256) 
+DISABLEWARNING (16) 
