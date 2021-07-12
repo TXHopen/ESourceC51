@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   DRV_CC1101                                                        07/11/2021 00:31:28 PAGE 1   
+C51 COMPILER V9.60.0.0   DRV_CC1101                                                        07/11/2021 19:35:22 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE DRV_CC1101
@@ -62,7 +62,7 @@ line level    source
                       uint16_t Ms = 1;
                       uint32_t j = 80;
                       
-C51 COMPILER V9.60.0.0   DRV_CC1101                                                        07/11/2021 00:31:28 PAGE 2   
+C51 COMPILER V9.60.0.0   DRV_CC1101                                                        07/11/2021 19:35:22 PAGE 2   
 
                       while( Ms-- )
                       {
@@ -126,7 +126,7 @@ line level    source
                       
                   CC1101_SET_CSN_HIGH( );                                     
               }
-C51 COMPILER V9.60.0.0   DRV_CC1101                                                        07/11/2021 00:31:28 PAGE 3   
+C51 COMPILER V9.60.0.0   DRV_CC1101                                                        07/11/2021 19:35:22 PAGE 3   
 
               
               /**
@@ -190,7 +190,7 @@ line level    source
                   drv_spi_read_write_byte( Addr | READ_BURST );       //连续读命令 及地址
                   l_RegStatus = drv_spi_read_write_byte( 0xFF );      //读取状态
                       
-C51 COMPILER V9.60.0.0   DRV_CC1101                                                        07/11/2021 00:31:28 PAGE 4   
+C51 COMPILER V9.60.0.0   DRV_CC1101                                                        07/11/2021 19:35:22 PAGE 4   
 
                   CC1101_SET_CSN_HIGH( );
                       
@@ -254,7 +254,7 @@ line level    source
                   CC1101_Write_Cmd( CC1101_SIDLE );
               }
               
-C51 COMPILER V9.60.0.0   DRV_CC1101                                                        07/11/2021 00:31:28 PAGE 5   
+C51 COMPILER V9.60.0.0   DRV_CC1101                                                        07/11/2021 19:35:22 PAGE 5   
 
               /**
                 * @brief :CC1101初始化WOR功能
@@ -318,7 +318,7 @@ line level    source
               
               /**
                 * @brief :CC1101清空发送缓冲区
-C51 COMPILER V9.60.0.0   DRV_CC1101                                                        07/11/2021 00:31:28 PAGE 6   
+C51 COMPILER V9.60.0.0   DRV_CC1101                                                        07/11/2021 19:35:22 PAGE 6   
 
                 * @param :无
                 * @note  :无
@@ -382,7 +382,7 @@ line level    source
                       
                       while( 0 != CC1101_GET_GDO0_STATUS( ));
                       while( 0 == CC1101_GET_GDO0_STATUS( ));                                 //等待发送完成
-C51 COMPILER V9.60.0.0   DRV_CC1101                                                        07/11/2021 00:31:28 PAGE 7   
+C51 COMPILER V9.60.0.0   DRV_CC1101                                                        07/11/2021 19:35:22 PAGE 7   
 
               }
               
@@ -446,7 +446,7 @@ line level    source
                               return 0; 
                       }                              
               }
-C51 COMPILER V9.60.0.0   DRV_CC1101                                                        07/11/2021 00:31:28 PAGE 8   
+C51 COMPILER V9.60.0.0   DRV_CC1101                                                        07/11/2021 19:35:22 PAGE 8   
 
               
               /**
@@ -510,7 +510,7 @@ line level    source
               }
               
               
-C51 COMPILER V9.60.0.0   DRV_CC1101                                                        07/11/2021 00:31:28 PAGE 9   
+C51 COMPILER V9.60.0.0   DRV_CC1101                                                        07/11/2021 19:35:22 PAGE 9   
 
               
               

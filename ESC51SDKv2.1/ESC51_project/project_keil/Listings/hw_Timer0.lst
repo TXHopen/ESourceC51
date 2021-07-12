@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   HW_TIMER0                                                         07/11/2021 00:31:33 PAGE 1   
+C51 COMPILER V9.60.0.0   HW_TIMER0                                                         07/11/2021 19:35:25 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE HW_TIMER0
@@ -62,7 +62,7 @@ line level    source
   50   1              if (callback == NULL) {
   51   2                      pointer_interupt_timer0 = interupt_timer_function;
   52   2              } else {
-C51 COMPILER V9.60.0.0   HW_TIMER0                                                         07/11/2021 00:31:33 PAGE 2   
+C51 COMPILER V9.60.0.0   HW_TIMER0                                                         07/11/2021 19:35:25 PAGE 2   
 
   53   2                      pointer_interupt_timer0 = callback;
   54   2              }
@@ -126,7 +126,7 @@ line level    source
  112   2                                         timer_h = (65536-us) / 256;
  113   2                                         timer_l = (65536-us) % 256;
  114   2                                         break;
-C51 COMPILER V9.60.0.0   HW_TIMER0                                                         07/11/2021 00:31:33 PAGE 3   
+C51 COMPILER V9.60.0.0   HW_TIMER0                                                         07/11/2021 19:35:25 PAGE 3   
 
  115   2                      case TIMER0_MODE_2:TMOD   |= 0X02;
  116   2                                         timer_h = (256-us) % 256;

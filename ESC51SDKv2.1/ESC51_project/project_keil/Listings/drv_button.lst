@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   DRV_BUTTON                                                        07/11/2021 00:31:28 PAGE 1   
+C51 COMPILER V9.60.0.0   DRV_BUTTON                                                        07/11/2021 19:35:22 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE DRV_BUTTON
@@ -62,7 +62,7 @@ line level    source
                       //BUTTON引脚配置为输入
                       BUTTON_PxM0 = IO_IN_PUT_ONLY_M0 << BUTTON_PIN_BIT;
                       BUTTON_PxM1 = IO_IN_PUT_ONLY_M1 << BUTTON_PIN_BIT;
-C51 COMPILER V9.60.0.0   DRV_BUTTON                                                        07/11/2021 00:31:28 PAGE 2   
+C51 COMPILER V9.60.0.0   DRV_BUTTON                                                        07/11/2021 19:35:22 PAGE 2   
 
                       
                       BUTTON_PIN = 1;         //默认状态置高

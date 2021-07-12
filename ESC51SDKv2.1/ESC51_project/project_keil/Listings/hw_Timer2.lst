@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   HW_TIMER2                                                         07/11/2021 00:31:33 PAGE 1   
+C51 COMPILER V9.60.0.0   HW_TIMER2                                                         07/11/2021 19:35:25 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE HW_TIMER2
@@ -62,7 +62,7 @@ line level    source
                       TH2 = RCAP2H;
                       TL2 = RCAP2L;
                       
-C51 COMPILER V9.60.0.0   HW_TIMER2                                                         07/11/2021 00:31:33 PAGE 2   
+C51 COMPILER V9.60.0.0   HW_TIMER2                                                         07/11/2021 19:35:25 PAGE 2   
 
                       EA  = 1;
                       
@@ -126,7 +126,7 @@ line level    source
               }
               
               void Timer2Start(void)
-C51 COMPILER V9.60.0.0   HW_TIMER2                                                         07/11/2021 00:31:33 PAGE 3   
+C51 COMPILER V9.60.0.0   HW_TIMER2                                                         07/11/2021 19:35:25 PAGE 3   
 
               {
                       TR2   = 1;//打开定时器

@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   DRV_SPI                                                           07/11/2021 00:31:29 PAGE 1   
+C51 COMPILER V9.60.0.0   DRV_SPI                                                           07/11/2021 19:35:22 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE DRV_SPI
@@ -62,7 +62,7 @@ line level    source
                       for( i = 0; i < 8; i++ )                        //一个字节8byte需要循环8次
                       {
                               /** 发送 */
-C51 COMPILER V9.60.0.0   DRV_SPI                                                           07/11/2021 00:31:29 PAGE 2   
+C51 COMPILER V9.60.0.0   DRV_SPI                                                           07/11/2021 19:35:22 PAGE 2   
 
                               if( 0x80 == ( TxByte & 0x80 ))
                               {
@@ -126,7 +126,7 @@ MODULE INFORMATION:   STATIC OVERLAYABLE
    PDATA SIZE       =   ----    ----
    DATA SIZE        =   ----    ----
    IDATA SIZE       =   ----    ----
-C51 COMPILER V9.60.0.0   DRV_SPI                                                           07/11/2021 00:31:29 PAGE 3   
+C51 COMPILER V9.60.0.0   DRV_SPI                                                           07/11/2021 19:35:22 PAGE 3   
 
    BIT SIZE         =   ----    ----
 END OF MODULE INFORMATION.

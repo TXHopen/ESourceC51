@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   LCD12864                                                          07/11/2021 00:31:30 PAGE 1   
+C51 COMPILER V9.60.0.0   LCD12864                                                          07/11/2021 19:35:23 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE LCD12864
@@ -62,7 +62,7 @@ line level    source
                       delay_10us(20);
                       LCD12864_EN = 0;
               }
-C51 COMPILER V9.60.0.0   LCD12864                                                          07/11/2021 00:31:30 PAGE 2   
+C51 COMPILER V9.60.0.0   LCD12864                                                          07/11/2021 19:35:23 PAGE 2   
 
               
               
@@ -126,7 +126,7 @@ line level    source
               {
                       LCD12864_Write_Command(0x30);
                       LCD12864_Write_Command(0x06);
-C51 COMPILER V9.60.0.0   LCD12864                                                          07/11/2021 00:31:30 PAGE 3   
+C51 COMPILER V9.60.0.0   LCD12864                                                          07/11/2021 19:35:23 PAGE 3   
 
                       LCD12864_Write_Command(addresses[x-1]+(y-1));
                       while(*dat != '\0')
