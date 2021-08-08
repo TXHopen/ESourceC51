@@ -16,7 +16,7 @@
 #include "hw_ioctrl.h"
 #include "user_config_prj.h"
 
-#include "bsp_config.h"
+//#include "bsp_config.h"
 
 
 

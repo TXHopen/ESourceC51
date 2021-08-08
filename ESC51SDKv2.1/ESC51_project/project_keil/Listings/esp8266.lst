@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   ESP8266                                                           07/11/2021 19:35:22 PAGE 1   
+C51 COMPILER V9.60.0.0   ESP8266                                                           07/17/2021 11:59:45 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE ESP8266
@@ -62,7 +62,7 @@ line level    source
                       ESP8266_RST_Pin=1;
                       ESP8266_CH_PD_Pin=1;
               
-C51 COMPILER V9.60.0.0   ESP8266                                                           07/11/2021 19:35:22 PAGE 2   
+C51 COMPILER V9.60.0.0   ESP8266                                                           07/17/2021 11:59:45 PAGE 2   
 
                       ESP8266_SendCmd("AT+CWMODE=3");//设置路由器模式 1 staTIon模式 2 AP点 路由器模式 3 station+
              -AP混合模式

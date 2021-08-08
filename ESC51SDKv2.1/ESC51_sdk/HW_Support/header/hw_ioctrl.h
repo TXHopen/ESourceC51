@@ -1,3 +1,21 @@
+/**
+ * *****************************************************ESourceOPEN*****************************************************
+ * @file      hw_ioctrl.h
+ * 
+ * @brief     硬件支持组件：io控制
+ * 
+ * @version   V0.00.01
+ * 
+ * @author    TXHopen (3332695529@qq.com)
+ * 
+ * @date      2021-08-08
+ * 
+ * @copyright Copyright (c) 2021
+ * 
+ * *****************************************************ESourceOPEN*****************************************************
+ * 
+ * *****************************************************ESourceOPEN*****************************************************
+ **/
 #ifndef __HW_IOCTRL_H
 #define __HW_IOCTRL_H
 
@@ -5,7 +23,7 @@
 
 #include "user_config_prj.h"
 
-
+/* ------------------------------------------------------------------------------------------------------------------ */
 
 
 sfr IO_P0M0			= 0x93;
@@ -17,22 +35,22 @@ sfr IO_P2M1			= 0x96;
 sfr IO_P3M0			= 0xB1;
 sfr IO_P3M1			= 0xB2;
 
-/** IO属性定�? */
-//准双向口
+
+
 #define IO_IN_OUT_PUT_M0			((uint8_t)0x00)
 #define IO_IN_OUT_PUT_M1			((uint8_t)0x00)
-//推挽输出
+
 #define IO_OUT_PUT_PP_M0			((uint8_t)0x00)
 #define IO_OUT_PUT_PP_M1			((uint8_t)0x01)
-//仅为输入(高阻)
+
 #define IO_IN_PUT_ONLY_M0			((uint8_t)0x01)
 #define IO_IN_PUT_ONLY_M1			((uint8_t)0x00)
-//开�?
+
 #define IO_OPEN_DRAIN_M0			((uint8_t)0x01)
 #define IO_OPEN_DRAIN_M1			((uint8_t)0x01)
 
 
-
+/* ------------------------------------------------------------------------------------------------------------------ */
 typedef enum _IO_Port
 { 
 	IO_P0 = 0, 
@@ -66,12 +84,12 @@ typedef enum
 } IOMode;
 
 
-
+/* ------------------------------------------------------------------------------------------------------------------ */
 
 #define ES_GPIO_SET_HIGH(GPIO)             GPIO = 1;
 #define ES_GPIO_SET_LOW(GPIO)              GPIO = 0;
 #define ES_GPIO_SET_TOGGLE(GPIO)           GPIO = ~GPIO;
-#define ES_GPIO_PORT_SET_DATA(PORT, DATA)  PORT  =  DATA;
+#define ES_GPIO_PORT_SET_DATA(PORT, DATA)  PORT = DATA;
 #define ES_GPIO_READ_PORT(PORT)            PORT;
 #define ES_GPIO_READ_BIT(PORT)             PORT;
 
@@ -82,9 +100,17 @@ typedef enum
 
 
 
+#define ES_IO_CTRL_SET_32BIT(indata) \
+    { \
+        P0 = indata               % 0x100; \
+        P1 = (indata / 0x100)     % 0x100; \
+        P2 = (indata / 0x10000)   % 0x100; \
+        P3 = (indata / 0x1000000) % 0x100; \
+    }
 
 
 
+/* ------------------------------------------------------------------------------------------------------------------ */
 
 #ifdef IOCTRL_CONFIG
 
@@ -96,7 +122,7 @@ char io_ctrl_set_low (IOPort Port, IOBit Bit);
 char io_ctrl_read (IOPort Port, IOBit Bit);
 
 
-
+/* ------------------------------------------------------------------------------------------------------------------ */
 
 #endif /* IOCTRL_CONFIG */
 

@@ -1,7 +1,25 @@
+/**
+ * *****************************************************ESourceOPEN*****************************************************
+ * @file      hw_Timer2.c
+ * 
+ * @brief     纭欢鏀寔缁勪欢锛氬畾鏃跺櫒2
+ * 
+ * @version   V0.00.01
+ * 
+ * @author    TXHopen (3332695529@qq.com)
+ * 
+ * @date      2021-08-08
+ * 
+ * @copyright Copyright (c) 2021
+ * 
+ * *****************************************************ESourceOPEN*****************************************************
+ * 
+ * *****************************************************ESourceOPEN*****************************************************
+ **/
 #include "hw_Timer2.h"
 
 #ifdef TIMER2_CONFIG
-
+/* ------------------------------------------------------------------------------------------------------------------ */
 
 static u8 timer_h;
 static u8 timer_l;
@@ -17,21 +35,25 @@ static int interupt_timer_function (void *arg)
 
 
 
-/*******************************************************************************
-* 函 数 名         : Timer1Init
-* 函数功能		   : 定时器1初始化
-* 输    入         : 无
-* 输    出         : 无
-*******************************************************************************/
+
+void Timer2() interrupt 5
+{
+	TF2   = 0;
+	
+	pointer_interupt_timer2(NULL);
+	
+}
+
+/* ------------------------------------------------------------------------------------------------------------------ */
 void Timer2Init(TIMER2_MODE mode, uint us, void *callback)
 {
 	switch (mode)
 	{
-		case TIMER2_MODE_CAPTURE:T2CON=0X09;  //设置T2为捕获模式，下降沿则产生中断
+		case TIMER2_MODE_CAPTURE:T2CON=0X09;
 		                         timer_h = (65536-us) / 256;
 		                         timer_l = (65536-us) % 256;
 		                         break;
-		case TIMER2_MODE_TIMING :T2CON=0X00;  //设置T2为捕获模式，下降沿则产生中断
+		case TIMER2_MODE_TIMING :T2CON=0X00;
 		                         timer_h = (65536-us) / 256;
 		                         timer_l = (65536-us) % 256;
 		                         break;
@@ -61,15 +83,15 @@ void Timer2Init(TIMER2_MODE mode, uint us, void *callback)
 
 void Timer2Init_NoOpen(TIMER2_MODE mode, uint us, void *callback)
 {
-	TR2   = 0;//关闭定时器
-	ET2   = 0;//关闭定时器1中断允许
+	TR2   = 0;
+	ET2   = 0;
 	switch (mode)
 	{
-		case TIMER2_MODE_CAPTURE:T2CON=0X09;  //设置T2为捕获模式，下降沿则产生中断
+		case TIMER2_MODE_CAPTURE:T2CON=0X09;
 		                         timer_h = (65536-us) / 256;
 		                         timer_l = (65536-us) % 256;
 		                         break;
-		case TIMER2_MODE_TIMING :T2CON=0X00;  //设置T2为
+		case TIMER2_MODE_TIMING :T2CON=0X00;
 		                         timer_h = (65536-us) / 256;
 		                         timer_l = (65536-us) % 256;
 		                         break;
@@ -96,42 +118,29 @@ void Timer2Init_NoOpen(TIMER2_MODE mode, uint us, void *callback)
 
 void Timer2Open(void)
 {
-	ET2   = 1;//打开定时器0中断允许
-	TR2   = 1;//打开定时器
+	ET2   = 1;
+	TR2   = 1;
 }
 
 void Timer2Close(void)
 {
-	TR2   = 0;//关闭定时器
-	ET2   = 0;//关闭定时器0中断允许
+	TR2   = 0;
+	ET2   = 0;
 }
 
 void Timer2Pause(void)
 {
-	TR2   = 0;//关闭定时器
+	TR2   = 0;
 }
 
 void Timer2Start(void)
 {
-	TR2   = 1;//打开定时器
+	TR2   = 1;
 }
 
 
 
 
-
-/*******************************************************************************
-* 函 数 名         : void Timer2() interrupt 5
-* 函数功能		   : 定时器0中断函数
-* 输    入         : 无
-* 输    出         : 无
-*******************************************************************************/
-void Timer2() interrupt 5
-{
-	TF2   = 0;
-	
-	pointer_interupt_timer2(NULL);
-	
-}
+/* ------------------------------------------------------------------------------------------------------------------ */
 #endif /* TIMER2_CONFIG */
 

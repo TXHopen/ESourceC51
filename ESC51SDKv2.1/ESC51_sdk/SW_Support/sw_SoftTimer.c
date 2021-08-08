@@ -1,3 +1,22 @@
+/**
+ * *****************************************************ESourceOPEN*****************************************************
+ * @file      sw_SoftTimer.c
+ * 
+ * @brief     软件组件支持：软件定时器源码
+ * 
+ * @version   V0.00.01
+ * 
+ * @author    TXHopen (3332695529@qq.com)
+ * 
+ * @date      2021-08-08
+ * 
+ * @copyright Copyright (c) 2021
+ * 
+ * *****************************************************ESourceOPEN*****************************************************
+ * 
+ * *****************************************************ESourceOPEN*****************************************************
+ **/
+
 #include "sw_SoftTimer.h"
 
 #ifdef SW_SOFTTIMER_CONFIG
@@ -5,18 +24,18 @@
 
 
 
+/* ------------------------------------------------------------------------------------------------------------------ */
+/* 组件内部 静态部分 */
+
+static __SOFTTimerOBJ   *__stimerobj_head = NULL;                     /* 软件定时器列表                                */
 
 
-/* ------------------------------------------------------------ */
 
-
-
-static __SOFTTimerOBJ   *__stimerobj_head = NULL;
-
-
-/* ------------------------------------------------------------ */
-
-
+/**
+ * @brief  软件定时器组件基础部分回调函数
+ * 
+ * @param  arg ：回调函数传入参数
+ **/
 static void SOFTTimer_callback (void *arg)
 {
 	static __SOFTTimerOBJ *head = NULL;
@@ -33,23 +52,32 @@ static void SOFTTimer_callback (void *arg)
 		}
 		head = head->next;
 	}
-
 }
 
 
 
 
+/* ------------------------------------------------------------------------------------------------------------------ */
+/* 组件API */
 
-/* ------------------------------------------------------------ */
-GTIMER_OBJ_DECL_STATIC(ST_GTimer);
+GTIMER_OBJ_DECL_STATIC(ST_GTimer);                                    /* 生成一个通用定时器对象                         */
 
 
+
+/**
+ * @brief  软件定时器组件初始化函数（已在bsp_config.c中被调用）
+ * 
+ **/
 void SOFTTimer_Init(void)
 {
 	GTIMER_OBJ_INIT_STATIC(ST_GTimer, SOFTTimer_callback, NULL);
 	GTIMER_OBJ_JOIN(ST_GTimer);
 }
 
+/**
+ * @brief  软件定时器组件启动函数（已在bsp_config.c中被调用）
+ * 
+ **/
 void SOFTTimer_Start(void)
 {
 
@@ -57,6 +85,10 @@ void SOFTTimer_Start(void)
 
 }
 
+/**
+ * @brief  软件定时器组件停止函数（可自行调用）
+ * 
+ **/
 void SOFTTimer_Stop(void)
 {
 
@@ -67,13 +99,14 @@ void SOFTTimer_Stop(void)
 
 
 
-/* ------------------------------------------------------------ */
 
 
-
-
-
-
+/**
+ * @brief  将服务对象添加至软件定时器组件
+ * 
+ * @param  pobj ：需要添加的服务对象的指针
+ * @return char ：错误码
+ **/
 char SOFTTimer_OBJJoin(__SOFTTimerOBJ* pobj)
 {
 	__SOFTTimerOBJ *head = __stimerobj_head;
@@ -97,6 +130,12 @@ char SOFTTimer_OBJJoin(__SOFTTimerOBJ* pobj)
 	return 0;
 }
 
+/**
+ * @brief  将服务对象从软件定时器组件中移除
+ * 
+ * @param  pobj ：需要移除的服务对象的指针
+ * @return char ：错误码
+ **/
 char SOFTTimer_OBJRemove(__SOFTTimerOBJ* pobj)
 {
 	
@@ -125,6 +164,12 @@ char SOFTTimer_OBJRemove(__SOFTTimerOBJ* pobj)
 	return -1;
 }
 
+/**
+ * @brief  暂停在软件定时器中的服务对象
+ * 
+ * @param  pobj ：需要暂停的服务对象指针
+ * @return char ：错误码
+ **/
 char SOFTTimer_OBJPause(__SOFTTimerOBJ* pobj)
 {
 	__SOFTTimerOBJ*  head = __stimerobj_head;
@@ -141,6 +186,12 @@ char SOFTTimer_OBJPause(__SOFTTimerOBJ* pobj)
 	return -1;
 }
 
+/**
+ * @brief  运行在软件定时器中的服务对象
+ * 
+ * @param  pobj ：服务对象的指针
+ * @return char ：错误码
+ **/
 char SOFTTimer_OBJRun(__SOFTTimerOBJ* pobj)
 {
 	__SOFTTimerOBJ*  head = __stimerobj_head;
@@ -157,7 +208,13 @@ char SOFTTimer_OBJRun(__SOFTTimerOBJ* pobj)
 	return -1;
 }
 
-
+/**
+ * @brief  设置软件定时器中服务对象的延时时间
+ * 
+ * @param  pobj ：服务对象的指针
+ * @param  delms ：新的延时时间
+ * @return char ：错误码
+ **/
 char SOFTTimer_OBJSet(__SOFTTimerOBJ* pobj, int delms)
 {
 	__SOFTTimerOBJ*  head = __stimerobj_head;
@@ -176,6 +233,6 @@ char SOFTTimer_OBJSet(__SOFTTimerOBJ* pobj, int delms)
 }
 
 
-/* ------------------------------------------------------------ */
+/* ------------------------------------------------------------------------------------------------------------------ */
 
 #endif /* SW_SOFTTIMER_CONFIG */

@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   HW_TIMER1                                                         07/11/2021 19:35:25 PAGE 1   
+C51 COMPILER V9.60.0.0   HW_TIMER1                                                         07/17/2021 11:59:48 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE HW_TIMER1
@@ -62,7 +62,7 @@ line level    source
                               pointer_interupt_timer1 = interupt_timer_function;
                       } else {
                               pointer_interupt_timer1 = callback;
-C51 COMPILER V9.60.0.0   HW_TIMER1                                                         07/11/2021 19:35:25 PAGE 2   
+C51 COMPILER V9.60.0.0   HW_TIMER1                                                         07/17/2021 11:59:48 PAGE 2   
 
                       }
                       
@@ -126,7 +126,7 @@ line level    source
                       TR1   = 0;//关闭定时器
                       ET1   = 0;//关闭定时器0中断允许
                       TH1   = timer_h;        //给定时器赋初值
-C51 COMPILER V9.60.0.0   HW_TIMER1                                                         07/11/2021 19:35:25 PAGE 3   
+C51 COMPILER V9.60.0.0   HW_TIMER1                                                         07/17/2021 11:59:48 PAGE 3   
 
                       TL1   = timer_l;        
               }

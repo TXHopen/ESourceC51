@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   HW_TIMER0                                                         07/11/2021 19:35:25 PAGE 1   
+C51 COMPILER V9.60.0.0   HW_TIMER0                                                         07/17/2021 11:59:47 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE HW_TIMER0
@@ -13,175 +13,175 @@ line level    source
    1          #include "hw_Timer0.h"
    2          
    3          #ifdef TIMER0_CONFIG
-   4          
-   5          
-   6          static u8 timer_h;
-   7          static u8 timer_l;
-   8          
-   9          static u8 timer_mode;
-  10          
-  11          
-  12          
-  13          static int (*pointer_interupt_timer0)(void *arg);
-  14          
-  15          static int interupt_timer_function (void *arg) 
-  16          {
-  17   1              return 0;
-  18   1      }
-  19          
-  20          /*******************************************************************************
-  21          * 函 数 名         : Timer0Init
-  22          * 函数功能                 : 定时器0初始化
-  23          * 输    入         : 无
-  24          * 输    出         : 无
-  25          *******************************************************************************/
-  26          void Timer0Init(TIMER0_MODE mode, uint16_t us, void *callback)
-  27          {
-  28   1              timer_mode = mode;
-  29   1              switch (mode)
-  30   1              {
-  31   2                      case TIMER0_MODE_0:TMOD   |= 0X00;
-  32   2                                         timer_h = (8192-us) / 8;
-  33   2                                         timer_l = (8192-us) % 8;
-  34   2                                         break;
-  35   2                      case TIMER0_MODE_1:TMOD   |= 0X01;
-  36   2                                         timer_h = (65536-us) / 256;
-  37   2                                         timer_l = (65536-us) % 256;
-  38   2                                         break;
-  39   2                      case TIMER0_MODE_2:TMOD   |= 0X02;
-  40   2                                         timer_h = (256-us) % 256;
-  41   2                                         timer_l = timer_h;
-  42   2                                         break;
-  43   2                      case TIMER0_MODE_3:TMOD   |= 0X03;
-  44   2                                         timer_h = (8192-us) / 8;
-  45   2                                         timer_l = (8192-us) % 8;
-  46   2                                         break;
-  47   2                      default:return ;   break;
-  48   2              }
-  49   1              
-  50   1              if (callback == NULL) {
-  51   2                      pointer_interupt_timer0 = interupt_timer_function;
-  52   2              } else {
-C51 COMPILER V9.60.0.0   HW_TIMER0                                                         07/11/2021 19:35:25 PAGE 2   
+              
+              
+              static u8 timer_h;
+              static u8 timer_l;
+              
+              static u8 timer_mode;
+              
+              
+              
+              static int (*pointer_interupt_timer0)(void *arg);
+              
+              static int interupt_timer_function (void *arg) 
+              {
+                      return 0;
+              }
+              
+              /*******************************************************************************
+              * 函 数 名         : Timer0Init
+              * 函数功能                 : 定时器0初始化
+              * 输    入         : 无
+              * 输    出         : 无
+              *******************************************************************************/
+              void Timer0Init(TIMER0_MODE mode, uint16_t us, void *callback)
+              {
+                      timer_mode = mode;
+                      switch (mode)
+                      {
+                              case TIMER0_MODE_0:TMOD   |= 0X00;
+                                                 timer_h = (8192-us) / 8;
+                                                 timer_l = (8192-us) % 8;
+                                                 break;
+                              case TIMER0_MODE_1:TMOD   |= 0X01;
+                                                 timer_h = (65536-us) / 256;
+                                                 timer_l = (65536-us) % 256;
+                                                 break;
+                              case TIMER0_MODE_2:TMOD   |= 0X02;
+                                                 timer_h = (256-us) % 256;
+                                                 timer_l = timer_h;
+                                                 break;
+                              case TIMER0_MODE_3:TMOD   |= 0X03;
+                                                 timer_h = (8192-us) / 8;
+                                                 timer_l = (8192-us) % 8;
+                                                 break;
+                              default:return ;   break;
+                      }
+                      
+                      if (callback == NULL) {
+                              pointer_interupt_timer0 = interupt_timer_function;
+                      } else {
+C51 COMPILER V9.60.0.0   HW_TIMER0                                                         07/17/2021 11:59:47 PAGE 2   
 
-  53   2                      pointer_interupt_timer0 = callback;
-  54   2              }
-  55   1              
-  56   1              TH0   = timer_h;        //给定时器赋初值，定时1ms
-  57   1              TL0   = timer_l;        
-  58   1              ET0   = 1;//打开定时器0中断允许
-  59   1              EA    = 1;//打开总中断
-  60   1              TR0   = 1;//打开定时器
-  61   1      }
-  62          
-  63          void Timer0Init_NoOpen(TIMER0_MODE mode, uint16_t us, void *callback)
-  64          {
-  65   1              timer_mode = mode;
-  66   1              TR0   = 0;//关闭定时器
-  67   1              ET0   = 0;//关闭定时器0中断允许
-  68   1              switch (mode)
-  69   1              {
-  70   2                      case TIMER0_MODE_0:TMOD   |= 0X00;
-  71   2                                         timer_h = (8192-us) / 8;
-  72   2                                         timer_l = (8192-us) % 8;
-  73   2                                         break;
-  74   2                      case TIMER0_MODE_1:TMOD   |= 0X01;
-  75   2                                         timer_h = (65536-us) / 256;
-  76   2                                         timer_l = (65536-us) % 256;
-  77   2                                         break;
-  78   2                      case TIMER0_MODE_2:TMOD   |= 0X02;
-  79   2                                         timer_h = (256-us) % 256;
-  80   2                                         timer_l = timer_h;
-  81   2                                         break;
-  82   2                      case TIMER0_MODE_3:TMOD   |= 0X03;
-  83   2                                         timer_h = (8192-us) / 8;
-  84   2                                         timer_l = (8192-us) % 8;
-  85   2                                         break;
-  86   2                      default:return ;   break;
-  87   2              }
-  88   1              
-  89   1              if (callback == NULL) {
-  90   2                      pointer_interupt_timer0 = interupt_timer_function;
-  91   2              } else {
-  92   2                      pointer_interupt_timer0 = callback;
-  93   2              }
-  94   1              
-  95   1              TH0   = timer_h;        //给定时器赋初值，定时1ms
-  96   1              TL0   = timer_l;        
-  97   1              ET0   = 0;//关闭定时器0中断允许
-  98   1              EA    = 1;//打开总中断
-  99   1              TR0   = 0;//打开定时器
- 100   1      }
- 101          
- 102          void Timer0Settime(uint16_t us)
- 103          {
- 104   1              TR0 = 0;
- 105   1              switch (timer_mode)
- 106   1              {
- 107   2                      case TIMER0_MODE_0:TMOD   |= 0X00;
- 108   2                                         timer_h = (8192-us) / 8;
- 109   2                                         timer_l = (8192-us) % 8;
- 110   2                                         break;
- 111   2                      case TIMER0_MODE_1:TMOD   |= 0X01;
- 112   2                                         timer_h = (65536-us) / 256;
- 113   2                                         timer_l = (65536-us) % 256;
- 114   2                                         break;
-C51 COMPILER V9.60.0.0   HW_TIMER0                                                         07/11/2021 19:35:25 PAGE 3   
+                              pointer_interupt_timer0 = callback;
+                      }
+                      
+                      TH0   = timer_h;        //给定时器赋初值，定时1ms
+                      TL0   = timer_l;        
+                      ET0   = 1;//打开定时器0中断允许
+                      EA    = 1;//打开总中断
+                      TR0   = 1;//打开定时器
+              }
+              
+              void Timer0Init_NoOpen(TIMER0_MODE mode, uint16_t us, void *callback)
+              {
+                      timer_mode = mode;
+                      TR0   = 0;//关闭定时器
+                      ET0   = 0;//关闭定时器0中断允许
+                      switch (mode)
+                      {
+                              case TIMER0_MODE_0:TMOD   |= 0X00;
+                                                 timer_h = (8192-us) / 8;
+                                                 timer_l = (8192-us) % 8;
+                                                 break;
+                              case TIMER0_MODE_1:TMOD   |= 0X01;
+                                                 timer_h = (65536-us) / 256;
+                                                 timer_l = (65536-us) % 256;
+                                                 break;
+                              case TIMER0_MODE_2:TMOD   |= 0X02;
+                                                 timer_h = (256-us) % 256;
+                                                 timer_l = timer_h;
+                                                 break;
+                              case TIMER0_MODE_3:TMOD   |= 0X03;
+                                                 timer_h = (8192-us) / 8;
+                                                 timer_l = (8192-us) % 8;
+                                                 break;
+                              default:return ;   break;
+                      }
+                      
+                      if (callback == NULL) {
+                              pointer_interupt_timer0 = interupt_timer_function;
+                      } else {
+                              pointer_interupt_timer0 = callback;
+                      }
+                      
+                      TH0   = timer_h;        //给定时器赋初值，定时1ms
+                      TL0   = timer_l;        
+                      ET0   = 0;//关闭定时器0中断允许
+                      EA    = 1;//打开总中断
+                      TR0   = 0;//打开定时器
+              }
+              
+              void Timer0Settime(uint16_t us)
+              {
+                      TR0 = 0;
+                      switch (timer_mode)
+                      {
+                              case TIMER0_MODE_0:TMOD   |= 0X00;
+                                                 timer_h = (8192-us) / 8;
+                                                 timer_l = (8192-us) % 8;
+                                                 break;
+                              case TIMER0_MODE_1:TMOD   |= 0X01;
+                                                 timer_h = (65536-us) / 256;
+                                                 timer_l = (65536-us) % 256;
+                                                 break;
+C51 COMPILER V9.60.0.0   HW_TIMER0                                                         07/17/2021 11:59:47 PAGE 3   
 
- 115   2                      case TIMER0_MODE_2:TMOD   |= 0X02;
- 116   2                                         timer_h = (256-us) % 256;
- 117   2                                         timer_l = timer_h;
- 118   2                                         break;
- 119   2                      case TIMER0_MODE_3:TMOD   |= 0X03;
- 120   2                                         timer_h = (8192-us) / 8;
- 121   2                                         timer_l = (8192-us) % 8;
- 122   2                                         break;
- 123   2                      default:return ;   break;
- 124   2              }
- 125   1              TR0 = 1;
- 126   1      }
- 127          
- 128          void Timer0Open(void)
- 129          {
- 130   1              ET0   = 1;//打开定时器0中断允许
- 131   1              TR0   = 1;//打开定时器
- 132   1      }
- 133          
- 134          void Timer0Close(void)
- 135          {
- 136   1              TR0   = 0;//关闭定时器
- 137   1              ET0   = 0;//关闭定时器0中断允许
- 138   1              TH0   = timer_h;        //给定时器赋初值，定时1ms
- 139   1              TL0   = timer_l;        
- 140   1      }
- 141          
- 142          
- 143          
- 144          
- 145          /*******************************************************************************
- 146          * 函 数 名         : void Timer0() interrupt 1
- 147          * 函数功能                 : 定时器0中断函数
- 148          * 输    入         : 无
- 149          * 输    出         : 无
- 150          *******************************************************************************/
- 151          void Timer0() interrupt 1
- 152          {
- 153   1              if (timer_mode != TIMER0_MODE_2) {
- 154   2                      TH0 = timer_h;  //给定时器赋初值
- 155   2                      TL0 = timer_l;
- 156   2              }
- 157   1              pointer_interupt_timer0(NULL);
- 158   1      }
- 159          
- 160          
- 161          
- 162          #endif /* TIMER0_CONFIG */
+                              case TIMER0_MODE_2:TMOD   |= 0X02;
+                                                 timer_h = (256-us) % 256;
+                                                 timer_l = timer_h;
+                                                 break;
+                              case TIMER0_MODE_3:TMOD   |= 0X03;
+                                                 timer_h = (8192-us) / 8;
+                                                 timer_l = (8192-us) % 8;
+                                                 break;
+                              default:return ;   break;
+                      }
+                      TR0 = 1;
+              }
+              
+              void Timer0Open(void)
+              {
+                      ET0   = 1;//打开定时器0中断允许
+                      TR0   = 1;//打开定时器
+              }
+              
+              void Timer0Close(void)
+              {
+                      TR0   = 0;//关闭定时器
+                      ET0   = 0;//关闭定时器0中断允许
+                      TH0   = timer_h;        //给定时器赋初值，定时1ms
+                      TL0   = timer_l;        
+              }
+              
+              
+              
+              
+              /*******************************************************************************
+              * 函 数 名         : void Timer0() interrupt 1
+              * 函数功能                 : 定时器0中断函数
+              * 输    入         : 无
+              * 输    出         : 无
+              *******************************************************************************/
+              void Timer0() interrupt 1
+              {
+                      if (timer_mode != TIMER0_MODE_2) {
+                              TH0 = timer_h;  //给定时器赋初值
+                              TL0 = timer_l;
+                      }
+                      pointer_interupt_timer0(NULL);
+              }
+              
+              
+              
+              #endif /* TIMER0_CONFIG */
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =    906    ----
+   CODE SIZE        =   ----    ----
    CONSTANT SIZE    =   ----    ----
-   XDATA SIZE       =      6      15
+   XDATA SIZE       =   ----    ----
    PDATA SIZE       =   ----    ----
    DATA SIZE        =   ----    ----
    IDATA SIZE       =   ----    ----

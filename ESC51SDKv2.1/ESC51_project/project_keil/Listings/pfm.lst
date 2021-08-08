@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   PFM                                                               07/11/2021 19:35:24 PAGE 1   
+C51 COMPILER V9.60.0.0   PFM                                                               07/17/2021 11:59:46 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE PFM
@@ -13,63 +13,63 @@ line level    source
    1          #include "pfm.h"
    2          
    3          #ifdef PFM_CONFIG
-   4          
-   5          
-   6          
-   7          static int pfm_int_function (void *arg) 
-   8          {
-   9   1              PFM_OUT = ~PFM_OUT;
-  10   1              return 0;
-  11   1      }
-  12          
-  13          
-  14          char PFM_Init (uint frq)
-  15          {
-  16   1              uint16_t us10 = 0;
-  17   1              us10 = frq   / 10;
-  18   1              us10 = 50000 / us10;
-  19   1              Timer0Init(TIMER0_MODE_1, us10, pfm_int_function);
-  20   1              return 0;
-  21   1      }
-  22          
-  23          
-  24          
-  25          
-  26          char PFM_Start (void)
-  27          {
-  28   1              Timer0Open();
-  29   1              
-  30   1              return 0;
-  31   1      }
-  32          
-  33          char PFM_Stop (void)
-  34          {
-  35   1              Timer0Close();
-  36   1              
-  37   1              return 0;
-  38   1      }
-  39          
-  40          
-  41          char PFM_SetFrq (uint frq)
-  42          {
-  43   1              uint16_t us10 = 0;
-  44   1              us10 = frq   / 10;
-  45   1              us10 = 50000 / us10;
-  46   1              
-  47   1              Timer0Settime(us10);
-  48   1              
-  49   1              return 0;
-  50   1      }
-  51          
-  52          #endif /* PFM_CONFIG */
-C51 COMPILER V9.60.0.0   PFM                                                               07/11/2021 19:35:24 PAGE 2   
+              
+              
+              
+              static int pfm_int_function (void *arg) 
+              {
+                      PFM_OUT = ~PFM_OUT;
+                      return 0;
+              }
+              
+              
+              char PFM_Init (uint frq)
+              {
+                      uint16_t us10 = 0;
+                      us10 = frq   / 10;
+                      us10 = 50000 / us10;
+                      Timer0Init(TIMER0_MODE_1, us10, pfm_int_function);
+                      return 0;
+              }
+              
+              
+              
+              
+              char PFM_Start (void)
+              {
+                      Timer0Open();
+                      
+                      return 0;
+              }
+              
+              char PFM_Stop (void)
+              {
+                      Timer0Close();
+                      
+                      return 0;
+              }
+              
+              
+              char PFM_SetFrq (uint frq)
+              {
+                      uint16_t us10 = 0;
+                      us10 = frq   / 10;
+                      us10 = 50000 / us10;
+                      
+                      Timer0Settime(us10);
+                      
+                      return 0;
+              }
+              
+              #endif /* PFM_CONFIG */
+C51 COMPILER V9.60.0.0   PFM                                                               07/17/2021 11:59:46 PAGE 2   
 
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =    111    ----
+   CODE SIZE        =   ----    ----
    CONSTANT SIZE    =   ----    ----
-   XDATA SIZE       =   ----       3
+   XDATA SIZE       =   ----    ----
    PDATA SIZE       =   ----    ----
    DATA SIZE        =   ----    ----
    IDATA SIZE       =   ----    ----

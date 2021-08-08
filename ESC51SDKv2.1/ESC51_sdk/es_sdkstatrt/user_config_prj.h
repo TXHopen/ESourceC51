@@ -21,7 +21,7 @@
 
 /* ------------------------------------------------------------ */
 //#define SW_GDELAY_CONFIG
-//#define SW_SOFTTIMER_CONFIG
+#define SW_SOFTTIMER_CONFIG
 //#define SW_GCAPTURE_CONFIG
 //#define SW_PWMGROUP_CONFIG
 //#define SW_BUTTONGP_CONFIG
@@ -30,14 +30,14 @@
 
 
 /* ------------------------------------------------------------ */
-//#define LCD1602_CONFIG
+#define LCD1602_CONFIG
 //#define MAX541X_CONFIG
 //#define MAX263_CONFIG
-//#define KEY4X4_CONFIG
+#define KEY4X4_CONFIG
 //#define AD0809_CONFIG
 //#define AD9850_CONFIG
 //#define PWM_CONFIG
-#define PFM_CONFIG
+//#define PFM_CONFIG
 //#define DHT11_CONFIG
 //#define DS1302_CONFIG
 //#define DS18B20_CONFIG
@@ -48,7 +48,7 @@
 //#define MAX1241_CONFIG
 //#define AD5320_CONFIG
 //#define LCD12864_CONFIG
-//#define HX711_CONFIG
+#define HX711_CONFIG
 //#define HCSR04_CONFIG
 //#define DRV_SPI_CONFIG
 //#define DRV_CC1101_CONFIG

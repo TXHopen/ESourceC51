@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   HW_TIMER2                                                         07/11/2021 19:35:25 PAGE 1   
+C51 COMPILER V9.60.0.0   HW_TIMER2                                                         07/17/2021 11:59:48 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE HW_TIMER2
@@ -13,154 +13,154 @@ line level    source
    1          #include "hw_Timer2.h"
    2          
    3          #ifdef TIMER2_CONFIG
-              
-              
-              static u8 timer_h;
-              static u8 timer_l;
-              
-              static bit mode_flg = 0;
-              
-              int (*pointer_interupt_timer2)(void *arg);
-              
-              static int interupt_timer_function (void *arg) 
-              {
-                      return 0;
-              }
-              
-              
-              
-              /*******************************************************************************
-              * 函 数 名         : Timer1Init
-              * 函数功能                 : 定时器1初始化
-              * 输    入         : 无
-              * 输    出         : 无
-              *******************************************************************************/
-              void Timer2Init(TIMER2_MODE mode, uint us, void *callback)
-              {
-                      switch (mode)
-                      {
-                              case TIMER2_MODE_CAPTURE:T2CON=0X09;  //设置T2为捕获模式，下降沿则产生中断
-                                                       timer_h = (65536-us) / 256;
-                                                       timer_l = (65536-us) % 256;
-                                                       break;
-                              case TIMER2_MODE_TIMING :T2CON=0X00;  //设置T2为捕获模式，下降沿则产生中断
-                                                       timer_h = (65536-us) / 256;
-                                                       timer_l = (65536-us) % 256;
-                                                       break;
-                              default:                 return ;
-                                               break;
-                      }
-                      
-                      if (callback == NULL) {
-                              pointer_interupt_timer2 = interupt_timer_function;
-                      } else {
-                              pointer_interupt_timer2 = callback;
-                      }
-                      
-                      RCAP2H = timer_h;
-                      RCAP2L = timer_l;
-                      TH2 = RCAP2H;
-                      TL2 = RCAP2L;
-                      
-C51 COMPILER V9.60.0.0   HW_TIMER2                                                         07/11/2021 19:35:25 PAGE 2   
+   4          
+   5          
+   6          static u8 timer_h;
+   7          static u8 timer_l;
+   8          
+   9          static bit mode_flg = 0;
+  10          
+  11          int (*pointer_interupt_timer2)(void *arg);
+  12          
+  13          static int interupt_timer_function (void *arg) 
+  14          {
+  15   1              return 0;
+  16   1      }
+  17          
+  18          
+  19          
+  20          /*******************************************************************************
+  21          * 函 数 名         : Timer1Init
+  22          * 函数功能                 : 定时器1初始化
+  23          * 输    入         : 无
+  24          * 输    出         : 无
+  25          *******************************************************************************/
+  26          void Timer2Init(TIMER2_MODE mode, uint us, void *callback)
+  27          {
+  28   1              switch (mode)
+  29   1              {
+  30   2                      case TIMER2_MODE_CAPTURE:T2CON=0X09;  //设置T2为捕获模式，下降沿则产生中断
+  31   2                                               timer_h = (65536-us) / 256;
+  32   2                                               timer_l = (65536-us) % 256;
+  33   2                                               break;
+  34   2                      case TIMER2_MODE_TIMING :T2CON=0X00;  //设置T2为捕获模式，下降沿则产生中断
+  35   2                                               timer_h = (65536-us) / 256;
+  36   2                                               timer_l = (65536-us) % 256;
+  37   2                                               break;
+  38   2                      default:                 return ;
+  39   2                                       break;
+  40   2              }
+  41   1              
+  42   1              if (callback == NULL) {
+  43   2                      pointer_interupt_timer2 = interupt_timer_function;
+  44   2              } else {
+  45   2                      pointer_interupt_timer2 = callback;
+  46   2              }
+  47   1              
+  48   1              RCAP2H = timer_h;
+  49   1              RCAP2L = timer_l;
+  50   1              TH2 = RCAP2H;
+  51   1              TL2 = RCAP2L;
+  52   1              
+C51 COMPILER V9.60.0.0   HW_TIMER2                                                         07/17/2021 11:59:48 PAGE 2   
 
-                      EA  = 1;
-                      
-                      TR2 = 1;
-                      ET2 = 1;
-              }
-              
-              
-              
-              
-              void Timer2Init_NoOpen(TIMER2_MODE mode, uint us, void *callback)
-              {
-                      TR2   = 0;//关闭定时器
-                      ET2   = 0;//关闭定时器1中断允许
-                      switch (mode)
-                      {
-                              case TIMER2_MODE_CAPTURE:T2CON=0X09;  //设置T2为捕获模式，下降沿则产生中断
-                                                       timer_h = (65536-us) / 256;
-                                                       timer_l = (65536-us) % 256;
-                                                       break;
-                              case TIMER2_MODE_TIMING :T2CON=0X00;  //设置T2为
-                                                       timer_h = (65536-us) / 256;
-                                                       timer_l = (65536-us) % 256;
-                                                       break;
-                              default:                 return ;
-                                               break;
-                      }
-                      
-                      if (callback == NULL) {
-                              pointer_interupt_timer2 = interupt_timer_function;
-                      } else {
-                              pointer_interupt_timer2 = callback;
-                      }
-                      
-                      RCAP2H = timer_h;
-                      RCAP2L = timer_l;
-                      TH2 = RCAP2H;
-                      TL2 = RCAP2L;
-                      
-                      TR2 = 0;
-                      ET2 = 0;
-                      
-                      EA  = 1;
-              }
-              
-              void Timer2Open(void)
-              {
-                      ET2   = 1;//打开定时器0中断允许
-                      TR2   = 1;//打开定时器
-              }
-              
-              void Timer2Close(void)
-              {
-                      TR2   = 0;//关闭定时器
-                      ET2   = 0;//关闭定时器0中断允许
-              }
-              
-              void Timer2Pause(void)
-              {
-                      TR2   = 0;//关闭定时器
-              }
-              
-              void Timer2Start(void)
-C51 COMPILER V9.60.0.0   HW_TIMER2                                                         07/11/2021 19:35:25 PAGE 3   
+  53   1              EA  = 1;
+  54   1              
+  55   1              TR2 = 1;
+  56   1              ET2 = 1;
+  57   1      }
+  58          
+  59          
+  60          
+  61          
+  62          void Timer2Init_NoOpen(TIMER2_MODE mode, uint us, void *callback)
+  63          {
+  64   1              TR2   = 0;//关闭定时器
+  65   1              ET2   = 0;//关闭定时器1中断允许
+  66   1              switch (mode)
+  67   1              {
+  68   2                      case TIMER2_MODE_CAPTURE:T2CON=0X09;  //设置T2为捕获模式，下降沿则产生中断
+  69   2                                               timer_h = (65536-us) / 256;
+  70   2                                               timer_l = (65536-us) % 256;
+  71   2                                               break;
+  72   2                      case TIMER2_MODE_TIMING :T2CON=0X00;  //设置T2为
+  73   2                                               timer_h = (65536-us) / 256;
+  74   2                                               timer_l = (65536-us) % 256;
+  75   2                                               break;
+  76   2                      default:                 return ;
+  77   2                                       break;
+  78   2              }
+  79   1              
+  80   1              if (callback == NULL) {
+  81   2                      pointer_interupt_timer2 = interupt_timer_function;
+  82   2              } else {
+  83   2                      pointer_interupt_timer2 = callback;
+  84   2              }
+  85   1              
+  86   1              RCAP2H = timer_h;
+  87   1              RCAP2L = timer_l;
+  88   1              TH2 = RCAP2H;
+  89   1              TL2 = RCAP2L;
+  90   1              
+  91   1              TR2 = 0;
+  92   1              ET2 = 0;
+  93   1              
+  94   1              EA  = 1;
+  95   1      }
+  96          
+  97          void Timer2Open(void)
+  98          {
+  99   1              ET2   = 1;//打开定时器0中断允许
+ 100   1              TR2   = 1;//打开定时器
+ 101   1      }
+ 102          
+ 103          void Timer2Close(void)
+ 104          {
+ 105   1              TR2   = 0;//关闭定时器
+ 106   1              ET2   = 0;//关闭定时器0中断允许
+ 107   1      }
+ 108          
+ 109          void Timer2Pause(void)
+ 110          {
+ 111   1              TR2   = 0;//关闭定时器
+ 112   1      }
+ 113          
+ 114          void Timer2Start(void)
+C51 COMPILER V9.60.0.0   HW_TIMER2                                                         07/17/2021 11:59:48 PAGE 3   
 
-              {
-                      TR2   = 1;//打开定时器
-              }
-              
-              
-              
-              
-              
-              /*******************************************************************************
-              * 函 数 名         : void Timer2() interrupt 5
-              * 函数功能                 : 定时器0中断函数
-              * 输    入         : 无
-              * 输    出         : 无
-              *******************************************************************************/
-              void Timer2() interrupt 5
-              {
-                      TF2   = 0;
-                      
-                      pointer_interupt_timer2(NULL);
-                      
-              }
-              #endif /* TIMER2_CONFIG */
+ 115          {
+ 116   1              TR2   = 1;//打开定时器
+ 117   1      }
+ 118          
+ 119          
+ 120          
+ 121          
+ 122          
+ 123          /*******************************************************************************
+ 124          * 函 数 名         : void Timer2() interrupt 5
+ 125          * 函数功能                 : 定时器0中断函数
+ 126          * 输    入         : 无
+ 127          * 输    出         : 无
+ 128          *******************************************************************************/
+ 129          void Timer2() interrupt 5
+ 130          {
+ 131   1              TF2   = 0;
+ 132   1              
+ 133   1              pointer_interupt_timer2(NULL);
+ 134   1              
+ 135   1      }
+ 136          #endif /* TIMER2_CONFIG */
  137          
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =   ----    ----
+   CODE SIZE        =    488    ----
    CONSTANT SIZE    =   ----    ----
-   XDATA SIZE       =   ----    ----
+   XDATA SIZE       =      5      13
    PDATA SIZE       =   ----    ----
    DATA SIZE        =   ----    ----
    IDATA SIZE       =   ----    ----
-   BIT SIZE         =   ----    ----
+   BIT SIZE         =      1    ----
 END OF MODULE INFORMATION.
 
 

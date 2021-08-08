@@ -1,3 +1,21 @@
+/**
+ * *****************************************************ESourceOPEN*****************************************************
+ * @file      sw_PWMGroup.h
+ * 
+ * @brief     多路PWM组件头文件，包含子对象类型、多路PWM组件API、多路PWM组件API宏
+ * 
+ * @version   V0.00.01
+ * 
+ * @author    TXHopen (3332695529@qq.com)
+ * 
+ * @date      2021-08-08
+ * 
+ * @copyright Copyright (c) 2021
+ * 
+ * *****************************************************ESourceOPEN*****************************************************
+ * 
+ * *****************************************************ESourceOPEN*****************************************************
+ **/
 #ifndef __SW_PWMGROUP_H
 #define __SW_PWMGROUP_H
 
@@ -11,6 +29,8 @@
 #include "es_sys_package.h"
 
 
+/* ------------------------------------------------------------------------------------------------------------------ */
+/* 子对象类型 */
 
 typedef struct _PWMGROUP_Member
 {
@@ -28,8 +48,8 @@ typedef struct _PWMGROUP_Member
 
 
 
-
-
+/* ------------------------------------------------------------------------------------------------------------------ */
+/* 组件API */
 
 char PWMGroup_Init (void);
 char PWMGroup_Start (void);
@@ -43,7 +63,8 @@ char PWMGroup_OBJSetDUTY (__PWMGROUP_Member *pobj, uint8_t duty);
 
 
 
-
+/* ------------------------------------------------------------------------------------------------------------------ */
+/* 组件API宏 */
 
 #define PWMGROUP_OBJ_DECL(PWMOBJ)  \
     __PWMGROUP_Member PWMOBJ
@@ -96,7 +117,7 @@ char PWMGroup_OBJSetDUTY (__PWMGROUP_Member *pobj, uint8_t duty);
 		PWMGroup_OBJSetDUTY(&PWMOBJ, Del)
 
 
-
+/* ------------------------------------------------------------------------------------------------------------------ */
 
 #endif /* SW_PWMGROUP_CONFIG */
 

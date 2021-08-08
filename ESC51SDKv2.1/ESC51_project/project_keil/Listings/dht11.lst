@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   DHT11                                                             07/11/2021 19:35:21 PAGE 1   
+C51 COMPILER V9.60.0.0   DHT11                                                             07/17/2021 11:59:43 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE DHT11
@@ -62,7 +62,7 @@ line level    source
                       }
                       return 0;
               }
-C51 COMPILER V9.60.0.0   DHT11                                                             07/11/2021 19:35:21 PAGE 2   
+C51 COMPILER V9.60.0.0   DHT11                                                             07/17/2021 11:59:43 PAGE 2   
 
               
               
@@ -126,7 +126,7 @@ line level    source
                               for(i=0;i<5;i++) //读取40位数据
                               {
                                       buf[i]=DHT11_Read_Byte();
-C51 COMPILER V9.60.0.0   DHT11                                                             07/11/2021 19:35:21 PAGE 3   
+C51 COMPILER V9.60.0.0   DHT11                                                             07/17/2021 11:59:43 PAGE 3   
 
                               }
                               if((buf[0]+buf[1]+buf[2]+buf[3])==buf[4])
