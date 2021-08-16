@@ -1,5 +1,6 @@
 {
     "files.associations": {
-        "es_sys_package.h": "c"
+        "es_sys_package.h": "c",
+        "sw_list.h": "c"
     }
 }
