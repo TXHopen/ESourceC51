@@ -123,7 +123,9 @@
 #include "sw_ButtonGP.h"
 #endif /* SW_BUTTONGP_CONFIG */
 
-
+#ifdef SW_LIST_CONFIG
+#include "sw_List.h"
+#endif /* SW_LIST_CONFIG */
 
 
 

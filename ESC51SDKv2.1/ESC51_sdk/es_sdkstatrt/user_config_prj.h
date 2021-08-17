@@ -56,7 +56,7 @@
 //#define SW_GCAPTURE_CONFIG
 //#define SW_PWMGROUP_CONFIG
 //#define SW_BUTTONGP_CONFIG
-
+#define SW_LIST_CONFIG
 
 
 
