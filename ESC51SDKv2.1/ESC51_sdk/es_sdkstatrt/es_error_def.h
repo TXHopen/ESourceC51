@@ -37,7 +37,6 @@ typedef enum __error_type {
     ES_OK = 0,                     /**< \brief 正确 */
     ES_ERROR,                      /**< \brief 错误 */
     
-    ES_EINVAL,                     /**< \brief 参数无效 */
     ES_EOVFLOW,                    /**< \brief 溢出 */
     ES_ENULLP,                     /**< \brief 空指针 */
   
@@ -172,7 +171,37 @@ typedef enum __error_type {
     ES_EOWNERDEAD,                 /**< \brief 所有者死亡 */
     ES_ENOTRECOVERABLE,            /**< \brief 状态不可恢复 */
     ES_ERFKILL,                    /**< \brief 由于RF-kill而无法操作 */
+} __es_err_t;
+
+
+
+
+
+typedef enum err_type {
+    ES_OK = 0,                     /**< \brief 正确 */
+    ES_ERROR,                      /**< \brief 错误 */
+    
+    ES_EINVAL,                     /**< \brief 参数无效 */
+    ES_EOVFLOW,                    /**< \brief 溢出 */
+    ES_ENULLP,                     /**< \brief 空指针 */
+
+    ES_EPERM,                      /**< \brief 操作不允许 */
+    ES_ESRCH,                      /**< \brief 没有这样的过程 */
+    ES_ENOEXEC,                    /**< \brief 操作不允许 */
+    ES_EFAULT,                     /**< \brief 错误的地址 */
+    ES_ENOSPC,                     /**< \brief 设备上没有空间 */
+    ES_ESPIPE,                     /**< \brief 非法移位 */
+    ES_EDOM,                       /**< \brief 数值结果超出范围 */
+    ES_ENOSYS,                     /**< \brief 功能没有实现 */
+    ES_ENODATA,                    /**< \brief 无可用数据 */
+    ES_ETIME,                      /**< \brief 计时器过期 */
+    ES_EDESTADDRREQ,               /**< \brief 需要目标地址 */
+    ES_EADDRINUSE,                 /**< \brief 地址已在使用 */
+    ES_EADDRNOTAVAIL,              /**< \brief 无法分配请求的地址 */
+    ES_ECANCELED,                  /**< \brief 取消操作 */
 } es_err_t;
+
+
 
 
 
