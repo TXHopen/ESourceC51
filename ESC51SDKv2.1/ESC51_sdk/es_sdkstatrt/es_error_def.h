@@ -195,9 +195,6 @@ typedef enum err_type {
     ES_ENOSYS,                     /**< \brief 功能没有实现 */
     ES_ENODATA,                    /**< \brief 无可用数据 */
     ES_ETIME,                      /**< \brief 计时器过期 */
-    ES_EDESTADDRREQ,               /**< \brief 需要目标地址 */
-    ES_EADDRINUSE,                 /**< \brief 地址已在使用 */
-    ES_EADDRNOTAVAIL,              /**< \brief 无法分配请求的地址 */
     ES_ECANCELED,                  /**< \brief 取消操作 */
 } es_err_t;
 
